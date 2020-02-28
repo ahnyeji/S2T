@@ -6,7 +6,7 @@ Window {
     property bool mbImageClicked : false
     property int mCount : 0
     property int categoryClicked: 6
-    property url pageSource : "PageRecommend.qml"
+    property url pageSource : "qrc:/PageRecommend.qml"
     visible: true
     width: 432
     height: 768
@@ -27,7 +27,7 @@ Window {
                 id: logo
                 width: parent.width * 0.3
                 height: parent.height
-                source: "images/logo.png"
+                source: "qrc:/images/logo.png"
                 fillMode: Image.PreserveAspectFit
             }
         }
@@ -59,7 +59,7 @@ Window {
                     width: parent.width
                     height : parent.height
                     fillMode: Image.PreserveAspectFit
-                    source: mbImageClicked? "images/microphone1.gif" : "images/mic1.gif"
+                    source: mbImageClicked? "qrc:/images/microphone1.gif" : "qrc:/images/mic1.gif"
                 }
 
                 onClicked: {
@@ -122,7 +122,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 6){
                                 categoryClicked = 6
-                                pageSource = "PageRecommend.qml"
+                                pageSource = "qrc:/PageRecommend.qml"
                             }
                         }
                     }
@@ -156,7 +156,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 1){
                                 categoryClicked = 1
-                                pageSource = "PageBurger.qml"
+                                pageSource = "qrc:/PageBurger.qml"
                             }
                         }
                     }
@@ -187,7 +187,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 2){
                                 categoryClicked = 2
-                                pageSource = "PageSet.qml"
+                                pageSource = "qrc:/PageSet.qml"
                             }
                         }
 
@@ -219,7 +219,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 3){
                                 categoryClicked = 3
-                                pageSource = "PageDessert.qml"
+                                pageSource = "qrc:/PageDessert.qml"
                             }
                         }
                     }
@@ -250,7 +250,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 4){
                                 categoryClicked = 4
-                                pageSource = "PageDrink.qml"
+                                pageSource = "qrc:/PageDrink.qml"
                             }
                         }
                     }
@@ -281,7 +281,7 @@ Window {
                         onClicked: {
                             if(categoryClicked != 5){
                                 categoryClicked = 5
-                                pageSource = "PageChicken.qml"
+                                pageSource = "qrc:/PageChicken.qml"
                             }
                         }
                     }

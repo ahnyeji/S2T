@@ -56,7 +56,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/JipieHabaneroL.jpg"
+                            source: "qrc:/images/menu/dessert/JipieHabaneroL.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -98,7 +98,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/JipieS.jpg"
+                            source: "qrc:/images/menu/dessert/JipieS.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -142,7 +142,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/ChickenNugget.jpg"
+                            source: "qrc:/images/menu/dessert/ChickenNugget.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -185,7 +185,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/LongCheeseStick.jpg"
+                            source: "qrc:/images/menu/dessert/LongCheeseStick.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -228,7 +228,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/CornSalad.jpg"
+                            source: "qrc:/images/menu/dessert/CornSalad.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -271,7 +271,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/SundayStrawberry.jpg"
+                            source: "qrc:/images/menu/dessert/SundayStrawberry.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -314,7 +314,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/ShakeShakeChilly.jpg"
+                            source: "qrc:/images/menu/dessert/ShakeShakeChilly.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -357,7 +357,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/ShakeShakeCheese.jpg"
+                            source: "qrc:/images/menu/dessert/ShakeShakeCheese.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -400,7 +400,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/dessert/ShakeShakeOnion.jpg"
+                            source: "qrc:/images/menu/dessert/ShakeShakeOnion.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -456,7 +456,7 @@ Page{
                             id: image10
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/SeasonedPotato.jpg"
+                            source: "qrc:/images/menu/dessert/SeasonedPotato.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -498,7 +498,7 @@ Page{
                             id: image11
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/SquidRing.png"
+                            source: "qrc:/images/menu/dessert/SquidRing.png"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -539,7 +539,7 @@ Page{
                             id: image12
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/CheeseStickOriginal.jpg"
+                            source: "qrc:/images/menu/dessert/CheeseStickOriginal.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -580,7 +580,7 @@ Page{
                             id: image13
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/Potato.jpg"
+                            source: "qrc:/images/menu/dessert/Potato.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -621,7 +621,7 @@ Page{
                             id: image14
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/ChocoCookieTornado.jpg"
+                            source: "qrc:/images/menu/dessert/ChocoCookieTornado.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -662,7 +662,7 @@ Page{
                             id: image15
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/GreenTeaTornado.jpg"
+                            source: "qrc:/images/menu/dessert/GreenTeaTornado.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -703,7 +703,7 @@ Page{
                             id: image16
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/StrawberryTornado.jpg"
+                            source: "qrc:/images/menu/dessert/StrawberryTornado.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -744,7 +744,7 @@ Page{
                             id: image17
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/dessert/SoftCone.jpg"
+                            source: "qrc:/images/menu/dessert/SoftCone.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -826,7 +826,7 @@ Page{
                     id: backimage
                     width: parent.width
                     height: parent.height
-                    source: "images/back.png"
+                    source: "qrc:/images/back.png"
                 }
 
                 onClicked:{
@@ -857,7 +857,7 @@ Page{
                     id: nextimage
                     width: parent.width
                     height: parent.height
-                    source: "images/next.png"
+                    source: "qrc:/images/next.png"
                 }
 
                 onClicked:{
