@@ -67,12 +67,12 @@ Window {
 
                 onClicked: {
                     if(micUnclicked){
-                        stackview.push("qrc:/PageTest.qml")
+                        stackview.push("qrc:/MicClicked.qml")
                         micUnclicked = false;
 
                     }else{
                         micUnclicked = true;
-                        stackview.pop("qrc:/PageTest.qml")
+                        stackview.pop("qrc:/MicClicked.qml")
 
 
                     }
