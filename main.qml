@@ -4,8 +4,7 @@ import QtQuick.Controls 2.13
 
 
 Window {
-    property bool mbImageClicked : true
-    property int mCount : 0
+    property bool micUnclicked : true
     property int categoryClicked: 6
     property url pageSource : "PageBurger.qml"
     property string manuName
@@ -14,9 +13,6 @@ Window {
     width: 432
     height: 768
     title: qsTr("LotteRia Kiosk")
-
-
-
 
     Column {
 
@@ -66,16 +62,16 @@ Window {
                     width: parent.width
                     height : parent.height
                     fillMode: Image.PreserveAspectFit
-                    source: mbImageClicked? "images/microphone1.gif" : "images/mic1.gif"
+                    source: micUnclicked? "images/microphone1.gif" : "images/mic1.gif"
                 }
 
                 onClicked: {
-                    if(mbImageClicked){
+                    if(micUnclicked){
                         stackview.push("qrc:/PageTest.qml")
-                        mbImageClicked = false;
+                        micUnclicked = false;
 
                     }else{
-                        mbImageClicked = true;
+                        micUnclicked = true;
                         stackview.pop("qrc:/PageTest.qml")
 
 
@@ -89,234 +85,56 @@ Window {
             y: 768
             width: parent.width
             height: parent.height*0.6
-
-
-            initialItem: Column {
-                id: mainbar
-                width: parent.width
-                height: parent.height
-
-                Rectangle {
-                    id: categorybar
-                    width: parent.width
-                    height: parent.height*0.08
-                    color: "#da291c"
-
-                    Row {
-                        id: category
-                        width: parent.width
-                        height: parent.height*0.9
-                        topPadding: 7
-                        leftPadding: parent.width*0.02
-                        rightPadding: parent.width*0.02
-
-
-                        Button {
-                            id: recommendBtn
-                            highlighted: false
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-
-                            background: Rectangle {
-                                id: rectangle
-                                color: categoryClicked == 6 ? "#ffffff":"#da291c"
-                                radius: 10
-
-                                Text {
-                                    id: recommend
-                                    text: qsTr("추천")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                    font.weight: Font.Bold
-                                    font.pointSize: 14
-                                    color: categoryClicked == 6 ? "#000000":"#ffffff"
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 6){
-                                    categoryClicked = 6
-                                    pageSource = "PageRecommend.qml"
-                                }
-                            }
-                        }
-
-                        Button {
-                            id: burgerBtn
-                            highlighted: false
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-
-                            background: Rectangle {
-                                id: rectangle2
-                                color: categoryClicked == 1 ? "#ffffff":"#da291c"
-                                radius: 10
-
-
-                                Text {
-                                    id: burger
-                                    text: qsTr("버거")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                    font.weight: Font.Bold
-                                    font.pointSize: 14
-                                    color: categoryClicked == 1 ? "#000000":"#ffffff"
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 1){
-                                    categoryClicked = 1
-                                    pageSource = "PageBurger.qml"
-                                }
-                            }
-                        }
-
-                        Button {
-                            id: setBtn
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-                            highlighted: false
-                            background: Rectangle {
-                                id: rectangle1
-                                color: categoryClicked == 2 ? "#ffffff":"#da291c"
-                                radius: 10
-                                Text {
-                                    id: set
-                                    color: categoryClicked == 2 ? "#000000":"#ffffff"
-                                    text: qsTr("세트/팩")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.pointSize: 14
-                                    font.weight: Font.Bold
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 2){
-                                    categoryClicked = 2
-                                    pageSource = "PageSet.qml"
-                                }
-                            }
-
-                        }
-
-                        Button {
-                            id: dessertBtn
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-                            highlighted: false
-                            background: Rectangle {
-                                id: rectangle3
-                                color: categoryClicked == 3 ? "#ffffff":"#da291c"
-                                radius: 10
-                                Text {
-                                    id: dessert
-                                    color: categoryClicked == 3 ? "#000000":"#ffffff"
-                                    text: qsTr("디저트")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.pointSize: 14
-                                    font.weight: Font.Bold
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 3){
-                                    categoryClicked = 3
-                                    pageSource = "PageDessert.qml"
-                                }
-                            }
-                        }
-
-                        Button {
-                            id: drinkBtn
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-                            highlighted: false
-                            background: Rectangle {
-                                id: rectangle4
-                                color: categoryClicked == 4 ? "#ffffff":"#da291c"
-                                radius: 10
-                                Text {
-                                    id: drink
-                                    color: categoryClicked == 4 ? "#000000":"#ffffff"
-                                    text: qsTr("음료")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.pointSize: 14
-                                    font.weight: Font.Bold
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 4){
-                                    categoryClicked = 4
-                                    pageSource = "PageDrink.qml"
-                                }
-                            }
-                        }
-
-                        Button {
-                            id: chickenBtn
-                            width: parent.width * 0.16
-                            height: parent.height * 1.3
-                            highlighted: false
-                            background: Rectangle {
-                                id: rectangle5
-                                color: categoryClicked == 5 ? "#ffffff":"#da291c"
-                                radius: 10
-                                Text {
-                                    id: chicken
-                                    color: categoryClicked == 5 ? "#000000":"#ffffff"
-                                    text: qsTr("치킨")
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    topPadding : 4.5
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignHCenter
-                                    font.pointSize: 14
-                                    font.weight: Font.Bold
-                                    font.family: "Courier"
-                                    font.letterSpacing: 2
-                                }
-                            }
-                            onClicked: {
-                                if(categoryClicked != 5){
-                                    categoryClicked = 5
-                                    pageSource = "PageChicken.qml"
-                                }
-                            }
-                        }
-                    }
+            replaceEnter: Transition {
+                PropertyAnimation {//뷰를 replace 한 화면이 그려질때 출력하는 애니메이션
+                    property: "opacity"
+                    from: 1
+                    to:1
+                    duration: 0
+                 }
+            }
+            replaceExit: Transition {
+                PropertyAnimation {//뷰를 replace 한 화면이 그려질때 이전화면이 없어지는 애니메이션
+                    property: "opacity"
+                    from: 1
+                    to:1
+                    duration: 0
                 }
-
-                Row {
-                    id: mainView
-                    width: parent.width
-                    height: parent.height*0.92
-
-                    Loader {
-                        id: pageLoader
-
-                        source: pageSource
-                        anchors.fill:parent
-                    }
+            }
+            pushEnter: Transition {
+                PropertyAnimation {//뷰를 push 한 화면이 그려지는 애니메이션
+                    property: "opacity"//투명도가 설정 되게 설정 x,나 y등 다른 속성값으로 설정할수 있음
+                    from: 1//투명도를 1에서 1로 바꿔줌 즉 투명도가 변하지 않아서 애니메이션이 없는 것처럼 된다.
+                    to:1
+                    duration: 0
                 }
+            }
+            pushExit: Transition {
+                PropertyAnimation {//뷰를 push 한 화면이 그려질때 이전화면이 없어지는 애니메이션
+                    property: "opacity"//투명도가 설정 되게 설정 x,나 y등 다른 속성값으로 설정할수 있음
+                    from: 1
+                    to:1//투명도를 1에서 1로 바꿔줌 즉 투명도가 변하지 않아서 애니메이션이 없는 것처럼 된다.
+                    duration: 0
+                }
+            }
+            popEnter: Transition {
+                PropertyAnimation {////뷰를 pop해서 이전화면으로 갈때 이전화면이 출력되는 애니메이션
+                    property: "opacity"//투명도가 설정 되게 설정 x,나 y등 다른 속성값으로 설정할수 있음
+                    from: 1//투명도를 1에서 1로 바꿔줌 즉 투명도가 변하지 않아서 애니메이션이 없는 것처럼 된다.
+                    to:1
+                    duration: 0
+                }
+            }
+            popExit: Transition {
+                PropertyAnimation {//뷰를 pop 했을때 pop한 화면이 없어지는 애니메이션
+                    property: "opacity"//투명도가 설정 되게 설정 x,나 y등 다른 속성값으로 설정할수 있음
+                    from: 1
+                    to:1//투명도를 1에서 1로 바꿔줌 즉 투명도가 변하지 않아서 애니메이션이 없는 것처럼 된다.
+                    duration:0
+                }
+            }
+
+            initialItem: Mainbar{
 
             }
 
