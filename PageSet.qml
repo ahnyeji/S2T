@@ -52,7 +52,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/AZBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/AZBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -95,7 +95,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/BigBulgogiSet.jpg"
+                            source: "qrc:/images/menu/set/BigBulgogiSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -138,7 +138,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/BulgogiBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/BulgogiBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -181,7 +181,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/ChickenBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/ChickenBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -224,7 +224,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/ClassicCheeseBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/ClassicCheeseBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -267,7 +267,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/DoubleX2Set.jpg"
+                            source: "qrc:/images/menu/set/DoubleX2Set.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -310,7 +310,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/HanwooBulgogiCombo.jpg"
+                            source: "qrc:/images/menu/set/HanwooBulgogiCombo.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -353,7 +353,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/HanwooBulgogiSet.jpg"
+                            source: "qrc:/images/menu/set/HanwooBulgogiSet.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -396,7 +396,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/set/HanwooCouplePack.jpg"
+                            source: "qrc:/images/menu/set/HanwooCouplePack.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -453,7 +453,7 @@ Page{
                             id: image10
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/HanwooPremiumPack.jpg"
+                            source: "qrc:/images/menu/set/HanwooPremiumPack.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -495,7 +495,7 @@ Page{
                             id: image11
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/HotCrispyChickenBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/HotCrispyChickenBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -536,7 +536,7 @@ Page{
                             id: image12
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/MozzarellaInTheBurgerBaconSet.jpg"
+                            source: "qrc:/images/menu/set/MozzarellaInTheBurgerBaconSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -577,7 +577,7 @@ Page{
                             id: image13
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/ShrimpBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/ShrimpBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -618,7 +618,7 @@ Page{
                             id: image14
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/TeriBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/TeriBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -659,7 +659,7 @@ Page{
                             id: image15
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/TREXBurgerSet.jpg"
+                            source: "qrc:/images/menu/set/TREXBurgerSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -700,7 +700,7 @@ Page{
                             id: image16
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/WagyuEdition2Set.jpg"
+                            source: "qrc:/images/menu/set/WagyuEdition2Set.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -741,7 +741,7 @@ Page{
                             id: image17
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/set/RiaMiracleSet.jpg"
+                            source: "qrc:/images/menu/set/RiaMiracleSet.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -823,7 +823,7 @@ Page{
                     id: backimage
                     width: parent.width
                     height: parent.height
-                    source: "images/back.png"
+                    source: "qrc:/images/back.png"
                 }
 
                 onClicked:{
@@ -853,7 +853,7 @@ Page{
                     id: nextimage
                     width: parent.width
                     height: parent.height
-                    source: "images/next.png"
+                    source: "qrc:/images/next.png"
                 }
 
                 onClicked:{

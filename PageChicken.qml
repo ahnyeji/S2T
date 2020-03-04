@@ -53,7 +53,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/FriedChicken.jpg"
+                            source: "qrc:/images/menu/chicken/FriedChicken.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -96,7 +96,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/ChickenFillet2.jpg"
+                            source: "qrc:/images/menu/chicken/ChickenFillet2.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -139,7 +139,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/FireWing2.jpg"
+                            source: "qrc:/images/menu/chicken/FireWing2.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -182,7 +182,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/ChickenFillet4.jpg"
+                            source: "qrc:/images/menu/chicken/ChickenFillet4.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -225,7 +225,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/FireWing4.jpg"
+                            source: "qrc:/images/menu/chicken/FireWing4.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -268,7 +268,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/LeanMeatHalfPack.jpg"
+                            source: "qrc:/images/menu/chicken/LeanMeatHalfPack.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -311,7 +311,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/HalfPack.jpg"
+                            source: "qrc:/images/menu/chicken/HalfPack.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -354,7 +354,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/FamilyPack.jpg"
+                            source: "qrc:/images/menu/chicken/FamilyPack.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -397,7 +397,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/chicken/LeanMeatFullPack.jpg"
+                            source: "qrc:/images/menu/chicken/LeanMeatFullPack.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -455,7 +455,7 @@ Page{
                             id: image10
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/chicken/FullPack.jpg"
+                            source: "qrc:/images/menu/chicken/FullPack.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -537,7 +537,7 @@ Page{
                     id: backimage
                     width: parent.width
                     height: parent.height
-                    source: "images/back.png"
+                    source: "qrc:/images/back.png"
                 }
 
                 onClicked:{
@@ -567,7 +567,7 @@ Page{
                     id: nextimage
                     width: parent.width
                     height: parent.height
-                    source: "images/next.png"
+                    source: "qrc:/images/next.png"
                 }
 
                 onClicked:{

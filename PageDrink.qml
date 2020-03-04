@@ -52,7 +52,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/IcedTea.jpg"
+                            source: "qrc:/images/menu/drink/IcedTea.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -95,7 +95,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/IceAmericanoL.jpg"
+                            source: "qrc:/images/menu/drink/IceAmericanoL.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -138,7 +138,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/HotChoco.png"
+                            source: "qrc:/images/menu/drink/HotChoco.png"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -181,7 +181,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/OrangeJuice.jpg"
+                            source: "qrc:/images/menu/drink/OrangeJuice.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -224,7 +224,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/Milk.jpg"
+                            source: "qrc:/images/menu/drink/Milk.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -267,7 +267,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/CiderR.jpg"
+                            source: "qrc:/images/menu/drink/CiderR.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -310,7 +310,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/ColaR.jpg"
+                            source: "qrc:/images/menu/drink/ColaR.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -353,7 +353,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/MilkShakeStrawberry.jpg"
+                            source: "qrc:/images/menu/drink/MilkShakeStrawberry.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -396,7 +396,7 @@ Page{
                             width: parent.width * 0.9
                             height: parent.height * 0.5
                             anchors.horizontalCenter: parent.horizontalCenter
-                            source: "images/menu/drink/MilkShakeChoco.jpg"
+                            source: "qrc:/images/menu/drink/MilkShakeChoco.jpg"
                             fillMode: Image.PreserveAspectFit
                         }
 
@@ -456,7 +456,7 @@ Page{
                             id: image10
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/drink/MilkShakeVanilla.jpg"
+                            source: "qrc:/images/menu/drink/MilkShakeVanilla.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -497,7 +497,7 @@ Page{
                             id: image11
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/drink/Americano.jpg"
+                            source: "qrc:/images/menu/drink/Americano.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -538,7 +538,7 @@ Page{
                             id: image12
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/drink/IceAmericano.jpg"
+                            source: "qrc:/images/menu/drink/IceAmericano.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -579,7 +579,7 @@ Page{
                             id: image13
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/drink/CafeLatte.jpg"
+                            source: "qrc:/images/menu/drink/CafeLatte.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -620,7 +620,7 @@ Page{
                             id: image14
                             width: parent.width * 0.9
                             height: parent.height * 0.5
-                            source: "images/menu/drink/IceCaffeLatte.jpg"
+                            source: "qrc:/images/menu/drink/IceCaffeLatte.jpg"
                             fillMode: Image.PreserveAspectFit
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
@@ -660,7 +660,7 @@ Page{
                     id: backimage
                     width: parent.width
                     height: parent.height
-                    source: "images/back.png"
+                    source: "qrc:/images/back.png"
                 }
 
                 onClicked:{
@@ -690,7 +690,7 @@ Page{
                     id: nextimage
                     width: parent.width
                     height: parent.height
-                    source: "images/next.png"
+                    source: "qrc:/images/next.png"
                 }
 
                 onClicked:{
