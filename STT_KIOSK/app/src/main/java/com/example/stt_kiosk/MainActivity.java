@@ -2,7 +2,7 @@ package com.example.stt_kiosk;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
     TextView name;
     TextView price;
     ImageView img;
+    BitmapDrawable image;
 
     Intent intent;
-    Bitmap sendBitmap;
     ByteArrayOutputStream stream;
     byte[] byteArray;
 
@@ -132,35 +132,29 @@ public class MainActivity extends AppCompatActivity {
             case 1 :
                 adapter = new CustomAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter);
-                indicator.setViewPager(vpPager);
                 break ;
             case 2 :
                 adapter2 = new CustomAdapter2(getLayoutInflater());
                 vpPager.setAdapter(adapter2);
-                indicator.setViewPager(vpPager);
                 break ;
             case 3 :
                 adapter3 = new CustomAdapter3(getLayoutInflater());
                 vpPager.setAdapter(adapter3);
-                indicator.setViewPager(vpPager);
                 break ;
             case 4 :
                 adapter4 = new CustomAdapter4(getLayoutInflater());
                 vpPager.setAdapter(adapter4);
-                indicator.setViewPager(vpPager);
                 break;
             case 5 :
                 adapter5 = new CustomAdapter5(getLayoutInflater());
-                vpPager.setAdapter(adapter);
-                indicator.setViewPager(vpPager);
+                vpPager.setAdapter(adapter5);
                 break;
             case 6 :
                 adapter6 = new CustomAdapter6(getLayoutInflater());
                 vpPager.setAdapter(adapter6);
-                indicator.setViewPager(vpPager);
                 break;
         }
-
+        indicator.setViewPager(vpPager);
     }
 
 
@@ -214,130 +208,97 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_btn1:
                 name = (TextView) findViewById(R.id.menu_name1);
                 price = (TextView) findViewById(R.id.menu_price1);
-                img = findViewById(R.id.menu_img1);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                img = (ImageView) findViewById(R.id.menu_img1);
                 break;
             case R.id.menu_btn2:
                 name = (TextView) findViewById(R.id.menu_name2);
                 price = (TextView) findViewById(R.id.menu_price2);
                 img = findViewById(R.id.menu_img2);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.chickenburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn3:
                 name = (TextView) findViewById(R.id.menu_name3);
                 price = (TextView) findViewById(R.id.menu_price3);
                 img = findViewById(R.id.menu_img3);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn4:
                 name = (TextView) findViewById(R.id.menu_name4);
                 price = (TextView) findViewById(R.id.menu_price4);
                 img = findViewById(R.id.menu_img4);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn5:
                 name = (TextView) findViewById(R.id.menu_name5);
                 price = (TextView) findViewById(R.id.menu_price5);
                 img = findViewById(R.id.menu_img5);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn6:
                 name = (TextView) findViewById(R.id.menu_name6);
                 price = (TextView) findViewById(R.id.menu_price6);
                 img = findViewById(R.id.menu_img6);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn7:
                 name = (TextView) findViewById(R.id.menu_name7);
                 price = (TextView) findViewById(R.id.menu_price7);
                 img = findViewById(R.id.menu_img7);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn8:
                 name = (TextView) findViewById(R.id.menu_name8);
                 price = (TextView) findViewById(R.id.menu_price8);
                 img = findViewById(R.id.menu_img8);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn9:
                 name = (TextView) findViewById(R.id.menu_name9);
                 price = (TextView) findViewById(R.id.menu_price9);
                 img = findViewById(R.id.menu_img9);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn11:
                 name = (TextView) findViewById(R.id.menu_name11);
                 price = (TextView) findViewById(R.id.menu_price11);
                 img = findViewById(R.id.menu_img11);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn12:
                 name = (TextView) findViewById(R.id.menu_name12);
                 price = (TextView) findViewById(R.id.menu_price12);
                 img = findViewById(R.id.menu_img12);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn13:
                 name = (TextView) findViewById(R.id.menu_name13);
                 price = (TextView) findViewById(R.id.menu_price13);
                 img = findViewById(R.id.menu_img13);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn14:
                 name = (TextView) findViewById(R.id.menu_name14);
                 price = (TextView) findViewById(R.id.menu_price14);
                 img = findViewById(R.id.menu_img14);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn15:
                 name = (TextView) findViewById(R.id.menu_name15);
                 price = (TextView) findViewById(R.id.menu_price15);
                 img = findViewById(R.id.menu_img15);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn16:
                 name = (TextView) findViewById(R.id.menu_name16);
                 price = (TextView) findViewById(R.id.menu_price16);
                 img = findViewById(R.id.menu_img16);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn17:
                 name = (TextView) findViewById(R.id.menu_name17);
                 price = (TextView) findViewById(R.id.menu_price17);
                 img = findViewById(R.id.menu_img17);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn18:
                 name = (TextView) findViewById(R.id.menu_name18);
                 price = (TextView) findViewById(R.id.menu_price18);
                 img = findViewById(R.id.menu_img18);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
             case R.id.menu_btn19:
                 name = (TextView) findViewById(R.id.menu_name19);
                 price = (TextView) findViewById(R.id.menu_price19);
                 img = findViewById(R.id.menu_img19);
-                sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.azburger);
-                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 break;
         }
+        image = (BitmapDrawable) img.getDrawable();
+        Bitmap bitmap = image.getBitmap();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byteArray = stream.toByteArray();
         intent.putExtra("image", byteArray);
         intent.putExtra("name", name.getText().toString());
