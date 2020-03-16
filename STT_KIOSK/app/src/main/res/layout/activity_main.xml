@@ -165,6 +165,7 @@
                 android:layout_weight="9"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:onClick="mOnPopupClick"
                 android:visibility="visible"></androidx.viewpager.widget.ViewPager>
 
             <ImageButton
