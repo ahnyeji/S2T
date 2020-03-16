@@ -97,6 +97,16 @@ public class CustomAdapter extends PagerAdapter {
         TextView n8 = (TextView) view.findViewById(R.id.menu_name8);
         TextView n9 = (TextView) view.findViewById(R.id.menu_name9);
 
+        TextView p1 = (TextView) view.findViewById(R.id.menu_price1);
+        TextView p2 = (TextView) view.findViewById(R.id.menu_price2);
+        TextView p3 = (TextView) view.findViewById(R.id.menu_price3);
+        TextView p4 = (TextView) view.findViewById(R.id.menu_price4);
+        TextView p5 = (TextView) view.findViewById(R.id.menu_price5);
+        TextView p6 = (TextView) view.findViewById(R.id.menu_price6);
+        TextView p7 = (TextView) view.findViewById(R.id.menu_price7);
+        TextView p8 = (TextView) view.findViewById(R.id.menu_price8);
+        TextView p9 = (TextView) view.findViewById(R.id.menu_price9);
+
         switch (position){
             case 0:
                 img1.setImageResource(R.drawable.azburger);
@@ -110,7 +120,7 @@ public class CustomAdapter extends PagerAdapter {
                 img9.setImageResource(R.drawable.azburger);
 
                 n1.setText("AZ버거");
-                n2.setText("AZ버거2");
+                p1.setText("4,300원");
 
                 break;
             case 1:

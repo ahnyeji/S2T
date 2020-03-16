@@ -1,13 +1,17 @@
 package com.example.stt_kiosk;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,9 +24,19 @@ public class PopupActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.popup_activity);
+        Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = (int) (size.x * 0.9); //Display 사이즈의 90%
+        int height = (int) (size.y * 0.9);  //Display 사이즈의 90%
+
+        getWindow().getAttributes().width = width;
+        getWindow().getAttributes().height = height;
+
 
         //UI 객체생성
         txtText = (TextView)findViewById(R.id.txtText);
