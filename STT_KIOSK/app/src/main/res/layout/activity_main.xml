@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -147,69 +148,31 @@
             <ImageButton
                 android:id="@+id/back_btn"
                 style="@style/Widget.AppCompat.ImageButton"
-                android:layout_width="35dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:padding="0dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/back" />
 
-            <FrameLayout
-                android:id="@+id/menupage"
-                android:layout_width="match_parent"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vpPager"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="17">
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="visible"></androidx.viewpager.widget.ViewPager>
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#E6DDA4"
-                    android:visibility="invisible" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#9C27B0"
-                    android:visibility="invisible" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#B02767"
-                    android:visibility="invisible" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#CF613F"
-                    android:visibility="invisible" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vpPager6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#2196F3"
-                    android:visibility="invisible" />
-
-            </FrameLayout>
+                android:layout_weight="9"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:visibility="visible"></androidx.viewpager.widget.ViewPager>
 
             <ImageButton
                 android:id="@+id/next_btn"
-                android:layout_width="35dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:padding="0dp"
@@ -329,9 +292,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="15dp"
                                 android:layout_weight="1"
+                                android:onClick="MyOnClick"
                                 android:padding="0dp"
                                 android:scaleType="fitCenter"
-                                android:onClick="MyOnClick"
                                 android:text="+" />
 
                         </LinearLayout>

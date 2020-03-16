@@ -3,7 +3,8 @@ package com.example.stt_kiosk;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
@@ -77,54 +78,79 @@ public class CustomAdapter3 extends PagerAdapter {
 
         //위에서 inflated 되어 만들어진 view로부터 findViewById()를 해야 하는 것에 주의.
 
-        ImageButton img1 = (ImageButton) view.findViewById(R.id.btn1);
-        ImageButton img2 = (ImageButton) view.findViewById(R.id.btn2);
-        ImageButton img3 = (ImageButton) view.findViewById(R.id.btn3);
-        ImageButton img4 = (ImageButton) view.findViewById(R.id.btn4);
-        ImageButton img5 = (ImageButton) view.findViewById(R.id.btn5);
-        ImageButton img6 = (ImageButton) view.findViewById(R.id.btn6);
-        ImageButton img7 = (ImageButton) view.findViewById(R.id.btn7);
-        ImageButton img8 = (ImageButton) view.findViewById(R.id.btn8);
-        ImageButton img9 = (ImageButton) view.findViewById(R.id.btn9);
+        ImageView img1 = (ImageView) view.findViewById(R.id.menu_img1);
+        ImageView img2 = (ImageView) view.findViewById(R.id.menu_img2);
+        ImageView img3 = (ImageView) view.findViewById(R.id.menu_img3);
+        ImageView img4 = (ImageView) view.findViewById(R.id.menu_img4);
+        ImageView img5 = (ImageView) view.findViewById(R.id.menu_img5);
+        ImageView img6 = (ImageView) view.findViewById(R.id.menu_img6);
+        ImageView img7 = (ImageView) view.findViewById(R.id.menu_img7);
+        ImageView img8 = (ImageView) view.findViewById(R.id.menu_img8);
+        ImageView img9 = (ImageView) view.findViewById(R.id.menu_img9);
+
+        TextView n1 = (TextView) view.findViewById(R.id.menu_name1);
+        TextView n2 = (TextView) view.findViewById(R.id.menu_name2);
+        TextView n3 = (TextView) view.findViewById(R.id.menu_name3);
+        TextView n4 = (TextView) view.findViewById(R.id.menu_name4);
+        TextView n5 = (TextView) view.findViewById(R.id.menu_name5);
+        TextView n6 = (TextView) view.findViewById(R.id.menu_name6);
+        TextView n7 = (TextView) view.findViewById(R.id.menu_name7);
+        TextView n8 = (TextView) view.findViewById(R.id.menu_name8);
+        TextView n9 = (TextView) view.findViewById(R.id.menu_name9);
 
         switch (position){
             case 0:
+                img1.setImageResource(R.drawable.azburger);
+                img2.setImageResource(R.drawable.azburger);
+                img3.setImageResource(R.drawable.azburger);
+                img4.setImageResource(R.drawable.azburger);
+                img5.setImageResource(R.drawable.azburger);
+                img6.setImageResource(R.drawable.azburger);
+                img7.setImageResource(R.drawable.azburger);
+                img8.setImageResource(R.drawable.azburger);
+                img9.setImageResource(R.drawable.azburger);
 
-                img1.setImageResource(R.drawable.azburger+position);
-                img2.setImageResource(R.drawable.azburger+position);
-                img3.setImageResource(R.drawable.azburger+position);
-                img4.setImageResource(R.drawable.azburger+position);
-                img5.setImageResource(R.drawable.azburger+position);
-                img6.setImageResource(R.drawable.azburger+position);
-                img7.setImageResource(R.drawable.azburger+position);
-                img8.setImageResource(R.drawable.azburger+position);
-                img9.setImageResource(R.drawable.azburger+position);
+                n1.setText("AZ버거3");
+
                 break;
             case 1:
                 view= inflater.inflate(R.layout.fragment_second, null);
 
-                img1 = (ImageButton) view.findViewById(R.id.btn1);
-                img2 = (ImageButton) view.findViewById(R.id.btn2);
-                img3 = (ImageButton) view.findViewById(R.id.btn3);
-                img4 = (ImageButton) view.findViewById(R.id.btn4);
-                img5 = (ImageButton) view.findViewById(R.id.btn5);
-                img6 = (ImageButton) view.findViewById(R.id.btn6);
-                img7 = (ImageButton) view.findViewById(R.id.btn7);
-                img8 = (ImageButton) view.findViewById(R.id.btn8);
-                img9 = (ImageButton) view.findViewById(R.id.btn9);
+                ImageView img11 = (ImageView) view.findViewById(R.id.menu_img11);
+                ImageView img12 = (ImageView) view.findViewById(R.id.menu_img12);
+                ImageView img13 = (ImageView) view.findViewById(R.id.menu_img13);
+                ImageView img14 = (ImageView) view.findViewById(R.id.menu_img14);
+                ImageView img15 = (ImageView) view.findViewById(R.id.menu_img15);
+                ImageView img16 = (ImageView) view.findViewById(R.id.menu_img16);
+                ImageView img17 = (ImageView) view.findViewById(R.id.menu_img17);
+                ImageView img18 = (ImageView) view.findViewById(R.id.menu_img18);
+                ImageView img19 = (ImageView) view.findViewById(R.id.menu_img19);
 
-                img1.setImageResource(R.drawable.chickenburger+position);
-                img2.setImageResource(R.drawable.chickenburger+position);
-                img3.setImageResource(R.drawable.chickenburger+position);
-                img4.setImageResource(R.drawable.chickenburger+position);
-                img5.setImageResource(R.drawable.chickenburger+position);
-                img6.setImageResource(R.drawable.chickenburger+position);
-                img7.setImageResource(R.drawable.chickenburger+position);
-                img8.setImageResource(R.drawable.chickenburger+position);
-                img9.setImageResource(R.drawable.chickenburger+position);
+                TextView n11 = (TextView) view.findViewById(R.id.menu_name11);
+                TextView n12 = (TextView) view.findViewById(R.id.menu_name12);
+                TextView n13 = (TextView) view.findViewById(R.id.menu_name13);
+                TextView n14 = (TextView) view.findViewById(R.id.menu_name14);
+                TextView n15 = (TextView) view.findViewById(R.id.menu_name15);
+                TextView n16 = (TextView) view.findViewById(R.id.menu_name16);
+                TextView n17 = (TextView) view.findViewById(R.id.menu_name17);
+                TextView n18 = (TextView) view.findViewById(R.id.menu_name18);
+                TextView n19 = (TextView) view.findViewById(R.id.menu_name19);
+
+                img11.setImageResource(R.drawable.chickenburger);
+                img12.setImageResource(R.drawable.chickenburger);
+                img13.setImageResource(R.drawable.chickenburger);
+                img14.setImageResource(R.drawable.chickenburger);
+                img15.setImageResource(R.drawable.chickenburger);
+                img16.setImageResource(R.drawable.chickenburger);
+                img17.setImageResource(R.drawable.chickenburger);
+                img18.setImageResource(R.drawable.chickenburger);
+                img19.setImageResource(R.drawable.chickenburger);
+
+                n11.setText("치킨버거3");
 
 
         }
+
 
 
 
