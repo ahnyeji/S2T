@@ -2,16 +2,20 @@ package com.example.stt_kiosk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PopupActivity extends Activity {
 
     TextView txtText;
-
+    TextView textView;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +26,17 @@ public class PopupActivity extends Activity {
 
         //UI 객체생성
         txtText = (TextView)findViewById(R.id.txtText);
-
+        textView = (TextView)findViewById(R.id.textView);
+        imageView = findViewById(R.id.imageView);
         //데이터 가져오기
         Intent intent = getIntent();
-        String data = intent.getStringExtra("data");
-        txtText.setText(data);
+        byte[] arr = intent.getByteArrayExtra("image");
+        Bitmap image = BitmapFactory.decodeByteArray(arr, 0, arr.length);
+        imageView.setImageBitmap(image);
+        String name = intent.getStringExtra("name");
+        String price = intent.getStringExtra("price");
+        txtText.setText(name);
+        textView.setText(price);
     }
 
     //확인 버튼 클릭
