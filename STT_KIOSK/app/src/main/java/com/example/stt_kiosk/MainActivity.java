@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
-
+    //What the
     FragmentPagerAdapter adapterViewPager;
 
     Button clicked_category;
