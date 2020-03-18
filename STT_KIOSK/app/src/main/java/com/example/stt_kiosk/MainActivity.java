@@ -2,36 +2,42 @@ package com.example.stt_kiosk;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
+
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
-
-// viewpager
-//
 
 public class MainActivity extends AppCompatActivity {
 
     FragmentPagerAdapter adapterViewPager;
 
-    Button btn_plus;
-    Button btn_minus;
+    Button clicked_category;
 
-    TextView cntnum;
+    ListView listview;
+    public static ListViewBtnAdapter list_adapter;
+    public static ArrayList<ListViewBtnItem> items;
+
+    boolean IsMicOn = false;
 
     ViewPager vpPager;
 
+    ImageView mic_btn;
     ImageButton back_btn;
     ImageButton next_btn;
 
@@ -50,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
     BitmapDrawable image;
 
     Intent intent;
+    Bitmap sendBitmap;
     ByteArrayOutputStream stream;
     byte[] byteArray;
-
 
     int cnt = 1;
 
@@ -65,51 +71,83 @@ public class MainActivity extends AppCompatActivity {
 
         changeView(1);
 
-        this.InitializeView();
+        mic_btn = (ImageView) findViewById(R.id.mic_btn);
+        Glide.with(this).load(R.raw.mic_off).into(mic_btn);
 
-        Button rec_btn = (Button) findViewById(R.id.rec_btn) ;
+        final Button rec_btn = (Button) findViewById(R.id.rec_btn) ;
+        clicked_category = rec_btn;
         rec_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                rec_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                rec_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = rec_btn;
                 changeView(1) ;
             }
         });
 
-        Button bg_btn = (Button) findViewById(R.id.bg_btn) ;
+        final Button bg_btn = (Button) findViewById(R.id.bg_btn) ;
         bg_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                bg_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                bg_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = bg_btn;
                 changeView(2) ;
             }
         });
-        Button set_btn = (Button) findViewById(R.id.set_btn) ;
+        final Button set_btn = (Button) findViewById(R.id.set_btn) ;
         set_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                set_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                set_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = set_btn;
                 changeView(3) ;
             }
         });
 
-        Button des_btn = (Button) findViewById(R.id.des_btn) ;
+        final Button des_btn = (Button) findViewById(R.id.des_btn) ;
         des_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                des_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                des_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = des_btn;
                 changeView(4) ;
             }
         });
 
-        Button dri_btn = (Button) findViewById(R.id.dri_btn) ;
+        final Button dri_btn = (Button) findViewById(R.id.dri_btn) ;
         dri_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                dri_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                dri_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = dri_btn;
                 changeView(5) ;
             }
         });
 
-        Button chi_btn = (Button) findViewById(R.id.chi_btn) ;
+        final Button chi_btn = (Button) findViewById(R.id.chi_btn) ;
         chi_btn.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clicked_category.setBackgroundResource(R.drawable.radiustop);
+                clicked_category.setTextColor(Color.parseColor("#ffffff"));
+                chi_btn.setBackgroundResource(R.drawable.radiustopwhite);
+                chi_btn.setTextColor(Color.parseColor("#272727"));
+                clicked_category = chi_btn;
                 changeView(6) ;
             }
         });
@@ -119,7 +157,10 @@ public class MainActivity extends AppCompatActivity {
         back_btn.setOnClickListener(myListener);
         next_btn.setOnClickListener(myListener);
 
-
+        items = new ArrayList<ListViewBtnItem>();
+        list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items, this);
+        listview = (ListView) findViewById(R.id.list);
+        listview.setAdapter(list_adapter);
     }
 
     private void changeView(int index) {
@@ -158,46 +199,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public void InitializeView()
-    {
-        btn_plus = (Button)findViewById(R.id.plus_btn);
-        btn_minus = (Button)findViewById(R.id.minus_btn);
-        cntnum = (TextView)findViewById(R.id.number);
-    }
-
-    public void MyOnClick(View view)
-    {
-        switch (view.getId()) {
-            case R.id.plus_btn:
-                cnt++;
-                cntnum.setText(""+cnt);
-                break;
-            case R.id.minus_btn:
-                if(cnt <= 1) break;
-                cnt--;
-                cntnum.setText(""+cnt);
-                break;
-        }
-    }
-
-
-    View.OnClickListener myListener = new View.OnClickListener(){
+    View.OnClickListener myListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             int position;
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.back_btn:
                     position = vpPager.getCurrentItem();
-                    vpPager.setCurrentItem(position-1,true);
+                    vpPager.setCurrentItem(position - 1, true);
                     break;
                 case R.id.next_btn:
                     position = vpPager.getCurrentItem();
-                    vpPager.setCurrentItem(position+1,true);
+                    vpPager.setCurrentItem(position + 1, true);
                     break;
             }
         }
     };
+
+    public void MicOnClick(View v){
+        if(IsMicOn == false){
+            Glide.with(this).load(R.raw.mic_on).into(mic_btn);
+            IsMicOn = true;
+        }
+        else{
+            Glide.with(this).load(R.raw.mic_off).into(mic_btn);
+            IsMicOn = false;
+        }
+    }
 
 
     public void MenuOnClick(View v)
@@ -304,6 +332,22 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("name", name.getText().toString());
         intent.putExtra("price", price.getText().toString());
         startActivityForResult(intent, 1);
+    }
+
+    public static ArrayList<ListViewBtnItem> getList() {
+        return items;
+    }
+
+    public static void setList(ArrayList<ListViewBtnItem> list) {
+        items = list;
+    }
+
+    public static ListViewBtnAdapter getList_adapter() {
+        return list_adapter;
+    }
+
+    public static void setList_adapter(ListViewBtnAdapter adapter){
+        list_adapter = adapter;
     }
 }
 

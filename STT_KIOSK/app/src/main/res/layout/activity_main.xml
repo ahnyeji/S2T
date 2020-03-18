@@ -18,8 +18,9 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="#E40202"
             app:srcCompat="@drawable/logo" />
 
@@ -38,9 +39,10 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="마이크 버튼을 누른 후\n천천히 말씀해주세요" />
+            android:text="마이크 버튼을 누른 후\n천천히 말씀해주세요"
+            android:textSize="24sp" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/mic_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,7 +50,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/mic_on" />
+            android:onClick="MicOnClick" />
 
     </LinearLayout>
 
@@ -63,73 +65,79 @@
 
         <Button
             android:id="@+id/rec_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/radiustop"
+            android:background="@drawable/radiustopwhite"
             android:text="추천"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#272727"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
 
         <Button
             android:id="@+id/bg_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/radiustop"
             android:text="버거"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
 
         <Button
             android:id="@+id/set_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/radiustop"
-            android:text="세트"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:text="세트/팩"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
 
         <Button
             android:id="@+id/des_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/radiustop"
             android:text="디저트"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
 
         <Button
             android:id="@+id/dri_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/radiustop"
             android:text="음료"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
 
         <Button
             android:id="@+id/chi_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/radiustop"
-            android:text="치킨/팩"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:text="치킨"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:theme="@style/Button1Style" />
     </LinearLayout>
@@ -212,7 +220,7 @@
                 android:id="@+id/list_title"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.5"
+                android:layout_weight="1"
                 android:background="#2DFF5722">
 
                 <TextView
@@ -240,119 +248,11 @@
                     android:text="가격" />
             </TableRow>
 
-            <ScrollView
-                android:id="@+id/list_scroll"
+            <ListView
+                android:id="@+id/list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="8">
-
-                <TableLayout
-                    android:id="@+id/list_table"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TableRow
-                        android:id="@+id/list1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="4"
-                            android:text="TextView" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/minus_btn"
-                                android:layout_width="0dp"
-                                android:layout_height="15dp"
-                                android:layout_weight="1"
-                                android:onClick="MyOnClick"
-                                android:padding="0dp"
-                                android:scaleType="fitCenter"
-                                android:text="—" />
-
-                            <TextView
-                                android:id="@+id/number"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="1" />
-
-                            <Button
-                                android:id="@+id/plus_btn"
-                                android:layout_width="0dp"
-                                android:layout_height="15dp"
-                                android:layout_weight="1"
-                                android:onClick="MyOnClick"
-                                android:padding="0dp"
-                                android:scaleType="fitCenter"
-                                android:text="+" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/textView9"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="TextView" />
-
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="10dp"
-                            android:layout_height="15dp"
-                            android:padding="0dp"
-                            android:scaleType="fitCenter"
-                            android:text="x" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/list2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/list3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/list4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-                    </TableRow>
-                </TableLayout>
-            </ScrollView>
+                android:layout_weight="5" />
 
         </LinearLayout>
 
@@ -369,9 +269,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1.5"
-                android:gravity="center"
+                android:gravity="left"
+                android:paddingLeft="18dp"
                 android:text="총 주문금액"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -380,24 +281,24 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center|right"
-                android:paddingRight="13dp"
+                android:paddingRight="15dp"
                 android:text="0 원"
-                android:textSize="20sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/order_btn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="6"
                 android:background="@drawable/radius"
                 android:text="주문하기"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
