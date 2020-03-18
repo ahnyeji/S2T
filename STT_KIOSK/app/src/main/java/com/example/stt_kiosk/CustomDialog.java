@@ -1,12 +1,11 @@
 package com.example.stt_kiosk;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.TextView;
+        import android.app.Dialog;
+        import android.content.Context;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.view.WindowManager;
+        import android.widget.Button;
 
 public class CustomDialog extends Dialog {
     CustomDialog m_oDialog;
@@ -20,14 +19,14 @@ public class CustomDialog extends Dialog {
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         lpWindow.dimAmount = 0.5f;
+        lpWindow.width = 700;
+        lpWindow.height = 850;
         getWindow().setAttributes(lpWindow);
 
         setContentView(R.layout.custom_dialog);
 
         m_oDialog = this;
 
-        TextView oView = (TextView) this.findViewById(R.id.textView);
-        oView.setText("Custom Dialog\n테스트입니다.");
 
         Button oBtn = (Button)this.findViewById(R.id.btnOK);
         oBtn.setOnClickListener(new View.OnClickListener(){

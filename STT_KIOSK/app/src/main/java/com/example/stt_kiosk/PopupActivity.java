@@ -71,15 +71,15 @@ public class PopupActivity extends Activity {
         txtText.setText(name);
         textView.setText(price);
 
-        nutrient_btn = findViewById(R.id.nutrient_btn);
-        allergy_btn = findViewById(R.id.allergy_btn);
-        origin_btn = findViewById(R.id.origin_btn);
+//        nutrient_btn = findViewById(R.id.nutrient_btn);
+//        allergy_btn = findViewById(R.id.allergy_btn);
+//        origin_btn = findViewById(R.id.origin_btn);
         side_btn = findViewById(R.id.side_btn);
         drink_btn = findViewById(R.id.drink_btn);
 
-        nutrient_table = findViewById(R.id.nutrient_table);
-        allergy_table = findViewById(R.id.allergy_table);
-        origin_table = findViewById(R.id.origin_table);
+//        nutrient_table = findViewById(R.id.nutrient_table);
+//        allergy_table = findViewById(R.id.allergy_table);
+//        origin_table = findViewById(R.id.origin_table);
 
     }
 
@@ -133,42 +133,42 @@ public class PopupActivity extends Activity {
         return;
     }
 
-    public void onInfoClicked(View v) {
-        if(opened != null) {
-            opened.setVisibility(View.GONE);
-            opened = null;
-        }
-        switch (v.getId()) {
-            case R.id.nutrient_btn :
-                if(info_clicked == nutrient_btn){
-                    info_clicked = null;
-                    break;
-                }
-                info_clicked = nutrient_btn;
-                opened = nutrient_table;
-                break;
-            case R.id.allergy_btn :
-                if(info_clicked == allergy_btn) {
-                    info_clicked = null;
-                    break;
-                }
-                info_clicked = allergy_btn;
-                opened = allergy_table;
-                break;
-            case R.id.origin_btn :
-                if(info_clicked == origin_btn) {
-                    info_clicked = null;
-                    break;
-                }
-                info_clicked = origin_btn;
-                opened = origin_table;
-                break;
-
-        }
-        if(opened != null){
-            opened.setVisibility(View.VISIBLE);
-        }
-    }
+//    public void onInfoClicked(View v) {
+//        if(opened != null) {
+//            opened.setVisibility(View.GONE);
+//            opened = null;
+//        }
+//        switch (v.getId()) {
+//            case R.id.nutrient_btn :
+//                if(info_clicked == nutrient_btn){
+//                    info_clicked = null;
+//                    break;
+//                }
+//                info_clicked = nutrient_btn;
+//                opened = nutrient_table;
+//                break;
+//            case R.id.allergy_btn :
+//                if(info_clicked == allergy_btn) {
+//                    info_clicked = null;
+//                    break;
+//                }
+//                info_clicked = allergy_btn;
+//                opened = allergy_table;
+//                break;
+//            case R.id.origin_btn :
+//                if(info_clicked == origin_btn) {
+//                    info_clicked = null;
+//                    break;
+//                }
+//                info_clicked = origin_btn;
+//                opened = origin_table;
+//                break;
+//
+//        }
+//        if(opened != null){
+//            opened.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     public void onChangeClicked(View v) {
         CustomDialog oDialog = new CustomDialog(this);

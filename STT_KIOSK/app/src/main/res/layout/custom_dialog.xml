@@ -1,18 +1,905 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textSize="28sp" />
+
+    <TableLayout
+        android:id="@+id/side_change"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="9"
+        android:background="#ffffff"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:visibility="visible">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/side_menu1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="메뉴1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="+0"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/side_menu6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/side_menu11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/side_menu16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/side_menu20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/side_img20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/azburger" />
+
+                <TextView
+                    android:id="@+id/side_name20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/side_price20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:padding="0dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
 
     <Button
         android:id="@+id/btnOK"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Button" />
 </LinearLayout>
