@@ -224,7 +224,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onInfoClicked"
+            android:onClick="onChangeClicked"
             android:text="변경하기" />
     </LinearLayout>
 
@@ -252,7 +252,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onInfoClicked"
+            android:onClick="onChangeClicked"
             android:text="변경하기" />
     </LinearLayout>
 

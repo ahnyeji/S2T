@@ -38,8 +38,7 @@ public class PopupActivity extends Activity {
     TableLayout nutrient_table;
     TableLayout allergy_table;
     TableLayout origin_table;
-    TableLayout side_change;
-    TableLayout drink_change;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,5 +168,12 @@ public class PopupActivity extends Activity {
         if(opened != null){
             opened.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void onChangeClicked(View v) {
+        CustomDialog oDialog = new CustomDialog(this);
+        oDialog.setCancelable(false);
+        oDialog.show();
+
     }
 }
