@@ -10,17 +10,18 @@
     <!-- //end 타이틀바 -->
 
     <!-- Notice -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/popup_img"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/azburger" />
+            android:src="@drawable/azburger" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -29,33 +30,187 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtText"
+                android:id="@+id/popup_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="3dp"
                 android:gravity="center"
                 android:textColor="#272727"
-                android:textSize="32sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/popup_exp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#272727"
-                android:textSize="28sp" />
+                android:textSize="16sp"
+                android:text="부드럽고 촉촉한 포테이토번과 풍부한 육즙의 두툼한 호주산 쇠고기패티로 본연의 맛을 꽉 채운 클래식 치즈버거"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#66bdbdbd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/detail_btn"
+                    android:onClick="onChangeClicked"
+                    android:text="상세정보" />
+
+                <TextView
+                    android:id="@+id/popup_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#565555"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
     </LinearLayout>
     <!-- Notice -->
+
+    <!-- 닫기 버튼 -->
+
+    <LinearLayout
+        android:id="@+id/popup_dessert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="사이드 - 디저트 : " />
+
+        <TextView
+            android:id="@+id/dessert_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/dessert_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/dessert_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onChangeClicked"
+            android:text="변경하기" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_drink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_drink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="사이드 - 음료 :" />
+
+        <TextView
+            android:id="@+id/drink_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/drink_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/drink_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onChangeClicked"
+            android:text="변경하기" />
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#66bdbdbd" />
 
-    <!-- 닫기 버튼 -->
+    <LinearLayout
+        android:id="@+id/popup_topping"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_topping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/topping_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/topping_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/total_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="총 금액" />
+
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +218,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancel_btn"
             android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_weight="1"
@@ -76,6 +231,7 @@
             android:textSize="15sp" />
 
         <Button
+            android:id="@+id/get_btn"
             android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_weight="1"
@@ -83,9 +239,10 @@
             android:gravity="center"
             android:onClick="mOnOK"
             android:padding="16dp"
-            android:text="확인"
+            android:text="담기"
             android:textColor="#ff7a00"
             android:textSize="15sp" />
+
     </LinearLayout>
-    <!--// 닫기 버튼 -->
+    !—// 닫기 버튼 —>
 </LinearLayout>

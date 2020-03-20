@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
-    //What the
+
     FragmentPagerAdapter adapterViewPager;
 
     Button clicked_category;
@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     CircleIndicator indicator;
 
-    CustomAdapter adapter;
-    CustomAdapter2 adapter2;
-    CustomAdapter3 adapter3;
-    CustomAdapter4 adapter4;
-    CustomAdapter5 adapter5;
-    CustomAdapter6 adapter6;
+    RecommandAdapter adapter;
+    BurgerAdapter adapter2;
+    SetAdapter adapter3;
+    DessertAdapter adapter4;
+    DrinkAdapter adapter5;
+    ChickenAdapter adapter6;
 
     TextView name;
     TextView price;
@@ -171,32 +171,33 @@ public class MainActivity extends AppCompatActivity {
         // index에 따라 자식(Children) 뷰 들의 visibility 설정.
         switch (index) {
             case 1 :
-                adapter = new CustomAdapter(getLayoutInflater());
+                adapter = new RecommandAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter);
                 break ;
             case 2 :
-                adapter2 = new CustomAdapter2(getLayoutInflater());
+                adapter2 = new BurgerAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter2);
                 break ;
             case 3 :
-                adapter3 = new CustomAdapter3(getLayoutInflater());
+                adapter3 = new SetAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter3);
                 break ;
             case 4 :
-                adapter4 = new CustomAdapter4(getLayoutInflater());
+                adapter4 = new DessertAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter4);
                 break;
             case 5 :
-                adapter5 = new CustomAdapter5(getLayoutInflater());
+                adapter5 = new DrinkAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter5);
                 break;
             case 6 :
-                adapter6 = new CustomAdapter6(getLayoutInflater());
+                adapter6 = new ChickenAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter6);
                 break;
         }
         indicator.setViewPager(vpPager);
     }
+
 
     View.OnClickListener myListener = new View.OnClickListener() {
         @Override

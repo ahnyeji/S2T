@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,12 +20,23 @@ import java.util.ArrayList;
 
 public class PopupActivity extends Activity {
 
-    TextView txtText;
-    TextView textView;
-    ImageView imageView;
+    DialogDessert dialogDessert;
+    DialogDrink dialogDrink;
+    DialogDetail dialogDetail;
+
+    TextView popupName;
+    TextView popupPrice;
+    ImageView popupImg;
     ArrayList<ListViewBtnItem> items;
     ListViewBtnAdapter list_adapter;
-    TextView total_price;
+    Button detail_btn;
+    Button dessert_change;
+    Button drink_change;
+
+    private TextView dessert_name;
+    private TextView dessert_price;
+    private TextView drink_name;
+    private TextView drink_price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,26 +48,31 @@ public class PopupActivity extends Activity {
         Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int width = (int) (size.x * 0.9); //Display 사이즈의 90%
-        int height = (int) (size.y * 0.9);  //Display 사이즈의 90%
 
-        getWindow().getAttributes().width = width;
-        getWindow().getAttributes().height = height;
-
+        dessert_name = (TextView) findViewById(R.id.dessert_selected);
+        dessert_price = (TextView) findViewById(R.id.dessert_price);
+        drink_name = (TextView) findViewById(R.id.drink_selected);
+        drink_price = (TextView) findViewById(R.id.drink_price);
 
         //UI 객체생성
-        txtText = (TextView)findViewById(R.id.txtText);
-        textView = (TextView)findViewById(R.id.textView);
-        imageView = findViewById(R.id.imageView);
+        popupName = (TextView)findViewById(R.id.popup_name);
+        popupPrice = (TextView)findViewById(R.id.popup_price);
+        popupImg = findViewById(R.id.popup_img);
         //데이터 가져오기
         Intent intent = getIntent();
         byte[] arr = intent.getByteArrayExtra("image");
         Bitmap image = BitmapFactory.decodeByteArray(arr, 0, arr.length);
-        imageView.setImageBitmap(image);
+        popupImg.setImageBitmap(image);
         String name = intent.getStringExtra("name");
         String price = intent.getStringExtra("price");
-        txtText.setText(name);
-        textView.setText(price);
+        popupName.setText(name);
+        popupPrice.setText(price);
+
+        dessert_change = findViewById(R.id.dessert_change);
+        drink_change = findViewById(R.id.drink_change);
+
+        detail_btn = findViewById(R.id.detail_btn);
+
     }
 
     //취소 버튼 클릭
@@ -77,10 +94,10 @@ public class PopupActivity extends Activity {
 
         ListViewBtnItem item;
         item = new ListViewBtnItem();
-        String Menu_item = (String) txtText.getText().toString();
-        String Price_item = (String) textView.getText().toString();
+        String Name_item = (String) popupName.getText().toString();
+        String Price_item = (String) popupPrice.getText().toString();
         items = (ArrayList<ListViewBtnItem>) MainActivity.getList();
-        item.setMenu(Menu_item);
+        item.setMenu(Name_item);
         item.setNumber("1");
         item.setPrice(Price_item);
         items.add(item);
@@ -108,5 +125,37 @@ public class PopupActivity extends Activity {
         return;
     }
 
-
+    public void onChangeClicked(View v) {
+        switch (v.getId()){
+            case R.id.dessert_change :
+                dialogDessert = new DialogDessert(this);
+                dialogDessert.setDialogListener(new DialogDessert.DialogDessertListener() {
+                    @Override
+                    public void onApplyClicked(String name, String price) {
+                        dessert_name.setText(name);
+                        dessert_price.setText(price);
+                    }
+                });
+                dialogDessert.setCancelable(false);
+                dialogDessert.show();
+                break;
+            case R.id.drink_change :
+                dialogDrink = new DialogDrink(this);
+                dialogDrink.setDialogLister(new DialogDrink.DialogDrinkListener() {
+                    @Override
+                    public void onApplyClicked(String name, String price) {
+                        drink_name.setText(name);
+                        drink_price.setText(price);
+                    }
+                });
+                dialogDrink.setCancelable(false);
+                dialogDrink.show();
+                break;
+            case R.id.detail_btn :
+                dialogDetail = new DialogDetail(this);
+                dialogDetail.setCancelable(false);
+                dialogDetail.show();
+                break;
+        }
+    }
 }
