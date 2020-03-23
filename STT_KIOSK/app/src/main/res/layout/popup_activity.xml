@@ -104,14 +104,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="감자튀김" />
 
         <TextView
             android:id="@+id/dessert_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="+0" />
 
         <Button
             android:id="@+id/dessert_change"
@@ -140,14 +140,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="콜라" />
 
         <TextView
             android:id="@+id/drink_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="+0" />
 
         <Button
             android:id="@+id/drink_change"

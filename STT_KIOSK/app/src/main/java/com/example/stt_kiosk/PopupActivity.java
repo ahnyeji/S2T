@@ -38,6 +38,17 @@ public class PopupActivity extends Activity {
     private TextView drink_name;
     private TextView drink_price;
 
+    static int dessert_save;
+    static int drink_save;
+
+    static String des_name;
+    static String des_price;
+    static String dri_name;
+    static String dri_price;
+
+    TextView total_price;
+    String total_str;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +83,13 @@ public class PopupActivity extends Activity {
         drink_change = findViewById(R.id.drink_change);
 
         detail_btn = findViewById(R.id.detail_btn);
+
+        dessert_save = R.id.dessert_menu1;
+
+        total_price = findViewById(R.id.total_price);
+        total_str = popupPrice.getText().toString();
+        total_price.setText(total_str.substring(0,total_str.length()-1));
+
 
     }
 
@@ -131,9 +149,10 @@ public class PopupActivity extends Activity {
                 dialogDessert = new DialogDessert(this);
                 dialogDessert.setDialogListener(new DialogDessert.DialogDessertListener() {
                     @Override
-                    public void onApplyClicked(String name, String price) {
+                    public void onApplyClicked(String name, String price, int save) {
                         dessert_name.setText(name);
-                        dessert_price.setText(price);
+                        dessert_price.setText("+"+price);
+                        dessert_save = save;
                     }
                 });
                 dialogDessert.setCancelable(false);
@@ -141,7 +160,7 @@ public class PopupActivity extends Activity {
                 break;
             case R.id.drink_change :
                 dialogDrink = new DialogDrink(this);
-                dialogDrink.setDialogLister(new DialogDrink.DialogDrinkListener() {
+                dialogDrink.setDialogListener(new DialogDrink.DialogDrinkListener() {
                     @Override
                     public void onApplyClicked(String name, String price) {
                         drink_name.setText(name);
@@ -158,4 +177,9 @@ public class PopupActivity extends Activity {
                 break;
         }
     }
+
+    public static int getDessertR() {
+        return dessert_save;
+    }
+
 }

@@ -20,7 +20,7 @@ public class DialogDrink extends Dialog {
     private Context context;
     DialogDrink m_oDialog;
 
-    private DialogDrinkListener DialogDrinkListener;
+    private DialogDrinkListener dialogDrinkListener;
 
     public DialogDrink(Context context) {
         super(context, android.R.style.Theme_Translucent_NoTitleBar);
@@ -30,8 +30,8 @@ public class DialogDrink extends Dialog {
         void onApplyClicked(String name, String price);
 //        void onNagativeClicked();
     }
-    public void setDialogLister(DialogDrinkListener DialogDrinkListener){
-        this.DialogDrinkListener = DialogDrinkListener;
+    public void setDialogListener(DialogDrinkListener dialogDrinkListener){
+        this.dialogDrinkListener = dialogDrinkListener;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class DialogDrink extends Dialog {
     public void onClickBtn(View _oView) {
         switch (_oView.getId()){
             case R.id.drink_apply:
-                DialogDrinkListener.onApplyClicked(name, price);
+                dialogDrinkListener.onApplyClicked(name, price);
                 this.dismiss();
                 break;
         }
