@@ -1,29 +1,43 @@
 package com.example.stt_kiosk;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.bumptech.glide.Glide;
-
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+
 
 import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String serverUrl = "http://192.168.0.7:8888/";
 
     FragmentPagerAdapter adapterViewPager;
 
@@ -43,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
     CircleIndicator indicator;
 
-    CustomAdapter adapter;
-    CustomAdapter2 adapter2;
-    CustomAdapter3 adapter3;
-    CustomAdapter4 adapter4;
-    CustomAdapter5 adapter5;
-    CustomAdapter6 adapter6;
+    RecommandAdapter adapter;
+    BurgerAdapter adapter2;
+    SetAdapter adapter3;
+    DessertAdapter adapter4;
+    DrinkAdapter adapter5;
+    ChickenAdapter adapter6;
 
     TextView name;
     TextView price;
@@ -61,6 +75,32 @@ public class MainActivity extends AppCompatActivity {
     byte[] byteArray;
 
     int cnt = 1;
+    String category_db;
+    String name_db;
+    String price_db;
+    String image_db;
+    private static String TAG = "phptest_MainActivity";
+
+    private static final String TAG_JSON="webnautes";
+    private static final String TAG_CATEGORY = "category";
+    private static final String TAG_NAME = "name";
+    private static final String TAG_PRICE ="price";
+    private static final String TAG_IMAGE ="image";
+    public static ArrayList<ArrayList<String>> DB_result_burger = null;
+    public static ArrayList<ArrayList<String>> DB_result_chicken = null;
+    public static ArrayList<ArrayList<String>> DB_result_dessert = null;
+    public static ArrayList<ArrayList<String>> DB_result_drink = null;
+    public static ArrayList<ArrayList<String>> DB_result_set = null;
+    public static ArrayList<String> DB_item = null;
+
+    TextView stt;
+    ArrayList<HashMap<String, String>> mArrayList;
+    String mJsonString;
+
+    ArrayList<ImageView> firstPageImg = new ArrayList<>();
+    ArrayList<TextView> firstPageName = new ArrayList<>();
+    ArrayList<TextView> firstPagePrice = new ArrayList<>();
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +108,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        adapterViewPager = new FragmentAdapter(getSupportFragmentManager());
 //        vpPager.setAdapter(adapterViewPager);
-
         changeView(1);
-
+        this.context = getApplicationContext();
         mic_btn = (ImageView) findViewById(R.id.mic_btn);
         Glide.with(this).load(R.raw.mic_off).into(mic_btn);
 
@@ -161,6 +200,12 @@ public class MainActivity extends AppCompatActivity {
         list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items, this);
         listview = (ListView) findViewById(R.id.list);
         listview.setAdapter(list_adapter);
+
+        mArrayList = new ArrayList<>();
+
+        MainActivity.GetData task = new MainActivity.GetData();
+        task.execute(serverUrl + "getjson.php");
+        stt = findViewById(R.id.stt_window);
     }
 
     private void changeView(int index) {
@@ -171,27 +216,27 @@ public class MainActivity extends AppCompatActivity {
         // index에 따라 자식(Children) 뷰 들의 visibility 설정.
         switch (index) {
             case 1 :
-                adapter = new CustomAdapter(getLayoutInflater());
+                adapter = new RecommandAdapter(getLayoutInflater());
                 vpPager.setAdapter(adapter);
                 break ;
             case 2 :
-                adapter2 = new CustomAdapter2(getLayoutInflater());
+                adapter2 = new BurgerAdapter(getLayoutInflater(),this.context);
                 vpPager.setAdapter(adapter2);
                 break ;
             case 3 :
-                adapter3 = new CustomAdapter3(getLayoutInflater());
+                adapter3 = new SetAdapter(getLayoutInflater(),this.context);
                 vpPager.setAdapter(adapter3);
                 break ;
             case 4 :
-                adapter4 = new CustomAdapter4(getLayoutInflater());
+                adapter4 = new DessertAdapter(getLayoutInflater(),this.context);
                 vpPager.setAdapter(adapter4);
                 break;
             case 5 :
-                adapter5 = new CustomAdapter5(getLayoutInflater());
+                adapter5 = new DrinkAdapter(getLayoutInflater(),this.context);
                 vpPager.setAdapter(adapter5);
                 break;
             case 6 :
-                adapter6 = new CustomAdapter6(getLayoutInflater());
+                adapter6 = new ChickenAdapter(getLayoutInflater(),this.context);
                 vpPager.setAdapter(adapter6);
                 break;
         }
@@ -349,5 +394,156 @@ public class MainActivity extends AppCompatActivity {
     public static void setList_adapter(ListViewBtnAdapter adapter){
         list_adapter = adapter;
     }
-}
 
+    private class GetData extends AsyncTask<String, Void, String>{
+        ProgressDialog progressDialog;
+        String errorString = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = ProgressDialog.show(MainActivity.this,
+                    "Please Wait", null, true, true);
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            Log.d(TAG, "response  - " + result);
+
+            if (result == null){
+
+                stt.setText(errorString);
+            }
+            else {
+                mJsonString = result;
+                showResult();
+            }
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String serverURL = params[0];
+
+
+            try {
+
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.connect();
+
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                }
+                else{
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line;
+
+                while((line = bufferedReader.readLine()) != null){
+                    sb.append(line);
+                }
+
+
+                bufferedReader.close();
+
+
+                return sb.toString().trim();
+
+
+            } catch (Exception e) {
+
+                Log.d(TAG, "InsertData: Error ", e);
+                errorString = e.toString();
+
+                return null;
+            }
+
+        }
+    }
+
+    private void showResult(){
+        try {
+            JSONObject jsonObject = new JSONObject(mJsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
+            DB_result_burger = new ArrayList<ArrayList<String>>();
+            DB_result_set = new ArrayList<ArrayList<String>>();
+            DB_result_drink = new ArrayList<ArrayList<String>>();
+            DB_result_dessert = new ArrayList<ArrayList<String>>();
+            DB_result_chicken = new ArrayList<ArrayList<String>>();
+
+
+            for(int i=0;i<jsonArray.length();i++){
+
+                JSONObject item = jsonArray.getJSONObject(i);
+
+                category_db = item.getString(TAG_CATEGORY);
+                name_db = item.getString(TAG_NAME);
+                price_db = item.getString(TAG_PRICE);
+                image_db = item.getString(TAG_IMAGE);
+                DB_item = new ArrayList<String>();
+                DB_item.add(category_db);
+                DB_item.add(name_db);
+                DB_item.add(price_db);
+                DB_item.add(image_db);
+                if(category_db.equals("세트")){
+                    DB_result_set.add(DB_item);
+                }
+                else if(category_db.equals("버거")){
+                    DB_result_burger.add(DB_item);
+                }
+                else if(category_db.equals("디저트")){
+                    DB_result_dessert.add(DB_item);
+                }
+                else if(category_db.equals("음료")){
+                    DB_result_drink.add(DB_item);
+                }
+                else if(category_db.equals("치킨")){
+                    DB_result_chicken.add(DB_item);
+                }
+            }
+
+//            for(int i=0 ; i<DB_result_burger.size() ; i++) {
+//                Log.d(TAG, "DB_RESULT_BURGER :");
+//
+//                for (int j = 0; j < DB_item.size(); j++) {
+//                    Log.d(TAG, "" + DB_result_burger.get(i).get(j));
+//                }
+//            }
+//            for(int i=0 ; i<DB_result_chicken.size() ; i++) {
+//                Log.d(TAG, "DB_RESULT_CHICKEN :");
+//
+//                for (int j = 0; j < DB_item.size(); j++) {
+//                    Log.d(TAG, "" + DB_result_chicken.get(i).get(j));
+//                }
+//            }
+
+        } catch (JSONException e) {
+
+            Log.d(TAG, "showResult : ", e);
+        }
+
+    }
+
+}

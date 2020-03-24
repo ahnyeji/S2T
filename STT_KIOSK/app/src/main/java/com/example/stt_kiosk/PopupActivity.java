@@ -14,31 +14,41 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PopupActivity extends Activity {
 
-    TextView txtText;
-    TextView textView;
-    ImageView imageView;
+    DialogDessert dialogDessert;
+    DialogDrink dialogDrink;
+    DialogDetail dialogDetail;
+
+    TextView popupName;
+    TextView popupPrice;
+    ImageView popupImg;
     ArrayList<ListViewBtnItem> items;
     ListViewBtnAdapter list_adapter;
+    Button detail_btn;
+    Button dessert_change;
+    Button drink_change;
+
+    private TextView dessert_name;
+    private TextView dessert_price;
+    private TextView drink_name;
+    private TextView drink_price;
+
+    static int dessert_save;
+    static int drink_save;
+
+    static String des_name;
+    static String des_price;
+    static String dri_name;
+    static String dri_price;
+
     TextView total_price;
-    Button info_clicked = null;
-    Button nutrient_btn;
-    Button allergy_btn;
-    Button origin_btn;
-    Button side_btn;
-    Button drink_btn;
-
-    TableLayout opened = null;
-    TableLayout nutrient_table;
-    TableLayout allergy_table;
-    TableLayout origin_table;
-
+    String total_str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,37 +60,45 @@ public class PopupActivity extends Activity {
         Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-//        int width = (int) (size.x * 0.9); //Display 사이즈의 90%
-//        int height = (int) (size.y * 0.9);  //Display 사이즈의 90%
 
-//        getWindow().getAttributes().width = width;
-//        getWindow().getAttributes().height = height;
-
+        dessert_name = (TextView) findViewById(R.id.dessert_selected);
+        dessert_price = (TextView) findViewById(R.id.dessert_price);
+        drink_name = (TextView) findViewById(R.id.drink_selected);
+        drink_price = (TextView) findViewById(R.id.drink_price);
 
         //UI 객체생성
-        txtText = (TextView)findViewById(R.id.txtText);
-        textView = (TextView)findViewById(R.id.textView);
-        imageView = findViewById(R.id.imageView);
+        popupName = (TextView)findViewById(R.id.popup_name);
+        popupPrice = (TextView)findViewById(R.id.popup_price);
+        popupImg = findViewById(R.id.popup_img);
         //데이터 가져오기
         Intent intent = getIntent();
         byte[] arr = intent.getByteArrayExtra("image");
         Bitmap image = BitmapFactory.decodeByteArray(arr, 0, arr.length);
-        imageView.setImageBitmap(image);
+        popupImg.setImageBitmap(image);
         String name = intent.getStringExtra("name");
         String price = intent.getStringExtra("price");
-        txtText.setText(name);
-        textView.setText(price);
+        popupName.setText(name);
+        popupPrice.setText(price);
 
-//        nutrient_btn = findViewById(R.id.nutrient_btn);
-//        allergy_btn = findViewById(R.id.allergy_btn);
-//        origin_btn = findViewById(R.id.origin_btn);
-        side_btn = findViewById(R.id.side_btn);
-        drink_btn = findViewById(R.id.drink_btn);
+        dessert_change = findViewById(R.id.dessert_change);
+        drink_change = findViewById(R.id.drink_change);
 
-//        nutrient_table = findViewById(R.id.nutrient_table);
-//        allergy_table = findViewById(R.id.allergy_table);
-//        origin_table = findViewById(R.id.origin_table);
+        detail_btn = findViewById(R.id.detail_btn);
 
+        dessert_save = R.id.dessert_menu1;
+
+        total_price = findViewById(R.id.total_price);
+        total_str = popupPrice.getText().toString();
+        total_str = total_str.substring(0,total_str.length()-1);
+        String price_str[] = total_str.split(",");
+        total_str = "";
+        for(int i=0; i < price_str.length; i++){
+            total_str += price_str[i];
+        }
+//        total_price.setText(total_str);
+        int total_int = Integer.parseInt(total_str);
+        DecimalFormat formatter = new DecimalFormat("###,###");
+        total_price.setText(formatter.format(total_int)+"원");
     }
 
     //취소 버튼 클릭
@@ -102,10 +120,10 @@ public class PopupActivity extends Activity {
 
         ListViewBtnItem item;
         item = new ListViewBtnItem();
-        String Menu_item = (String) txtText.getText().toString();
-        String Price_item = (String) textView.getText().toString();
+        String Name_item = (String) popupName.getText().toString();
+        String Price_item = (String) popupPrice.getText().toString();
         items = (ArrayList<ListViewBtnItem>) MainActivity.getList();
-        item.setMenu(Menu_item);
+        item.setMenu(Name_item);
         item.setNumber("1");
         item.setPrice(Price_item);
         items.add(item);
@@ -133,47 +151,43 @@ public class PopupActivity extends Activity {
         return;
     }
 
-//    public void onInfoClicked(View v) {
-//        if(opened != null) {
-//            opened.setVisibility(View.GONE);
-//            opened = null;
-//        }
-//        switch (v.getId()) {
-//            case R.id.nutrient_btn :
-//                if(info_clicked == nutrient_btn){
-//                    info_clicked = null;
-//                    break;
-//                }
-//                info_clicked = nutrient_btn;
-//                opened = nutrient_table;
-//                break;
-//            case R.id.allergy_btn :
-//                if(info_clicked == allergy_btn) {
-//                    info_clicked = null;
-//                    break;
-//                }
-//                info_clicked = allergy_btn;
-//                opened = allergy_table;
-//                break;
-//            case R.id.origin_btn :
-//                if(info_clicked == origin_btn) {
-//                    info_clicked = null;
-//                    break;
-//                }
-//                info_clicked = origin_btn;
-//                opened = origin_table;
-//                break;
-//
-//        }
-//        if(opened != null){
-//            opened.setVisibility(View.VISIBLE);
-//        }
-//    }
-
     public void onChangeClicked(View v) {
-        CustomDialog oDialog = new CustomDialog(this);
-        oDialog.setCancelable(false);
-        oDialog.show();
-
+        switch (v.getId()){
+            case R.id.dessert_change :
+                dialogDessert = new DialogDessert(this);
+                dialogDessert.setDialogListener(new DialogDessert.DialogDessertListener() {
+                    @Override
+                    public void onApplyClicked(String name, String price, int save) {
+                        dessert_name.setText(name);
+                        dessert_price.setText("+"+price+"원");
+                        dessert_save = save;
+                    }
+                });
+                dialogDessert.setCancelable(false);
+                dialogDessert.show();
+                break;
+            case R.id.drink_change :
+                dialogDrink = new DialogDrink(this);
+                dialogDrink.setDialogListener(new DialogDrink.DialogDrinkListener() {
+                    @Override
+                    public void onApplyClicked(String name, String price) {
+                        drink_name.setText(name);
+                        drink_price.setText(price);
+                    }
+                });
+                dialogDrink.setCancelable(false);
+                dialogDrink.show();
+                break;
+            case R.id.detail_btn :
+                dialogDetail = new DialogDetail(this);
+                dialogDetail.setCancelable(false);
+                dialogDetail.show();
+                break;
+        }
     }
+
+    public static int getDessertR() {
+        return dessert_save;
+    }
+
 }
