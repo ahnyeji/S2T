@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
     int resourceId ;
     // 생성자로부터 전달된 ListBtnClickListener  저장.
     private ListBtnClickListener listBtnClickListener ;
+    int total_int_num = 0;
 
 
     // ListViewBtnAdapter 생성자. 마지막에 ListBtnClickListener 추가.
@@ -47,6 +50,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
         final TextView menu_list = (TextView) convertView.findViewById(R.id.menu_list);
         final TextView number_list = (TextView) convertView.findViewById(R.id.number_list);
         final TextView price_list = (TextView) convertView.findViewById(R.id.price_list);
+        final TextView option_list = (TextView) convertView.findViewById(R.id.option_list);
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         final ListViewBtnItem listViewItem = (ListViewBtnItem) getItem(position);
@@ -55,14 +59,39 @@ public class ListViewBtnAdapter extends ArrayAdapter {
         menu_list.setText(listViewItem.getMenu());
         number_list.setText(listViewItem.getNumber());
         price_list.setText(listViewItem.getPrice());
+        String dessert_str ;
+        String drink_str ;
+        int total_int = 0;
+        ArrayList<ListViewBtnItem> items = MainActivity.getList();
+        int i = 0;
+        for(;i<=position;i++){
+            LinearLayout item_sub = (LinearLayout) convertView.findViewById(R.id.item_sub);
+            if(items.get(i).cat_list.equals("세트/팩")){
+                dessert_str = "디저트 : " + items.get(i).getDessert();
+                drink_str = ",  음료 : " + items.get(i).getDrink();
+                items.get(i).setOptionText(option_list, dessert_str + drink_str);
+                items.get(i).visibleLayout(item_sub);
+            }
+            else{
+                items.get(i).goneLayout(item_sub);
+            }
+            total_int += items.get(i).real_price_list * Integer.parseInt(items.get(i).getNumber());
+        }
+        MainActivity.setTotalPrice(total_int);
+        total_int_num = total_int;
+
 
         // button1 클릭 시 TextView(textView1)의 내용 변경.
-        Button minus_btn = (Button) convertView.findViewById(R.id.minus_btn);
+        ImageView minus_btn = (ImageView) convertView.findViewById(R.id.minus_btn);
         minus_btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
+                ArrayList<ListViewBtnItem> items = MainActivity.getList();
                 int temp = Integer.parseInt(number_list.getText().toString());
                 if(temp > 1){
                     number_list.setText(Integer.toString(temp-1));
+                    items.get(position).setNumber(Integer.toString(temp-1));
+                    total_int_num -= items.get(position).real_price_list;
+                    MainActivity.setTotalPrice(total_int_num);
                 }
                 else{
 
@@ -71,20 +100,28 @@ public class ListViewBtnAdapter extends ArrayAdapter {
         });
 
         // button2의 TAG에 position값 지정. Adapter를 click listener로 지정.
-        Button plus_btn = (Button) convertView.findViewById(R.id.plus_btn);
+        ImageView plus_btn = (ImageView) convertView.findViewById(R.id.plus_btn);
         plus_btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
+                ArrayList<ListViewBtnItem> items = MainActivity.getList();
                 int temp = Integer.parseInt(number_list.getText().toString());
                 number_list.setText(Integer.toString(temp+1));
+                items.get(position).setNumber(Integer.toString(temp+1));
+                total_int_num += items.get(position).real_price_list;
+                MainActivity.setTotalPrice(total_int_num);
+
             }
         });
 
-        Button cancel_btn = (Button) convertView.findViewById(R.id.delete_btn);
+        ImageView cancel_btn = (ImageView) convertView.findViewById(R.id.delete_btn);
         cancel_btn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 ArrayList<ListViewBtnItem> items = MainActivity.getList();
                 items.remove(position);
                 MainActivity.setList(items);
+                if(items.isEmpty()){
+                    MainActivity.setTotalPrice(0);
+                }
                 notifyDataSetChanged();
             }
         });

@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listview;
     public static ListViewBtnAdapter list_adapter;
     public static ArrayList<ListViewBtnItem> items;
+    static TextView total_price;
 
     boolean IsMicOn = false;
 
@@ -197,9 +199,10 @@ public class MainActivity extends AppCompatActivity {
         next_btn.setOnClickListener(myListener);
 
         items = new ArrayList<ListViewBtnItem>();
-        list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items, this);
         listview = (ListView) findViewById(R.id.list);
+        list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items, this);
         listview.setAdapter(list_adapter);
+        total_price = (TextView) findViewById(R.id.total_price);
 
         mArrayList = new ArrayList<>();
 
@@ -277,6 +280,7 @@ public class MainActivity extends AppCompatActivity {
     {
         intent = new Intent(this, com.example.stt_kiosk.PopupActivity.class);
         stream = new ByteArrayOutputStream();
+        String cat = (String) clicked_category.getText();
         switch (v.getId()){
             case R.id.menu_btn1:
                 name = (TextView) findViewById(R.id.menu_name1);
@@ -376,8 +380,16 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("image", byteArray);
         intent.putExtra("name", name.getText().toString());
         intent.putExtra("price", price.getText().toString());
+        intent.putExtra("cat", cat);
         startActivityForResult(intent, 1);
     }
+
+    public static void setTotalPrice(int total_int){
+        DecimalFormat formatter = new DecimalFormat("###,###");
+        total_price.setText(formatter.format(total_int)+"원");
+
+    }
+
 
     public static ArrayList<ListViewBtnItem> getList() {
         return items;

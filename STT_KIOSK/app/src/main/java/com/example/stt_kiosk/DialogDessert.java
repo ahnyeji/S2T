@@ -7,17 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DialogDessert extends Dialog {
+import java.util.ArrayList;
 
+public class DialogDessert extends Dialog {
     TextView dessert_name;
     TextView dessert_price;
     String name;
     String price;
-    LinearLayout dessert_menu1;
-    LinearLayout dessert_menu2;
 
     int save_menu;
     int pre_menu;
@@ -55,26 +55,31 @@ public class DialogDessert extends Dialog {
 
         m_oDialog = this;
 
+        ArrayList<LinearLayout> dessert_menu = new ArrayList<>();
+        for(int i=1; i<21; i++){
+            int menuID = context.getResources().getIdentifier("dessert_menu" + i, "id", "com.example.stt_kiosk");
+            LinearLayout menuView = (LinearLayout) this.findViewById(menuID);
+            menuView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    itemClicked(v);
+                }
+            });
+            dessert_menu.add(menuView);
+        }
+
         Button oBtn = (Button)this.findViewById(R.id.dessert_apply);
-        dessert_menu1 = (LinearLayout)this.findViewById(R.id.dessert_menu1);
         oBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 onClickBtn(v);
             }
         });
-        dessert_menu1.setOnClickListener(new View.OnClickListener(){
+        ImageView oBtn1 = (ImageView)this.findViewById(R.id.dessert_close_btn);
+        oBtn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                itemClicked(v);
-            }
-        });
-
-        dessert_menu2 = (LinearLayout)this.findViewById(R.id.dessert_menu2);
-        dessert_menu2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                itemClicked(v);
+                onClickClose(v);
             }
         });
 
@@ -83,117 +88,204 @@ public class DialogDessert extends Dialog {
 
         switch (save_menu){
             case R.id.dessert_menu1:
-                selectDessertMenu1();
+                selectDessertMenu(1);
                 break;
 
             case R.id.dessert_menu2:
-                selectDessertMenu2();
+                selectDessertMenu(2);
                 break;
 
             case R.id.dessert_menu3:
-                selectDessertMenu3();
+                selectDessertMenu(3);
                 break;
 
             case R.id.dessert_menu4:
-                selectDessertMenu4();
+                selectDessertMenu(4);
                 break;
 
+            case R.id.dessert_menu5:
+                selectDessertMenu(5);
+                break;
+
+            case R.id.dessert_menu6:
+                selectDessertMenu(6);
+                break;
+
+            case R.id.dessert_menu7:
+                selectDessertMenu(7);
+                break;
+
+            case R.id.dessert_menu8:
+                selectDessertMenu(8);
+                break;
+
+            case R.id.dessert_menu9:
+                selectDessertMenu(9);
+                break;
+
+            case R.id.dessert_menu10:
+                selectDessertMenu(10);
+                break;
+
+            case R.id.dessert_menu11:
+                selectDessertMenu(11);
+                break;
+
+            case R.id.dessert_menu12:
+                selectDessertMenu(12);
+                break;
+
+            case R.id.dessert_menu13:
+                selectDessertMenu(13);
+                break;
+
+            case R.id.dessert_menu14:
+                selectDessertMenu(14);
+                break;
+
+            case R.id.dessert_menu15:
+                selectDessertMenu(15);
+                break;
+
+            case R.id.dessert_menu16:
+                selectDessertMenu(16);
+                break;
+
+            case R.id.dessert_menu17:
+                selectDessertMenu(17);
+                break;
+
+            case R.id.dessert_menu18:
+                selectDessertMenu(18);
+                break;
+
+            case R.id.dessert_menu19:
+                selectDessertMenu(19);
+                break;
+
+            case R.id.dessert_menu20:
+                selectDessertMenu(20);
+                break;
         }
-
-
     }
+
     public void itemClicked(View v){
         switch (v.getId()){
             case R.id.dessert_menu1:
-                selectDessertMenu1();
+                selectDessertMenu(1);
                 break;
 
             case R.id.dessert_menu2:
-                selectDessertMenu2();
+                selectDessertMenu(2);
                 break;
 
             case R.id.dessert_menu3:
-                selectDessertMenu3();
+                selectDessertMenu(3);
                 break;
 
             case R.id.dessert_menu4:
-                selectDessertMenu4();
+                selectDessertMenu(4);
                 break;
 
+            case R.id.dessert_menu5:
+                selectDessertMenu(5);
+                break;
+
+            case R.id.dessert_menu6:
+                selectDessertMenu(6);
+                break;
+
+            case R.id.dessert_menu7:
+                selectDessertMenu(7);
+                break;
+
+            case R.id.dessert_menu8:
+                selectDessertMenu(8);
+                break;
+
+            case R.id.dessert_menu9:
+                selectDessertMenu(9);
+                break;
+
+            case R.id.dessert_menu10:
+                selectDessertMenu(10);
+                break;
+
+            case R.id.dessert_menu11:
+                selectDessertMenu(11);
+                break;
+
+            case R.id.dessert_menu12:
+                selectDessertMenu(12);
+                break;
+
+            case R.id.dessert_menu13:
+                selectDessertMenu(13);
+                break;
+
+            case R.id.dessert_menu14:
+                selectDessertMenu(14);
+                break;
+
+            case R.id.dessert_menu15:
+                selectDessertMenu(15);
+                break;
+
+            case R.id.dessert_menu16:
+                selectDessertMenu(16);
+                break;
+
+            case R.id.dessert_menu17:
+                selectDessertMenu(17);
+                break;
+
+            case R.id.dessert_menu18:
+                selectDessertMenu(18);
+                break;
+
+            case R.id.dessert_menu19:
+                selectDessertMenu(19);
+                break;
+
+            case R.id.dessert_menu20:
+                selectDessertMenu(20);
+                break;
         }
     }
     public void onClickBtn(View _oView) {
-        switch (_oView.getId()){
+        switch (_oView.getId()) {
             case R.id.dessert_apply:
                 dialogDessertListener.onApplyClicked(name, price, save_menu);
                 this.dismiss();
                 break;
+            case R.id.dessert_close_btn:
+                this.dismiss();
+                break;
         }
+    }
 //        this.dismiss();
-    }
+        public void onClickClose(View v) {
+            switch (v.getId()) {
+                case R.id.dessert_close_btn:
+                    this.dismiss();
+            }
+        }
 
-    public void selectDessertMenu1(){
-        dessert_name = (TextView) findViewById(R.id.dessert_name1);
-        dessert_price = (TextView) findViewById(R.id.dessert_price1);
+    public void selectDessertMenu(int idx){
+        int dname_id = context.getResources().getIdentifier("dessert_name"+idx, "id", "com.example.stt_kiosk");
+        int dprice_id = context.getResources().getIdentifier("dessert_price"+idx, "id", "com.example.stt_kiosk");
+        dessert_name = (TextView) findViewById(dname_id);
+        dessert_price = (TextView) findViewById(dprice_id);
         name = dessert_name.getText().toString();
         price = dessert_price.getText().toString();
         price = price.substring(1);
-        save_menu = R.id.dessert_menu1;
+        save_menu = context.getResources().getIdentifier("dessert_menu"+idx, "id", "com.example.stt_kiosk");
         save_menu_layout = (LinearLayout)findViewById(save_menu);
         pre_menu_layout = (LinearLayout)findViewById(pre_menu);
         save_menu_layout.setBackgroundResource(R.drawable.select_border);
         if(pre_menu != save_menu){
             pre_menu_layout.setBackgroundColor(Color.argb(0,0,0,0));
-            pre_menu = R.id.dessert_menu1;
+            pre_menu = save_menu;
         }
     }
-
-    public void selectDessertMenu2(){
-        dessert_name = (TextView) findViewById(R.id.dessert_name2);
-        dessert_price = (TextView) findViewById(R.id.dessert_price2);
-        name = dessert_name.getText().toString();
-        price = dessert_price.getText().toString();
-        price = price.substring(1);
-        save_menu = R.id.dessert_menu2;
-        save_menu_layout = (LinearLayout)findViewById(save_menu);
-        pre_menu_layout = (LinearLayout)findViewById(pre_menu);
-        save_menu_layout.setBackgroundResource(R.drawable.select_border);
-        if(pre_menu != save_menu){
-            pre_menu_layout.setBackgroundColor(Color.argb(0,0,0,0));
-            pre_menu = R.id.dessert_menu2;
-        }
-    }
-
-    public void selectDessertMenu3(){
-        dessert_name = (TextView) findViewById(R.id.dessert_name3);
-        dessert_price = (TextView) findViewById(R.id.dessert_price3);
-        name = dessert_name.getText().toString();
-        price = dessert_price.getText().toString();
-        price = price.substring(1);
-        save_menu = R.id.dessert_menu3;
-        save_menu_layout = (LinearLayout)findViewById(save_menu);
-        pre_menu_layout = (LinearLayout)findViewById(pre_menu);
-        save_menu_layout.setBackgroundResource(R.drawable.select_border);
-        if(pre_menu != save_menu){
-            pre_menu_layout.setBackgroundColor(Color.argb(0,0,0,0));
-            pre_menu = R.id.dessert_menu3;
-        }
-    }
-
-    public void selectDessertMenu4(){
-        dessert_name = (TextView) findViewById(R.id.dessert_name4);
-        dessert_price = (TextView) findViewById(R.id.dessert_price4);
-        name = dessert_name.getText().toString();
-        price = dessert_price.getText().toString();
-        price = price.substring(1);
-        save_menu = R.id.dessert_menu4;
-        save_menu_layout = (LinearLayout)findViewById(save_menu);
-        pre_menu_layout = (LinearLayout)findViewById(pre_menu);
-        save_menu_layout.setBackgroundResource(R.drawable.select_border);
-        if(pre_menu != save_menu){
-            pre_menu_layout.setBackgroundColor(Color.argb(0,0,0,0));
-            pre_menu = R.id.dessert_menu4;
-        }
-    }
-
 }
