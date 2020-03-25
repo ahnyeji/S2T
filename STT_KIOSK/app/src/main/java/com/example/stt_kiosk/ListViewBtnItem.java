@@ -1,9 +1,22 @@
 package com.example.stt_kiosk;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import static com.example.stt_kiosk.PopupActivity.dessert_name;
+import static com.example.stt_kiosk.PopupActivity.drink_name;
+import static com.example.stt_kiosk.PopupActivity.total_int;
+import static com.example.stt_kiosk.PopupActivity.total_price;
+import static com.example.stt_kiosk.PopupActivity.cat;
 
 public class ListViewBtnItem {
     private String menu_list;
     private String number_list;
-    private String price_list;
+    private String price_list = total_price.getText().toString();
+    private String dessert_list = dessert_name.getText().toString();
+    private String drink_list = drink_name.getText().toString();
+    public String cat_list = cat;
+    public int real_price_list = total_int;
 
     public void setMenu(String text){
         menu_list = text;
@@ -17,6 +30,7 @@ public class ListViewBtnItem {
         price_list = text;
     }
 
+
     public String getMenu(){
         return this.menu_list;
     }
@@ -27,5 +41,23 @@ public class ListViewBtnItem {
 
     public String getPrice(){
         return this.price_list;
+    }
+
+    public String getDessert(){
+        return this.dessert_list;
+    }
+    public String getDrink(){
+        return this.drink_list;
+    }
+
+    public void goneLayout(LinearLayout l){
+        l.setVisibility(View.GONE);
+    }
+    public void visibleLayout(LinearLayout l){
+        l.setVisibility(View.VISIBLE);
+    }
+
+    public void setOptionText(TextView t, String s){
+        t.setText(s);
     }
 }

@@ -2,16 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/drink_title"
+    <LinearLayout
+        android:id="@+id/drink_head"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="TextView"
-        android:textSize="28sp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/drink_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="디저트 변경"
+            android:textColor="#4A4A4A"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/drink_close_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#66232323" />
 
     <TableLayout
         android:id="@+id/drink_change"
@@ -44,11 +72,11 @@
                     android:id="@+id/drink_img1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name1"
@@ -86,11 +114,11 @@
                     android:id="@+id/drink_img2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name2"
@@ -128,11 +156,11 @@
                     android:id="@+id/drink_img3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name3"
@@ -170,11 +198,11 @@
                     android:id="@+id/drink_img4"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name4"
@@ -212,11 +240,11 @@
                     android:id="@+id/drink_img5"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name5"
@@ -261,11 +289,11 @@
                     android:id="@+id/drink_img6"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name6"
@@ -303,11 +331,11 @@
                     android:id="@+id/drink_img7"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name7"
@@ -345,11 +373,11 @@
                     android:id="@+id/drink_img8"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name8"
@@ -387,11 +415,11 @@
                     android:id="@+id/drink_img9"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name9"
@@ -429,11 +457,11 @@
                     android:id="@+id/drink_img10"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name10"
@@ -478,11 +506,11 @@
                     android:id="@+id/drink_img11"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name11"
@@ -520,11 +548,11 @@
                     android:id="@+id/drink_img12"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name12"
@@ -562,11 +590,11 @@
                     android:id="@+id/drink_img13"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name13"
@@ -604,11 +632,11 @@
                     android:id="@+id/drink_img14"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name14"
@@ -646,11 +674,11 @@
                     android:id="@+id/drink_img15"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name15"
@@ -695,11 +723,11 @@
                     android:id="@+id/drink_img16"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name16"
@@ -737,11 +765,11 @@
                     android:id="@+id/drink_img17"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name17"
@@ -779,11 +807,11 @@
                     android:id="@+id/drink_img18"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name18"
@@ -821,11 +849,11 @@
                     android:id="@+id/drink_img19"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name19"
@@ -863,11 +891,11 @@
                     android:id="@+id/drink_img20"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="0dp"
+                    android:layout_margin="3.5dp"
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/azburger" />
+                    android:src="@drawable/burger_az" />
 
                 <TextView
                     android:id="@+id/drink_name20"
@@ -901,5 +929,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Button" />
+        android:text="적용하기"
+        android:textSize="25sp" />
 </LinearLayout>

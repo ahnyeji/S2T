@@ -14,8 +14,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PopupActivity extends Activity {
@@ -23,6 +25,7 @@ public class PopupActivity extends Activity {
     DialogDessert dialogDessert;
     DialogDrink dialogDrink;
     DialogDetail dialogDetail;
+    DialogTopping dialogTopping;
 
     TextView popupName;
     TextView popupPrice;
@@ -33,10 +36,10 @@ public class PopupActivity extends Activity {
     Button dessert_change;
     Button drink_change;
 
-    private TextView dessert_name;
-    private TextView dessert_price;
-    private TextView drink_name;
-    private TextView drink_price;
+    public static TextView dessert_name;
+    public TextView dessert_price;
+    public static TextView drink_name;
+    public TextView drink_price;
 
     static int dessert_save;
     static int drink_save;
@@ -46,8 +49,14 @@ public class PopupActivity extends Activity {
     static String dri_name;
     static String dri_price;
 
-    TextView total_price;
+    public static TextView total_price;
     String total_str;
+    public static int total_int;
+    public static String cat;
+
+    LinearLayout popup_dessert;
+    LinearLayout popup_drink;
+    LinearLayout popup_topping;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +85,31 @@ public class PopupActivity extends Activity {
         popupImg.setImageBitmap(image);
         String name = intent.getStringExtra("name");
         String price = intent.getStringExtra("price");
+        cat = intent.getStringExtra("cat");
         popupName.setText(name);
         popupPrice.setText(price);
+
+        popup_dessert = findViewById(R.id.popup_dessert);
+        popup_drink = findViewById(R.id.popup_drink);
+        popup_topping = findViewById(R.id.popup_topping);
+
+        if(cat.equals("버거")){
+            dessert_name.setText(null);
+            drink_name.setText(null);
+            popup_dessert.setVisibility(View.GONE);
+            popup_drink.setVisibility(View.GONE);
+            popup_topping.setVisibility(View.VISIBLE);
+        }else if(cat.equals("세트/팩")){
+            popup_dessert.setVisibility(View.VISIBLE);
+            popup_drink.setVisibility(View.VISIBLE);
+            popup_topping.setVisibility(View.VISIBLE);
+        }else {
+            dessert_name.setText(null);
+            drink_name.setText(null);
+            popup_dessert.setVisibility(View.GONE);
+            popup_drink.setVisibility(View.GONE);
+            popup_topping.setVisibility(View.GONE);
+        }
 
         dessert_change = findViewById(R.id.dessert_change);
         drink_change = findViewById(R.id.drink_change);
@@ -85,12 +117,19 @@ public class PopupActivity extends Activity {
         detail_btn = findViewById(R.id.detail_btn);
 
         dessert_save = R.id.dessert_menu1;
+        drink_save = R.id.drink_menu1;
 
         total_price = findViewById(R.id.total_price);
         total_str = popupPrice.getText().toString();
-        total_price.setText(total_str.substring(0,total_str.length()-1));
-
-
+        total_str = total_str.substring(0,total_str.length()-1);
+        String price_str[] = total_str.split(",");
+        total_str = "";
+        for(int i=0; i < price_str.length; i++){
+            total_str += price_str[i];
+        }
+        total_int = Integer.parseInt(total_str);
+        DecimalFormat formatter = new DecimalFormat("###,###");
+        total_price.setText(formatter.format(total_int)+"원");
     }
 
     //취소 버튼 클릭
@@ -151,7 +190,7 @@ public class PopupActivity extends Activity {
                     @Override
                     public void onApplyClicked(String name, String price, int save) {
                         dessert_name.setText(name);
-                        dessert_price.setText("+"+price);
+                        dessert_price.setText("+"+price+"원");
                         dessert_save = save;
                     }
                 });
@@ -161,10 +200,12 @@ public class PopupActivity extends Activity {
             case R.id.drink_change :
                 dialogDrink = new DialogDrink(this);
                 dialogDrink.setDialogListener(new DialogDrink.DialogDrinkListener() {
+
                     @Override
-                    public void onApplyClicked(String name, String price) {
+                    public void onApplyClicked(String name, String price, int save) {
                         drink_name.setText(name);
-                        drink_price.setText(price);
+                        drink_price.setText("+"+price+"원");
+                        drink_save = save;
                     }
                 });
                 dialogDrink.setCancelable(false);
@@ -175,11 +216,19 @@ public class PopupActivity extends Activity {
                 dialogDetail.setCancelable(false);
                 dialogDetail.show();
                 break;
+
+            case R.id.topping_change :
+                dialogTopping = new DialogTopping(this);
+                dialogTopping.setCancelable(false);
+                dialogTopping.show();
+                break;
         }
     }
 
     public static int getDessertR() {
         return dessert_save;
     }
-
+    public static int getDrinkR() {
+        return drink_save;
+    }
 }

@@ -109,15 +109,15 @@ public class RecommandAdapter extends PagerAdapter {
 
         switch (position){
             case 0:
-                img1.setImageResource(R.drawable.azburger);
-                img2.setImageResource(R.drawable.azburger);
-                img3.setImageResource(R.drawable.azburger);
-                img4.setImageResource(R.drawable.azburger);
-                img5.setImageResource(R.drawable.azburger);
-                img6.setImageResource(R.drawable.azburger);
-                img7.setImageResource(R.drawable.azburger);
-                img8.setImageResource(R.drawable.azburger);
-                img9.setImageResource(R.drawable.azburger);
+                img1.setImageResource(R.drawable.burger_az);
+                img2.setImageResource(R.drawable.burger_az);
+                img3.setImageResource(R.drawable.burger_az);
+                img4.setImageResource(R.drawable.burger_az);
+                img5.setImageResource(R.drawable.burger_az);
+                img6.setImageResource(R.drawable.burger_az);
+                img7.setImageResource(R.drawable.burger_az);
+                img8.setImageResource(R.drawable.burger_az);
+                img9.setImageResource(R.drawable.burger_az);
 
                 n1.setText("AZ버거");
                 p1.setText("4,300원");
@@ -146,15 +146,15 @@ public class RecommandAdapter extends PagerAdapter {
                 TextView n18 = (TextView) view.findViewById(R.id.menu_name18);
                 TextView n19 = (TextView) view.findViewById(R.id.menu_name19);
 
-                img11.setImageResource(R.drawable.chickenburger);
-                img12.setImageResource(R.drawable.chickenburger);
-                img13.setImageResource(R.drawable.chickenburger);
-                img14.setImageResource(R.drawable.chickenburger);
-                img15.setImageResource(R.drawable.chickenburger);
-                img16.setImageResource(R.drawable.chickenburger);
-                img17.setImageResource(R.drawable.chickenburger);
-                img18.setImageResource(R.drawable.chickenburger);
-                img19.setImageResource(R.drawable.chickenburger);
+                img11.setImageResource(R.drawable.burger_bigbul);
+                img12.setImageResource(R.drawable.burger_bigbul);
+                img13.setImageResource(R.drawable.burger_bigbul);
+                img14.setImageResource(R.drawable.burger_bigbul);
+                img15.setImageResource(R.drawable.burger_bigbul);
+                img16.setImageResource(R.drawable.burger_bigbul);
+                img17.setImageResource(R.drawable.burger_bigbul);
+                img18.setImageResource(R.drawable.burger_bigbul);
+                img19.setImageResource(R.drawable.burger_bigbul);
 
                 n11.setText("치킨버거1");
                 n12.setText("치킨버거2");
