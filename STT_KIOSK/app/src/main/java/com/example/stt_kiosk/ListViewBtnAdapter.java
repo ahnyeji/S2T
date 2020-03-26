@@ -22,7 +22,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
     int resourceId ;
     // 생성자로부터 전달된 ListBtnClickListener  저장.
     private ListBtnClickListener listBtnClickListener ;
-    int total_int_num = 0;
+//    int total_int = 0;
 
 
     // ListViewBtnAdapter 생성자. 마지막에 ListBtnClickListener 추가.
@@ -61,25 +61,19 @@ public class ListViewBtnAdapter extends ArrayAdapter {
         price_list.setText(listViewItem.getPrice());
         String dessert_str ;
         String drink_str ;
-        int total_int = 0;
+        String topping_str;
         ArrayList<ListViewBtnItem> items = MainActivity.getList();
-        int i = 0;
-        for(;i<=position;i++){
-            LinearLayout item_sub = (LinearLayout) convertView.findViewById(R.id.item_sub);
-            if(items.get(i).cat_list.equals("세트/팩")){
-                dessert_str = "디저트 : " + items.get(i).getDessert();
-                drink_str = ",  음료 : " + items.get(i).getDrink();
-                items.get(i).setOptionText(option_list, dessert_str + drink_str);
-                items.get(i).visibleLayout(item_sub);
-            }
-            else{
-                items.get(i).goneLayout(item_sub);
-            }
-            total_int += items.get(i).real_price_list * Integer.parseInt(items.get(i).getNumber());
-        }
-        MainActivity.setTotalPrice(total_int);
-        total_int_num = total_int;
 
+        LinearLayout item_sub = (LinearLayout) convertView.findViewById(R.id.item_sub);
+        if(items.get(position).cat_list.equals("세트/팩")){
+            dessert_str = "디저트 : " + items.get(position).getDessert();
+            drink_str = ",  음료 : " + items.get(position).getDrink();
+            topping_str = ", 토핑 : " +items.get(position).getTopping();
+            items.get(position).setOptionText(option_list, dessert_str + drink_str + topping_str);
+            items.get(position).visibleLayout(item_sub);
+        }
+        else
+            items.get(position).goneLayout(item_sub);
 
         // button1 클릭 시 TextView(textView1)의 내용 변경.
         ImageView minus_btn = (ImageView) convertView.findViewById(R.id.minus_btn);
@@ -90,8 +84,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
                 if(temp > 1){
                     number_list.setText(Integer.toString(temp-1));
                     items.get(position).setNumber(Integer.toString(temp-1));
-                    total_int_num -= items.get(position).real_price_list;
-                    MainActivity.setTotalPrice(total_int_num);
+                    notifyDataSetChanged();
                 }
                 else{
 
@@ -107,8 +100,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
                 int temp = Integer.parseInt(number_list.getText().toString());
                 number_list.setText(Integer.toString(temp+1));
                 items.get(position).setNumber(Integer.toString(temp+1));
-                total_int_num += items.get(position).real_price_list;
-                MainActivity.setTotalPrice(total_int_num);
+                notifyDataSetChanged();
 
             }
         });
@@ -125,6 +117,13 @@ public class ListViewBtnAdapter extends ArrayAdapter {
                 notifyDataSetChanged();
             }
         });
+
+        int total_int = 0;
+        for(int i=0;i<items.size();i++){
+            total_int += items.get(i).real_price_list * Integer.parseInt(items.get(i).getNumber());
+        }
+
+        MainActivity.setTotalPrice(total_int);
 
         return convertView;
     }

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -253,18 +252,15 @@ public class DialogDrink extends Dialog {
                 break;
         }
     }
-    public void onClickBtn(View _oView) {
-        switch (_oView.getId()){
+    public void onClickBtn(View v) {
+        switch (v.getId()){
             case R.id.drink_apply:
                 dialogDrinkListener.onApplyClicked(name, price, save_menu);
                 this.dismiss();
                 break;
-            case R.id.drink_close_btn:
-                this.dismiss();
-                break;
         }
-//        this.dismiss();
     }
+
     public void onClickClose(View v) {
         switch (v.getId()) {
             case R.id.drink_close_btn:

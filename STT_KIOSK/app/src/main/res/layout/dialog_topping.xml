@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/topping_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -27,7 +28,7 @@
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/close_btn"
+            android:id="@+id/topping_close_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -62,7 +63,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/text_bacon"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -72,7 +73,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/num_bacon"
+                    android:id="@+id/cnt_bacon"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -84,7 +85,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/price_bacon"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -107,7 +108,7 @@
             android:text="—" />
 
         <TextView
-            android:id="@+id/number_bacon"
+            android:id="@+id/count_bacon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -162,7 +163,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/text_tomato"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -172,7 +173,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/num_tomato"
+                    android:id="@+id/cnt_tomato"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -184,7 +185,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/price_tomato"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -207,7 +208,7 @@
             android:text="—" />
 
         <TextView
-            android:id="@+id/number_tomato"
+            android:id="@+id/count_tomato"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -262,7 +263,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/text_cheese"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -272,7 +273,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/num_cheese"
+                    android:id="@+id/cnt_cheese"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -284,7 +285,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/price_cheese"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -307,7 +308,7 @@
             android:text="—" />
 
         <TextView
-            android:id="@+id/number_cheese"
+            android:id="@+id/count_cheese"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -361,7 +362,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/text_beef"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -371,7 +372,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/num_beef"
+                    android:id="@+id/cnt_beef"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -383,7 +384,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/price_beef"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -406,7 +407,7 @@
             android:text="—" />
 
         <TextView
-            android:id="@+id/number_beef"
+            android:id="@+id/count_beef"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
@@ -448,7 +449,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/text_price"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -479,7 +480,7 @@
                 android:textSize="27sp" />
 
             <TextView
-                android:id="@+id/plus_price"
+                android:id="@+id/price_topping"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"

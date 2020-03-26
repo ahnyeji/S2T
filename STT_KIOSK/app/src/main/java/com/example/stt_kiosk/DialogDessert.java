@@ -252,24 +252,21 @@ public class DialogDessert extends Dialog {
                 break;
         }
     }
-    public void onClickBtn(View _oView) {
-        switch (_oView.getId()) {
+    public void onClickBtn(View v) {
+        switch (v.getId()) {
             case R.id.dessert_apply:
                 dialogDessertListener.onApplyClicked(name, price, save_menu);
                 this.dismiss();
                 break;
-            case R.id.dessert_close_btn:
-                this.dismiss();
-                break;
         }
     }
-//        this.dismiss();
-        public void onClickClose(View v) {
-            switch (v.getId()) {
-                case R.id.dessert_close_btn:
-                    this.dismiss();
-            }
+
+    public void onClickClose(View v) {
+        switch (v.getId()) {
+            case R.id.dessert_close_btn:
+                this.dismiss();
         }
+    }
 
     public void selectDessertMenu(int idx){
         int dname_id = context.getResources().getIdentifier("dessert_name"+idx, "id", "com.example.stt_kiosk");
