@@ -21,7 +21,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PopupActivity extends Activity {
-
+    DecimalFormat formatter = new DecimalFormat("###,###");
     DialogDessert dialogDessert;
     DialogDrink dialogDrink;
     DialogDetail dialogDetail;
@@ -29,20 +29,25 @@ public class PopupActivity extends Activity {
 
     TextView popupName;
     TextView popupPrice;
+    TextView popupExp;
     ImageView popupImg;
     ArrayList<ListViewBtnItem> items;
     ListViewBtnAdapter list_adapter;
     Button detail_btn;
     Button dessert_change;
     Button drink_change;
+    Button topping_change;
 
     public static TextView dessert_name;
     public TextView dessert_price;
     public static TextView drink_name;
     public TextView drink_price;
+    public static TextView topping_name;
+    public TextView topping_price;
 
     static int dessert_save;
     static int drink_save;
+    static int[] topping_save;
 
     static String des_name;
     static String des_price;
@@ -52,6 +57,7 @@ public class PopupActivity extends Activity {
     public static TextView total_price;
     String total_str;
     public static int total_int;
+    public static int t_price;
     public static String cat;
 
     LinearLayout popup_dessert;
@@ -73,10 +79,13 @@ public class PopupActivity extends Activity {
         dessert_price = (TextView) findViewById(R.id.dessert_price);
         drink_name = (TextView) findViewById(R.id.drink_selected);
         drink_price = (TextView) findViewById(R.id.drink_price);
+        topping_name = (TextView) findViewById(R.id.topping_selected);
+        topping_price = (TextView) findViewById(R.id.topping_price);
 
         //UI 객체생성
         popupName = (TextView)findViewById(R.id.popup_name);
         popupPrice = (TextView)findViewById(R.id.popup_price);
+        popupExp = (TextView) findViewById(R.id.popup_exp);
         popupImg = findViewById(R.id.popup_img);
         //데이터 가져오기
         Intent intent = getIntent();
@@ -85,9 +94,11 @@ public class PopupActivity extends Activity {
         popupImg.setImageBitmap(image);
         String name = intent.getStringExtra("name");
         String price = intent.getStringExtra("price");
+        String exp = intent.getStringExtra("exp");
         cat = intent.getStringExtra("cat");
         popupName.setText(name);
         popupPrice.setText(price);
+        popupExp.setText(exp);
 
         popup_dessert = findViewById(R.id.popup_dessert);
         popup_drink = findViewById(R.id.popup_drink);
@@ -106,6 +117,7 @@ public class PopupActivity extends Activity {
         }else {
             dessert_name.setText(null);
             drink_name.setText(null);
+            topping_name.setText(null);
             popup_dessert.setVisibility(View.GONE);
             popup_drink.setVisibility(View.GONE);
             popup_topping.setVisibility(View.GONE);
@@ -113,22 +125,24 @@ public class PopupActivity extends Activity {
 
         dessert_change = findViewById(R.id.dessert_change);
         drink_change = findViewById(R.id.drink_change);
+        topping_change = findViewById(R.id.topping_change);
 
         detail_btn = findViewById(R.id.detail_btn);
 
         dessert_save = R.id.dessert_menu1;
         drink_save = R.id.drink_menu1;
+        topping_save = new int[]{0, 0, 0, 0};
 
         total_price = findViewById(R.id.total_price);
         total_str = popupPrice.getText().toString();
         total_str = total_str.substring(0,total_str.length()-1);
-        String price_str[] = total_str.split(",");
-        total_str = "";
-        for(int i=0; i < price_str.length; i++){
-            total_str += price_str[i];
-        }
+        total_str = total_str.replace(",", "");
+//        String price_str[] = total_str.split(",");
+//        total_str = "";
+//        for(int i=0; i < price_str.length; i++){
+//            total_str += price_str[i];
+//        }
         total_int = Integer.parseInt(total_str);
-        DecimalFormat formatter = new DecimalFormat("###,###");
         total_price.setText(formatter.format(total_int)+"원");
     }
 
@@ -192,6 +206,7 @@ public class PopupActivity extends Activity {
                         dessert_name.setText(name);
                         dessert_price.setText("+"+price+"원");
                         dessert_save = save;
+                        addPrice();
                     }
                 });
                 dialogDessert.setCancelable(false);
@@ -206,6 +221,7 @@ public class PopupActivity extends Activity {
                         drink_name.setText(name);
                         drink_price.setText("+"+price+"원");
                         drink_save = save;
+                        addPrice();
                     }
                 });
                 dialogDrink.setCancelable(false);
@@ -219,6 +235,19 @@ public class PopupActivity extends Activity {
 
             case R.id.topping_change :
                 dialogTopping = new DialogTopping(this);
+                dialogTopping.setDialogListener(new DialogTopping.DialogToppingListener() {
+
+                    @Override
+                    public void onApplyClicked(String name, String price, int c_bacon, int c_tomato, int c_cheese, int c_beef) {
+                        topping_name.setText(name);
+                        topping_price.setText("+"+price+"원");
+                        topping_save[0] = c_bacon;
+                        topping_save[1] = c_tomato;
+                        topping_save[2] = c_cheese;
+                        topping_save[3] = c_beef;
+                        addPrice();
+                    }
+                });
                 dialogTopping.setCancelable(false);
                 dialogTopping.show();
                 break;
@@ -230,5 +259,23 @@ public class PopupActivity extends Activity {
     }
     public static int getDrinkR() {
         return drink_save;
+    }
+    public static int getTopping(int idx) {
+        return topping_save[idx];
+    }
+
+    public void addPrice() {
+        String dessert = (String) dessert_price.getText();
+        String drink = (String) drink_price.getText();
+        String topping = (String) topping_price.getText();
+        String total = (String) popupPrice.getText();
+        total_int = Integer.parseInt(total.substring(0,total.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(dessert.substring(1, dessert.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(drink.substring(1, drink.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(topping.substring(1, topping.indexOf("원")).replace(",", ""));
+        total_price.setText(""+formatter.format(total_int)+"원");
+    }
+    public static TextView getTotalPrice(){
+        return total_price;
     }
 }

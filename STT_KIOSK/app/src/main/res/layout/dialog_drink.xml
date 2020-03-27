@@ -47,6 +47,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="9"
         android:background="#ffffff"
         android:paddingLeft="5dp"
@@ -929,6 +930,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@drawable/blackbackground"
         android:text="적용하기"
-        android:textSize="25sp" />
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </LinearLayout>

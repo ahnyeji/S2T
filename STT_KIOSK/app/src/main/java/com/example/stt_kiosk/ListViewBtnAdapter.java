@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ListViewBtnAdapter extends ArrayAdapter {
+    DecimalFormat formatter = new DecimalFormat("###,###");
     // 버튼 클릭 이벤트를 위한 Listener 인터페이스 정의.
     public interface ListBtnClickListener {
         void onListBtnClick(int position) ;
@@ -55,20 +57,80 @@ public class ListViewBtnAdapter extends ArrayAdapter {
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         final ListViewBtnItem listViewItem = (ListViewBtnItem) getItem(position);
 
+//        formatter.format(t_price)+"원"
         // 아이템 내 각 위젯에 데이터 반영
+        ArrayList<ListViewBtnItem> items = MainActivity.getList();
+        listViewItem.setPrice(""+formatter.format(listViewItem.real_price_list)+"원");
         menu_list.setText(listViewItem.getMenu());
         number_list.setText(listViewItem.getNumber());
         price_list.setText(listViewItem.getPrice());
         String dessert_str ;
         String drink_str ;
-        ArrayList<ListViewBtnItem> items = MainActivity.getList();
+        String topping_str = "";
+
+
 
         LinearLayout item_sub = (LinearLayout) convertView.findViewById(R.id.item_sub);
         if(items.get(position).cat_list.equals("세트/팩")){
             dessert_str = "디저트 : " + items.get(position).getDessert();
             drink_str = ",  음료 : " + items.get(position).getDrink();
-            items.get(position).setOptionText(option_list, dessert_str + drink_str);
+            if(!items.get(position).isEmptyTopping(items.get(position).getTopping())){
+                int[] topping_list = items.get(position).getTopping();
+                topping_str = ", 토핑 : ";
+                for(int i=0;i<topping_list.length;i++){
+                    if(items.get(position).getTopping()[i] != 0){
+                        if(i == items.get(position).firstTopping(items.get(position).getTopping())) {
+                            if (i == 0)
+                                topping_str += "베이컨" + "(" + topping_list[i] + ")";
+                            else if (i == 1)
+                                topping_str += "토마토" + "(" + topping_list[i] + ")";
+                            else if (i == 2)
+                                topping_str += "엘치즈" + "(" + topping_list[i] + ")";
+                            else
+                                topping_str += "비프패티" + "(" + topping_list[i] + ")";
+                        }
+                        else {
+                            if(i == 1)
+                                topping_str += ", " + "토마토" + "(" + topping_list[i] + ")";
+                            else if(i == 2)
+                                topping_str += ", " + "엘치즈" + "(" + topping_list[i] + ")";
+                            else
+                                topping_str += ", " + "비프패티" + "(" + topping_list[i] + ")";
+                        }
+                    }
+                }
+            }
+            items.get(position).setOptionText(option_list, dessert_str + drink_str + topping_str);
             items.get(position).visibleLayout(item_sub);
+        }
+        else if(items.get(position).cat_list.equals("버거")) {
+            if (!items.get(position).isEmptyTopping(items.get(position).getTopping())) {
+                int[] topping_list = items.get(position).getTopping();
+                topping_str = ", 토핑 : ";
+                for (int i = 0; i < topping_list.length; i++) {
+                    if (items.get(position).getTopping()[i] != 0) {
+                        if (i == items.get(position).firstTopping(items.get(position).getTopping())) {
+                            if (i == 0)
+                                topping_str += "베이컨" + "(" + topping_list[i] + ")";
+                            else if (i == 1)
+                                topping_str += "토마토" + "(" + topping_list[i] + ")";
+                            else if (i == 2)
+                                topping_str += "엘치즈" + "(" + topping_list[i] + ")";
+                            else
+                                topping_str += "비프패티" + "(" + topping_list[i] + ")";
+                        } else {
+                            if (i == 1)
+                                topping_str += ", " + "토마토" + "(" + topping_list[i] + ")";
+                            else if (i == 2)
+                                topping_str += ", " + "엘치즈" + "(" + topping_list[i] + ")";
+                            else
+                                topping_str += ", " + "비프패티" + "(" + topping_list[i] + ")";
+                        }
+                    }
+                }
+                items.get(position).setOptionText(option_list, topping_str);
+                items.get(position).visibleLayout(item_sub);
+            }
         }
         else
             items.get(position).goneLayout(item_sub);

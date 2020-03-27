@@ -6,44 +6,44 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
 public class DialogTopping extends Dialog {
+    DecimalFormat formatter = new DecimalFormat("###,###");
+    TextView count_bacon; TextView cnt_bacon; Button plus_bacon; Button minus_bacon;
+    TextView count_tomato; TextView cnt_tomato; Button plus_tomato; Button minus_tomato;
+    TextView count_cheese; TextView cnt_cheese; Button plus_cheese; Button minus_cheese;
+    TextView count_beef; TextView cnt_beef; Button plus_beef; Button minus_beef;
+    TextView price_topping;
 
-    TextView num1 = null;
-    TextView number1 = null;
-    Button btn_up1 = null;
-    Button btn_down1 = null;
+    String name;
+    String price;
 
-    TextView num2 = null;
-    TextView number2 = null;
-    Button btn_up2 = null;
-    Button btn_down2 = null;
+    int p_bacon; int c_bacon;
+    int p_tomato; int c_tomato;
+    int p_cheese; int c_cheese;
+    int p_beef; int c_beef;
+    int p_topping;
 
-    TextView num3 = null;
-    TextView number3 = null;
-    Button btn_up3 = null;
-    Button btn_down3 = null;
 
-    TextView num4 = null;
-    TextView number4 = null;
-    Button btn_up4 = null;
-    Button btn_down4 = null;
-
-    TextView total_plus = null;
-    int total = 0;
-
-    int count1 = 0;
-    int count2 = 0;
-    int count3 = 0;
-    int count4 = 0;
-
+    private Context context;
     DialogTopping m_oDialog;
+
+    private DialogToppingListener dialogToppingListener;
+
     public DialogTopping(Context context) {
         super(context, android.R.style.Theme_Translucent_NoTitleBar);
+        this.context = context;
+    }
+    interface DialogToppingListener{
+        void onApplyClicked(String name, String price, int c_bacon, int c_tomato, int c_cheese, int c_beef);
+//        void onNagativeClicked();
+    }
+    public void setDialogListener(DialogToppingListener dialogToppingListener){
+        this.dialogToppingListener = dialogToppingListener;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,124 +60,155 @@ public class DialogTopping extends Dialog {
 
         m_oDialog = this;
 
-        ImageButton oBtn = (ImageButton)this.findViewById(R.id.close_btn);
+        c_bacon = PopupActivity.getTopping(0);
+        c_tomato = PopupActivity.getTopping(1);
+        c_cheese = PopupActivity.getTopping(2);
+        c_beef = PopupActivity.getTopping(3);
+
+        count_bacon = findViewById(R.id.count_bacon); cnt_bacon = findViewById(R.id.cnt_bacon);
+        count_tomato = findViewById(R.id.count_tomato); cnt_tomato = findViewById(R.id.cnt_tomato);
+        count_cheese = findViewById(R.id.count_cheese); cnt_cheese = findViewById(R.id.cnt_cheese);
+        count_beef = findViewById(R.id.count_beef); cnt_beef = findViewById(R.id.cnt_beef);
+
+        count_bacon.setText(""+c_bacon); cnt_bacon.setText(""+c_bacon);
+        count_tomato.setText(""+c_tomato); cnt_tomato.setText(""+c_tomato);
+        count_cheese.setText(""+c_cheese); cnt_tomato.setText(""+c_tomato);
+        count_beef.setText(""+c_beef); cnt_beef.setText(""+c_beef);
+
+        plus_bacon = findViewById(R.id.plus_bacon); minus_bacon = findViewById(R.id.minus_bacon);
+        plus_tomato = findViewById(R.id.plus_tomato); minus_tomato = findViewById(R.id.minus_tomato);
+        plus_cheese = findViewById(R.id.plus_cheese); minus_cheese = findViewById(R.id.minus_cheese);
+        plus_beef = findViewById(R.id.plus_beef); minus_beef = findViewById(R.id.minus_beef);
+
+        price_topping = findViewById(R.id.price_topping);
+
+        String getPrice = (String) ((TextView)findViewById(R.id.price_bacon)).getText();
+        p_bacon = Integer.parseInt((getPrice.substring(2,getPrice.indexOf("원"))).replace(",", ""));
+        getPrice = (String) ((TextView)findViewById(R.id.price_tomato)).getText();
+        p_tomato = Integer.parseInt((getPrice.substring(2,getPrice.indexOf("원"))).replace(",", ""));
+        getPrice = (String) ((TextView)findViewById(R.id.price_cheese)).getText();
+        p_cheese = Integer.parseInt((getPrice.substring(2,getPrice.indexOf("원"))).replace(",", ""));
+        getPrice = (String) ((TextView)findViewById(R.id.price_beef)).getText();
+        p_beef = Integer.parseInt((getPrice.substring(2,getPrice.indexOf("원"))).replace(",", ""));
+
+        p_topping = c_bacon * p_bacon + c_tomato * p_tomato + c_cheese * p_cheese + c_beef * p_beef;
+        price_topping.setText(""+formatter.format(p_topping));
+
+        plus_bacon.setOnClickListener(listener); minus_bacon.setOnClickListener(listener);
+        plus_tomato.setOnClickListener(listener); minus_tomato.setOnClickListener(listener);
+        plus_cheese.setOnClickListener(listener); minus_cheese.setOnClickListener(listener);
+        plus_beef.setOnClickListener(listener); minus_beef.setOnClickListener(listener);
+
+        Button oBtn = (Button)this.findViewById(R.id.topping_apply);
         oBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 onClickBtn(v);
             }
         });
+        ImageView oBtn1 = (ImageView)this.findViewById(R.id.topping_close_btn);
+        oBtn1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                onClickClose(v);
+            }
+        });
 
-        setup();
+
     }
-    public void onClickBtn(View _oView) {
-        this.dismiss();
+
+    public void onClickBtn(View v) {
+        switch (v.getId()) {
+            case R.id.topping_apply:
+                name = "";
+                int cnt = 0;
+                if(c_bacon > 0){
+                    name += "베이컨(" + c_bacon + ")";
+                    cnt++;
+                }
+                if(c_tomato > 0){
+                    if(cnt > 0) name += "\n";
+                    name += "토마토(" + c_tomato + ")";
+                    cnt++;
+                }
+                if(c_cheese > 0){
+                    if(cnt > 0) name += "\n";
+                    name += "엘치즈(" + c_cheese + ")";
+                    cnt++;
+                }
+                if(c_beef > 0){
+                    if(cnt > 0) name += "\n";
+                    name += "비프패티(" + c_beef + ")";
+                    cnt++;
+                }
+                price = (String) price_topping.getText();
+                dialogToppingListener.onApplyClicked(name, price, c_bacon, c_tomato, c_cheese, c_beef);
+                this.dismiss();
+                break;
+        }
     }
 
-    private void setup()
-    {
-        btn_up1 = (Button) findViewById(R.id.plus_bacon);
-        btn_down1 = (Button) findViewById(R.id.minus_bacon);
-        num1 = (TextView)findViewById(R.id.num_bacon);
-        number1 = (TextView)findViewById(R.id.number_bacon);
-
-        btn_up2 = (Button) findViewById(R.id.plus_tomato);
-        btn_down2 = (Button) findViewById(R.id.minus_tomato);
-        num2 = (TextView)findViewById(R.id.num_tomato);
-        number2 = (TextView)findViewById(R.id.number_tomato);
-
-        btn_up3 = (Button) findViewById(R.id.plus_cheese);
-        btn_down3 = (Button) findViewById(R.id.minus_cheese);
-        num3 = (TextView)findViewById(R.id.num_cheese);
-        number3 = (TextView)findViewById(R.id.number_cheese);
-
-        btn_up4 = (Button) findViewById(R.id.plus_beef);
-        btn_down4 = (Button) findViewById(R.id.minus_beef);
-        num4 = (TextView)findViewById(R.id.num_beef);
-        number4 = (TextView)findViewById(R.id.number_beef);
-
-        total_plus = (TextView)findViewById((R.id.plus_price));
-
-        btn_up1.setOnClickListener(listener);
-        btn_down1.setOnClickListener(listener);
-
-        btn_up2.setOnClickListener(listener);
-        btn_down2.setOnClickListener(listener);
-
-        btn_up3.setOnClickListener(listener);
-        btn_down3.setOnClickListener(listener);
-
-        btn_up4.setOnClickListener(listener);
-        btn_down4.setOnClickListener(listener);
+    public void onClickClose(View v) {
+        switch (v.getId()) {
+            case R.id.topping_close_btn:
+                this.dismiss();
+        }
     }
-    View.OnClickListener listener = new View.OnClickListener()
-    {
+
+    View.OnClickListener listener = new View.OnClickListener() {
         @Override
-        public void onClick(View v)
-        {
-            int temp1 = Integer.parseInt(num1.getText().toString());
-            int temp2 = Integer.parseInt(num2.getText().toString());
-            int temp3 = Integer.parseInt(num3.getText().toString());
-            int temp4 = Integer.parseInt(num4.getText().toString());
-            switch (v.getId())
-            {
+        public void onClick(View v) {
+            switch (v.getId()){
                 case R.id.plus_bacon :
-                    count1++;
-                    num1.setText(""+count1);
-                    number1.setText(""+count1);
-                    break;
+                   count_bacon.setText(""+(++c_bacon));
+                   cnt_bacon.setText(""+c_bacon);
+                   p_topping += p_bacon;
+                   break;
                 case R.id.minus_bacon :
-                    if(temp1 > 0){
-                        count1--;
-                        num1.setText(""+count1);
-                        number1.setText(""+count1);
+                    if(c_bacon > 0){
+                        count_bacon.setText(""+(--c_bacon));
+                        cnt_bacon.setText(""+c_bacon);
+                        p_topping -= p_bacon;
                     }
                     break;
                 case R.id.plus_tomato :
-                    count2++;
-                    num2.setText(""+count2);
-                    number2.setText(""+count2);
+                    count_tomato.setText(""+(++c_tomato));
+                    cnt_tomato.setText(""+c_tomato);
+                    p_topping += p_tomato;
                     break;
                 case R.id.minus_tomato :
-                    if(temp2 > 0){
-                        count2--;
-                        num2.setText(""+count2);
-                        number2.setText(""+count2);
+                    if(c_tomato > 0){
+                        count_tomato.setText(""+(--c_tomato));
+                        cnt_tomato.setText(""+c_tomato);
+                        p_topping -= p_tomato;
                     }
                     break;
                 case R.id.plus_cheese :
-                    count3++;
-                    num3.setText(""+count3);
-                    number3.setText(""+count3);
+                    count_cheese.setText(""+(++c_cheese));
+                    cnt_cheese.setText(""+c_cheese);
+                    p_topping += p_cheese;
                     break;
                 case R.id.minus_cheese :
-                    if(temp3 > 0) {
-                        count3--;
-                        num3.setText("" + count3);
-                        number3.setText("" + count3);
+                    if(c_cheese > 0){
+                        count_cheese.setText(""+(--c_cheese));
+                        cnt_cheese.setText(""+c_cheese);
+                        p_topping -= p_cheese;
                     }
                     break;
                 case R.id.plus_beef :
-                    count4++;
-                    num4.setText(""+count4);
-                    number4.setText(""+count4);
+                    count_beef.setText(""+(++c_beef));
+                    cnt_beef.setText(""+c_beef);
+                    p_topping += p_beef;
                     break;
                 case R.id.minus_beef :
-                    if(temp4 > 0) {
-                        count4--;
-                        num4.setText("" + count4);
-                        number4.setText("" + count4);
+                    if(c_beef > 0){
+                        count_beef.setText(""+(--c_beef));
+                        cnt_beef.setText(""+c_beef);
+                        p_topping -= p_beef;
                     }
                     break;
             }
-            temp1 = Integer.parseInt(num1.getText().toString());
-            temp2 = Integer.parseInt(num2.getText().toString());
-            temp3 = Integer.parseInt(num3.getText().toString());
-            temp4 = Integer.parseInt(num4.getText().toString());
-            total = temp1*500 + temp2*300 + temp3*300 + temp4*1200;
-            DecimalFormat formatter = new DecimalFormat("###,###");
-            total_plus.setText(formatter.format(total));
+            price_topping.setText(formatter.format(p_topping));
         }
     };
 }
-
