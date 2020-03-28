@@ -48,6 +48,7 @@ public class PopupActivity extends Activity {
     static int dessert_save;
     static int drink_save;
     static int[] topping_save;
+    public static ArrayList<String> nutrient_save;
 
     static String des_name;
     static String des_price;
@@ -57,6 +58,7 @@ public class PopupActivity extends Activity {
     public static TextView total_price;
     String total_str;
     public static int total_int;
+    public static int t_price;
     public static String cat;
 
     LinearLayout popup_dessert;
@@ -94,6 +96,8 @@ public class PopupActivity extends Activity {
         String name = intent.getStringExtra("name");
         String price = intent.getStringExtra("price");
         String exp = intent.getStringExtra("exp");
+//        nutrient_save = new ArrayList<>();
+        nutrient_save = intent.getStringArrayListExtra("nutrient");
         cat = intent.getStringExtra("cat");
         popupName.setText(name);
         popupPrice.setText(price);
@@ -262,16 +266,22 @@ public class PopupActivity extends Activity {
     public static int getTopping(int idx) {
         return topping_save[idx];
     }
+    public static String getNutrient(int idx) {
+        return nutrient_save.get(idx);
+    }
 
     public void addPrice() {
         String dessert = (String) dessert_price.getText();
         String drink = (String) drink_price.getText();
         String topping = (String) topping_price.getText();
         String total = (String) popupPrice.getText();
-        int t_price = Integer.parseInt(total.substring(0,total.indexOf("원")).replace(",", ""));
-        t_price += Integer.parseInt(dessert.substring(1, dessert.indexOf("원")).replace(",", ""));
-        t_price += Integer.parseInt(drink.substring(1, drink.indexOf("원")).replace(",", ""));
-        t_price += Integer.parseInt(topping.substring(1, topping.indexOf("원")).replace(",", ""));
-        total_price.setText(""+formatter.format(t_price)+"원");
+        total_int = Integer.parseInt(total.substring(0,total.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(dessert.substring(1, dessert.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(drink.substring(1, drink.indexOf("원")).replace(",", ""));
+        total_int += Integer.parseInt(topping.substring(1, topping.indexOf("원")).replace(",", ""));
+        total_price.setText(""+formatter.format(total_int)+"원");
+    }
+    public static TextView getTotalPrice(){
+        return total_price;
     }
 }

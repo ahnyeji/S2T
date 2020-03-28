@@ -77,7 +77,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_colar" />
 
                 <TextView
                     android:id="@+id/drink_name1"
@@ -87,7 +87,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="메뉴1"
+                    android:text="콜라"
                     android:textSize="18sp" />
 
                 <TextView
@@ -98,7 +98,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="+0"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -119,7 +119,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_ciderr" />
 
                 <TextView
                     android:id="@+id/drink_name2"
@@ -129,7 +129,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="사이다"
                     android:textSize="18sp" />
 
                 <TextView
@@ -140,7 +140,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -161,7 +161,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_colarl" />
 
                 <TextView
                     android:id="@+id/drink_name3"
@@ -171,7 +171,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="콜라(L)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -182,7 +182,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 200원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -203,7 +203,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_ciderl" />
 
                 <TextView
                     android:id="@+id/drink_name4"
@@ -213,7 +213,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="사이다(L)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -224,7 +224,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 200원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -245,7 +245,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_milk" />
 
                 <TextView
                     android:id="@+id/drink_name5"
@@ -255,7 +255,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="우유"
                     android:textSize="18sp" />
 
                 <TextView
@@ -266,7 +266,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -294,7 +294,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_americano" />
 
                 <TextView
                     android:id="@+id/drink_name6"
@@ -304,7 +304,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="아메리카노"
                     android:textSize="18sp" />
 
                 <TextView
@@ -315,7 +315,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 300원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -336,7 +336,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_iceamericano" />
 
                 <TextView
                     android:id="@+id/drink_name7"
@@ -346,8 +346,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:text="아이스 아메리카노"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/drink_price7"
@@ -357,7 +357,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 300원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -378,7 +378,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_iceamericanol" />
 
                 <TextView
                     android:id="@+id/drink_name8"
@@ -388,8 +388,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:text="아이스 아메리카노(L)"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/drink_price8"
@@ -399,8 +399,9 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 800원"
                     android:textSize="18sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -420,7 +421,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_cafelatte" />
 
                 <TextView
                     android:id="@+id/drink_name9"
@@ -430,7 +431,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="카페라떼"
                     android:textSize="18sp" />
 
                 <TextView
@@ -441,7 +442,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 700원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -462,7 +463,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_icecaffelatte" />
 
                 <TextView
                     android:id="@+id/drink_name10"
@@ -472,7 +473,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="아이스 카페라떼"
                     android:textSize="18sp" />
 
                 <TextView
@@ -483,7 +484,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 700원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -511,7 +512,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_icedtea" />
 
                 <TextView
                     android:id="@+id/drink_name11"
@@ -521,7 +522,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="아이스티"
                     android:textSize="18sp" />
 
                 <TextView
@@ -532,7 +533,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 500원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -553,7 +554,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_lemonade" />
 
                 <TextView
                     android:id="@+id/drink_name12"
@@ -563,7 +564,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="레몬에이드"
                     android:textSize="18sp" />
 
                 <TextView
@@ -574,7 +575,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 800원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -595,7 +596,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_milkshakestrawberry" />
 
                 <TextView
                     android:id="@+id/drink_name13"
@@ -605,7 +606,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="쉐이크(딸기)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -616,7 +617,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 400원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -637,7 +638,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_milkshakevanilla" />
 
                 <TextView
                     android:id="@+id/drink_name14"
@@ -647,7 +648,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="쉐이크(바닐라)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -658,7 +659,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 400원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -679,7 +680,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_milkshakechoco" />
 
                 <TextView
                     android:id="@+id/drink_name15"
@@ -689,7 +690,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="쉐이크(초코)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -700,7 +701,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 400원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -728,7 +729,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_hotchoco" />
 
                 <TextView
                     android:id="@+id/drink_name16"
@@ -738,7 +739,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="핫초코"
                     android:textSize="18sp" />
 
                 <TextView
@@ -749,7 +750,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 300원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -770,7 +771,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_orangejuice" />
 
                 <TextView
                     android:id="@+id/drink_name17"
@@ -780,7 +781,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="오렌지주스(PET)"
                     android:textSize="18sp" />
 
                 <TextView
@@ -791,7 +792,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 800원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -812,7 +813,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_volvic" />
 
                 <TextView
                     android:id="@+id/drink_name18"
@@ -822,7 +823,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="볼빅"
                     android:textSize="18sp" />
 
                 <TextView
@@ -833,7 +834,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -854,7 +855,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/drink_treviplain" />
 
                 <TextView
                     android:id="@+id/drink_name19"
@@ -864,7 +865,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="트레비 플레인"
                     android:textSize="18sp" />
 
                 <TextView
@@ -875,7 +876,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -896,7 +897,7 @@
                     android:layout_weight="3"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/burger_az" />
+                    android:src="@drawable/none" />
 
                 <TextView
                     android:id="@+id/drink_name20"
@@ -906,7 +907,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="무드링크"
                     android:textSize="18sp" />
 
                 <TextView
@@ -917,7 +918,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|top"
                     android:padding="0dp"
-                    android:text="TextView"
+                    android:text="+ 0원"
                     android:textSize="18sp" />
             </LinearLayout>
 

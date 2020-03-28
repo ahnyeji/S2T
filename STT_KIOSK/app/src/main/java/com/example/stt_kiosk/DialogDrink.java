@@ -86,6 +86,7 @@ public class DialogDrink extends Dialog {
 
         save_menu = PopupActivity.getDrinkR();
         pre_menu = PopupActivity.getDrinkR();
+
         switch (save_menu){
             case R.id.drink_menu1:
                 selectDrinkMenu(1);
@@ -275,7 +276,7 @@ public class DialogDrink extends Dialog {
         drink_price = (TextView) findViewById(dprice_id);
         name = drink_name.getText().toString();
         price = drink_price.getText().toString();
-        price = price.substring(1);
+        price = price.substring(2,price.indexOf("원"));
         save_menu = context.getResources().getIdentifier("drink_menu"+idx, "id", "com.example.stt_kiosk");
         save_menu_layout = (LinearLayout)findViewById(save_menu);
         pre_menu_layout = (LinearLayout)findViewById(pre_menu);

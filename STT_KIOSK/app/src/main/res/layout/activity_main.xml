@@ -171,8 +171,6 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="9"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
                 android:visibility="visible"></androidx.viewpager.widget.ViewPager>
 
             <ImageButton

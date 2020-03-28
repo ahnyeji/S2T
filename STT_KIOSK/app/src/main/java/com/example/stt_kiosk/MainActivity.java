@@ -83,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
     String price_db;
     String image_db;
     String descript_db;
+    String totalweight_db;
+    String calorie_db;
+    String protein_db;
+    String sodium_db;
+    String sugar_db;
+    String saturatedfat_db;
     private static String TAG = "phptest_MainActivity";
 
     private static final String TAG_JSON="webnautes";
@@ -91,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_PRICE ="price";
     private static final String TAG_IMAGE ="image";
     private static final String TAG_DESCRIPT ="descript";
+    private static final String TAG_TOTALWEIGHT = "totalweight";
+    private static final String TAG_CALORIE = "calorie";
+    private static final String TAG_PROTEIN = "protein";
+    private static final String TAG_SODIUM = "sodium";
+    private static final String TAG_SUGAR = "sugar";
+    private static final String TAG_SATURATEDFAT = "saturatedfat";
     public static ArrayList<ArrayList<String>> DB_result_burger = null;
     public static ArrayList<ArrayList<String>> DB_result_chicken = null;
     public static ArrayList<ArrayList<String>> DB_result_dessert = null;
@@ -106,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<TextView> firstPageName = new ArrayList<>();
     ArrayList<TextView> firstPagePrice = new ArrayList<>();
     private Context context;
+    ArrayList<String> nutrient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -306,162 +319,351 @@ public class MainActivity extends AppCompatActivity {
                 name = (TextView) findViewById(R.id.menu_name1);
                 price = (TextView) findViewById(R.id.menu_price1);
                 exp = db_cat.get(0).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(0).get(5));
+                nutrient.add(db_cat.get(0).get(6));
+                nutrient.add(db_cat.get(0).get(7));
+                nutrient.add(db_cat.get(0).get(8));
+                nutrient.add(db_cat.get(0).get(9));
+                nutrient.add(db_cat.get(0).get(10));
                 img = (ImageView) findViewById(R.id.menu_img1);
                 break;
             case R.id.menu_btn2:
                 name = (TextView) findViewById(R.id.menu_name2);
                 price = (TextView) findViewById(R.id.menu_price2);
                 exp = db_cat.get(1).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(1).get(5));
+                nutrient.add(db_cat.get(1).get(6));
+                nutrient.add(db_cat.get(1).get(7));
+                nutrient.add(db_cat.get(1).get(8));
+                nutrient.add(db_cat.get(1).get(9));
+                nutrient.add(db_cat.get(1).get(10));
                 img = findViewById(R.id.menu_img2);
                 break;
             case R.id.menu_btn3:
                 name = (TextView) findViewById(R.id.menu_name3);
                 price = (TextView) findViewById(R.id.menu_price3);
                 exp = db_cat.get(2).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(2).get(5));
+                nutrient.add(db_cat.get(2).get(6));
+                nutrient.add(db_cat.get(2).get(7));
+                nutrient.add(db_cat.get(2).get(8));
+                nutrient.add(db_cat.get(2).get(9));
+                nutrient.add(db_cat.get(2).get(10));
                 img = findViewById(R.id.menu_img3);
                 break;
             case R.id.menu_btn4:
                 name = (TextView) findViewById(R.id.menu_name4);
                 price = (TextView) findViewById(R.id.menu_price4);
                 exp = db_cat.get(3).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(3).get(5));
+                nutrient.add(db_cat.get(3).get(6));
+                nutrient.add(db_cat.get(3).get(7));
+                nutrient.add(db_cat.get(3).get(8));
+                nutrient.add(db_cat.get(3).get(9));
+                nutrient.add(db_cat.get(3).get(10));
                 img = findViewById(R.id.menu_img4);
                 break;
             case R.id.menu_btn5:
                 name = (TextView) findViewById(R.id.menu_name5);
                 price = (TextView) findViewById(R.id.menu_price5);
                 exp = db_cat.get(4).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(4).get(5));
+                nutrient.add(db_cat.get(4).get(6));
+                nutrient.add(db_cat.get(4).get(7));
+                nutrient.add(db_cat.get(4).get(8));
+                nutrient.add(db_cat.get(4).get(9));
+                nutrient.add(db_cat.get(4).get(10));
                 img = findViewById(R.id.menu_img5);
                 break;
             case R.id.menu_btn6:
                 name = (TextView) findViewById(R.id.menu_name6);
                 price = (TextView) findViewById(R.id.menu_price6);
                 exp = db_cat.get(5).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(5).get(5));
+                nutrient.add(db_cat.get(5).get(6));
+                nutrient.add(db_cat.get(5).get(7));
+                nutrient.add(db_cat.get(5).get(8));
+                nutrient.add(db_cat.get(5).get(9));
+                nutrient.add(db_cat.get(5).get(10));
                 img = findViewById(R.id.menu_img6);
                 break;
             case R.id.menu_btn7:
                 name = (TextView) findViewById(R.id.menu_name7);
                 price = (TextView) findViewById(R.id.menu_price7);
                 exp = db_cat.get(6).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(6).get(5));
+                nutrient.add(db_cat.get(6).get(6));
+                nutrient.add(db_cat.get(6).get(7));
+                nutrient.add(db_cat.get(6).get(8));
+                nutrient.add(db_cat.get(6).get(9));
+                nutrient.add(db_cat.get(6).get(10));
                 img = findViewById(R.id.menu_img7);
                 break;
             case R.id.menu_btn8:
                 name = (TextView) findViewById(R.id.menu_name8);
                 price = (TextView) findViewById(R.id.menu_price8);
                 exp = db_cat.get(7).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(7).get(5));
+                nutrient.add(db_cat.get(7).get(6));
+                nutrient.add(db_cat.get(7).get(7));
+                nutrient.add(db_cat.get(7).get(8));
+                nutrient.add(db_cat.get(7).get(9));
+                nutrient.add(db_cat.get(7).get(10));
                 img = findViewById(R.id.menu_img8);
                 break;
             case R.id.menu_btn9:
                 name = (TextView) findViewById(R.id.menu_name9);
                 price = (TextView) findViewById(R.id.menu_price9);
                 exp = db_cat.get(8).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(8).get(5));
+                nutrient.add(db_cat.get(8).get(6));
+                nutrient.add(db_cat.get(8).get(7));
+                nutrient.add(db_cat.get(8).get(8));
+                nutrient.add(db_cat.get(8).get(9));
+                nutrient.add(db_cat.get(8).get(10));
                 img = findViewById(R.id.menu_img9);
                 break;
             case R.id.menu_btn11:
                 name = (TextView) findViewById(R.id.menu_name11);
                 price = (TextView) findViewById(R.id.menu_price11);
                 exp = db_cat.get(9).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(9).get(5));
+                nutrient.add(db_cat.get(9).get(6));
+                nutrient.add(db_cat.get(9).get(7));
+                nutrient.add(db_cat.get(9).get(8));
+                nutrient.add(db_cat.get(9).get(9));
+                nutrient.add(db_cat.get(9).get(10));
                 img = findViewById(R.id.menu_img11);
                 break;
             case R.id.menu_btn12:
                 name = (TextView) findViewById(R.id.menu_name12);
                 price = (TextView) findViewById(R.id.menu_price12);
                 exp = db_cat.get(10).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(10).get(5));
+                nutrient.add(db_cat.get(10).get(6));
+                nutrient.add(db_cat.get(10).get(7));
+                nutrient.add(db_cat.get(10).get(8));
+                nutrient.add(db_cat.get(10).get(9));
+                nutrient.add(db_cat.get(10).get(10));
                 img = findViewById(R.id.menu_img12);
                 break;
             case R.id.menu_btn13:
                 name = (TextView) findViewById(R.id.menu_name13);
                 price = (TextView) findViewById(R.id.menu_price13);
                 exp = db_cat.get(11).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(11).get(5));
+                nutrient.add(db_cat.get(11).get(6));
+                nutrient.add(db_cat.get(11).get(7));
+                nutrient.add(db_cat.get(11).get(8));
+                nutrient.add(db_cat.get(11).get(9));
+                nutrient.add(db_cat.get(11).get(10));
                 img = findViewById(R.id.menu_img13);
                 break;
             case R.id.menu_btn14:
                 name = (TextView) findViewById(R.id.menu_name14);
                 price = (TextView) findViewById(R.id.menu_price14);
                 exp = db_cat.get(12).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(12).get(5));
+                nutrient.add(db_cat.get(12).get(6));
+                nutrient.add(db_cat.get(12).get(7));
+                nutrient.add(db_cat.get(12).get(8));
+                nutrient.add(db_cat.get(12).get(9));
+                nutrient.add(db_cat.get(12).get(10));
                 img = findViewById(R.id.menu_img14);
                 break;
             case R.id.menu_btn15:
                 name = (TextView) findViewById(R.id.menu_name15);
                 price = (TextView) findViewById(R.id.menu_price15);
                 exp = db_cat.get(13).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(13).get(5));
+                nutrient.add(db_cat.get(13).get(6));
+                nutrient.add(db_cat.get(13).get(7));
+                nutrient.add(db_cat.get(13).get(8));
+                nutrient.add(db_cat.get(13).get(9));
+                nutrient.add(db_cat.get(13).get(10));
                 img = findViewById(R.id.menu_img15);
                 break;
             case R.id.menu_btn16:
                 name = (TextView) findViewById(R.id.menu_name16);
                 price = (TextView) findViewById(R.id.menu_price16);
                 exp = db_cat.get(14).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(14).get(5));
+                nutrient.add(db_cat.get(14).get(6));
+                nutrient.add(db_cat.get(14).get(7));
+                nutrient.add(db_cat.get(14).get(8));
+                nutrient.add(db_cat.get(14).get(9));
+                nutrient.add(db_cat.get(14).get(10));
                 img = findViewById(R.id.menu_img16);
                 break;
             case R.id.menu_btn17:
                 name = (TextView) findViewById(R.id.menu_name17);
                 price = (TextView) findViewById(R.id.menu_price17);
                 exp = db_cat.get(15).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(15).get(5));
+                nutrient.add(db_cat.get(15).get(6));
+                nutrient.add(db_cat.get(15).get(7));
+                nutrient.add(db_cat.get(15).get(8));
+                nutrient.add(db_cat.get(15).get(9));
+                nutrient.add(db_cat.get(15).get(10));
                 img = findViewById(R.id.menu_img17);
                 break;
             case R.id.menu_btn18:
                 name = (TextView) findViewById(R.id.menu_name18);
                 price = (TextView) findViewById(R.id.menu_price18);
                 exp = db_cat.get(16).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(16).get(5));
+                nutrient.add(db_cat.get(16).get(6));
+                nutrient.add(db_cat.get(16).get(7));
+                nutrient.add(db_cat.get(16).get(8));
+                nutrient.add(db_cat.get(16).get(9));
+                nutrient.add(db_cat.get(16).get(10));
                 img = findViewById(R.id.menu_img18);
                 break;
             case R.id.menu_btn19:
                 name = (TextView) findViewById(R.id.menu_name19);
                 price = (TextView) findViewById(R.id.menu_price19);
                 exp = db_cat.get(17).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(17).get(5));
+                nutrient.add(db_cat.get(17).get(6));
+                nutrient.add(db_cat.get(17).get(7));
+                nutrient.add(db_cat.get(17).get(8));
+                nutrient.add(db_cat.get(17).get(9));
+                nutrient.add(db_cat.get(17).get(10));
                 img = findViewById(R.id.menu_img19);
                 break;
             case R.id.menu_btn21:
                 name = (TextView) findViewById(R.id.menu_name21);
                 price = (TextView) findViewById(R.id.menu_price21);
                 exp = db_cat.get(18).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(18).get(5));
+                nutrient.add(db_cat.get(18).get(6));
+                nutrient.add(db_cat.get(18).get(7));
+                nutrient.add(db_cat.get(18).get(8));
+                nutrient.add(db_cat.get(18).get(9));
+                nutrient.add(db_cat.get(18).get(10));
                 img = findViewById(R.id.menu_img21);
                 break;
             case R.id.menu_btn22:
                 name = (TextView) findViewById(R.id.menu_name22);
                 price = (TextView) findViewById(R.id.menu_price22);
                 exp = db_cat.get(19).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(19).get(5));
+                nutrient.add(db_cat.get(19).get(6));
+                nutrient.add(db_cat.get(19).get(7));
+                nutrient.add(db_cat.get(19).get(8));
+                nutrient.add(db_cat.get(19).get(9));
+                nutrient.add(db_cat.get(19).get(10));
                 img = findViewById(R.id.menu_img22);
                 break;
             case R.id.menu_btn23:
                 name = (TextView) findViewById(R.id.menu_name23);
                 price = (TextView) findViewById(R.id.menu_price23);
                 exp = db_cat.get(20).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(20).get(5));
+                nutrient.add(db_cat.get(20).get(6));
+                nutrient.add(db_cat.get(20).get(7));
+                nutrient.add(db_cat.get(20).get(8));
+                nutrient.add(db_cat.get(20).get(9));
+                nutrient.add(db_cat.get(20).get(10));
                 img = findViewById(R.id.menu_img23);
                 break;
             case R.id.menu_btn24:
                 name = (TextView) findViewById(R.id.menu_name24);
                 price = (TextView) findViewById(R.id.menu_price24);
                 exp = db_cat.get(21).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(21).get(5));
+                nutrient.add(db_cat.get(21).get(6));
+                nutrient.add(db_cat.get(21).get(7));
+                nutrient.add(db_cat.get(21).get(8));
+                nutrient.add(db_cat.get(21).get(9));
+                nutrient.add(db_cat.get(21).get(10));
                 img = findViewById(R.id.menu_img24);
                 break;
             case R.id.menu_btn25:
                 name = (TextView) findViewById(R.id.menu_name25);
                 price = (TextView) findViewById(R.id.menu_price25);
                 exp = db_cat.get(22).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(22).get(5));
+                nutrient.add(db_cat.get(22).get(6));
+                nutrient.add(db_cat.get(22).get(7));
+                nutrient.add(db_cat.get(22).get(8));
+                nutrient.add(db_cat.get(22).get(9));
+                nutrient.add(db_cat.get(22).get(10));
                 img = findViewById(R.id.menu_img25);
                 break;
             case R.id.menu_btn26:
                 name = (TextView) findViewById(R.id.menu_name26);
                 price = (TextView) findViewById(R.id.menu_price26);
                 exp = db_cat.get(23).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(23).get(5));
+                nutrient.add(db_cat.get(23).get(6));
+                nutrient.add(db_cat.get(23).get(7));
+                nutrient.add(db_cat.get(23).get(8));
+                nutrient.add(db_cat.get(23).get(9));
+                nutrient.add(db_cat.get(23).get(10));
                 img = findViewById(R.id.menu_img26);
                 break;
             case R.id.menu_btn27:
                 name = (TextView) findViewById(R.id.menu_name27);
                 price = (TextView) findViewById(R.id.menu_price27);
                 exp = db_cat.get(24).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(24).get(5));
+                nutrient.add(db_cat.get(24).get(6));
+                nutrient.add(db_cat.get(24).get(7));
+                nutrient.add(db_cat.get(24).get(8));
+                nutrient.add(db_cat.get(24).get(9));
+                nutrient.add(db_cat.get(24).get(10));
                 img = findViewById(R.id.menu_img27);
                 break;
             case R.id.menu_btn28:
                 name = (TextView) findViewById(R.id.menu_name28);
                 price = (TextView) findViewById(R.id.menu_price28);
                 exp = db_cat.get(25).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(25).get(5));
+                nutrient.add(db_cat.get(25).get(6));
+                nutrient.add(db_cat.get(25).get(7));
+                nutrient.add(db_cat.get(25).get(8));
+                nutrient.add(db_cat.get(25).get(9));
+                nutrient.add(db_cat.get(25).get(10));
                 img = findViewById(R.id.menu_img28);
                 break;
             case R.id.menu_btn29:
                 name = (TextView) findViewById(R.id.menu_name29);
                 price = (TextView) findViewById(R.id.menu_price29);
                 exp = db_cat.get(26).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(26).get(5));
+                nutrient.add(db_cat.get(26).get(6));
+                nutrient.add(db_cat.get(26).get(7));
+                nutrient.add(db_cat.get(26).get(8));
+                nutrient.add(db_cat.get(26).get(9));
+                nutrient.add(db_cat.get(26).get(10));
                 img = findViewById(R.id.menu_img29);
                 break;
         }
@@ -474,6 +676,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("price", price.getText().toString());
         intent.putExtra("cat", cat);
         intent.putExtra("exp", exp);
+        intent.putExtra("nutrient",nutrient);
         startActivityForResult(intent, 1);
     }
 
@@ -608,12 +811,24 @@ public class MainActivity extends AppCompatActivity {
                 price_db = item.getString(TAG_PRICE);
                 image_db = item.getString(TAG_IMAGE);
                 descript_db = item.getString(TAG_DESCRIPT);
+                totalweight_db = item.getString(TAG_TOTALWEIGHT);
+                calorie_db = item.getString(TAG_CALORIE);
+                protein_db = item.getString(TAG_PROTEIN);
+                sodium_db = item.getString(TAG_SODIUM);
+                sugar_db = item.getString(TAG_SUGAR);
+                saturatedfat_db = item.getString(TAG_SATURATEDFAT);
                 DB_item = new ArrayList<String>();
                 DB_item.add(category_db);
                 DB_item.add(name_db);
                 DB_item.add(price_db);
                 DB_item.add(image_db);
                 DB_item.add(descript_db);
+                DB_item.add(totalweight_db);
+                DB_item.add(calorie_db);
+                DB_item.add(protein_db);
+                DB_item.add(sodium_db);
+                DB_item.add(sugar_db);
+                DB_item.add(saturatedfat_db);
                 if(category_db.equals("세트")){
                     DB_result_set.add(DB_item);
                 }

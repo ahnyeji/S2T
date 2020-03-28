@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#ffffff"
+    android:gravity="center_vertical"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/topping_head"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="75dp"
+        android:paddingRight="20dp">
 
         <TextView
             android:id="@+id/topping_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="25dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="9"
             android:gravity="center"
             android:text="토핑"
@@ -29,12 +31,8 @@
 
         <ImageButton
             android:id="@+id/topping_close_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="#ffffff"
             android:scaleType="fitCenter"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
@@ -42,24 +40,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="7"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
@@ -76,7 +74,6 @@
                     android:id="@+id/cnt_bacon"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="0"
                     android:textColor="#000000"
@@ -87,25 +84,26 @@
             <TextView
                 android:id="@+id/price_bacon"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:text="+ 500원"
                 android:textColor="#5C5C5C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/minus_bacon"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="—" />
+            android:src="@drawable/minuscircle" />
 
         <TextView
             android:id="@+id/count_bacon"
@@ -116,20 +114,20 @@
             android:gravity="center"
             android:text="0"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <ImageButton
             android:id="@+id/plus_bacon"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="+" />
+            android:src="@drawable/pluscircle" />
 
     </LinearLayout>
 
@@ -142,23 +140,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="7"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:orientation="horizontal">
 
@@ -176,7 +174,6 @@
                     android:id="@+id/cnt_tomato"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="0"
                     android:textColor="#000000"
@@ -187,25 +184,26 @@
             <TextView
                 android:id="@+id/price_tomato"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:gravity="center_vertical"
                 android:text="+ 300원"
                 android:textColor="#5C5C5C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/minus_tomato"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="—" />
+            android:src="@drawable/minuscircle" />
 
         <TextView
             android:id="@+id/count_tomato"
@@ -216,20 +214,20 @@
             android:gravity="center"
             android:text="0"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <ImageButton
             android:id="@+id/plus_tomato"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="+" />
+            android:src="@drawable/pluscircle" />
 
     </LinearLayout>
 
@@ -242,23 +240,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="7"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:orientation="horizontal">
 
@@ -276,7 +274,6 @@
                     android:id="@+id/cnt_cheese"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="0"
                     android:textColor="#000000"
@@ -287,25 +284,26 @@
             <TextView
                 android:id="@+id/price_cheese"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:gravity="center_vertical"
                 android:text="+ 300원"
                 android:textColor="#5C5C5C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/minus_cheese"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="—" />
+            android:src="@drawable/minuscircle" />
 
         <TextView
             android:id="@+id/count_cheese"
@@ -316,20 +314,20 @@
             android:gravity="center"
             android:text="0"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <ImageButton
             android:id="@+id/plus_cheese"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="+" />
+            android:src="@drawable/pluscircle" />
     </LinearLayout>
 
     <View
@@ -341,23 +339,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="7"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:orientation="horizontal">
 
@@ -375,7 +373,6 @@
                     android:id="@+id/cnt_beef"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="0"
                     android:textColor="#000000"
@@ -386,25 +383,26 @@
             <TextView
                 android:id="@+id/price_beef"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:gravity="center_vertical"
                 android:text="+ 1,200원"
                 android:textColor="#5C5C5C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/minus_beef"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="—" />
+            android:src="@drawable/minuscircle" />
 
         <TextView
             android:id="@+id/count_beef"
@@ -415,20 +413,20 @@
             android:gravity="center"
             android:text="0"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <ImageButton
             android:id="@+id/plus_beef"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="#ffffff"
             android:gravity="center"
             android:onClick="MyOnClick"
-            android:padding="0dp"
             android:scaleType="fitCenter"
-            android:text="+" />
+            android:src="@drawable/pluscircle" />
     </LinearLayout>
 
     <View
@@ -440,32 +438,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="35dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingRight="18dp">
 
         <TextView
             android:id="@+id/text_price"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="left|center_vertical"
             android:text="총 추가 금액 :"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="27sp"
+            android:textColor="#565656"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="35dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -477,7 +472,7 @@
                 android:gravity="right|center_vertical"
                 android:text="+ "
                 android:textColor="#000000"
-                android:textSize="27sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/price_topping"
@@ -486,29 +481,25 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="27sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/plus_won"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center_vertical"
+                android:gravity="right|center_vertical"
                 android:text="원"
                 android:textColor="#000000"
-                android:textSize="27sp" />
+                android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/topping_apply"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
         android:background="@drawable/blackbackground"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
         android:text="선택완료"
         android:textColor="#FFFFFF"
         android:textSize="24sp"

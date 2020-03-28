@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,10 +14,10 @@ import java.text.DecimalFormat;
 
 public class DialogTopping extends Dialog {
     DecimalFormat formatter = new DecimalFormat("###,###");
-    TextView count_bacon; TextView cnt_bacon; Button plus_bacon; Button minus_bacon;
-    TextView count_tomato; TextView cnt_tomato; Button plus_tomato; Button minus_tomato;
-    TextView count_cheese; TextView cnt_cheese; Button plus_cheese; Button minus_cheese;
-    TextView count_beef; TextView cnt_beef; Button plus_beef; Button minus_beef;
+    TextView count_bacon; TextView cnt_bacon; ImageButton plus_bacon; ImageButton minus_bacon;
+    TextView count_tomato; TextView cnt_tomato; ImageButton plus_tomato; ImageButton minus_tomato;
+    TextView count_cheese; TextView cnt_cheese; ImageButton plus_cheese; ImageButton minus_cheese;
+    TextView count_beef; TextView cnt_beef; ImageButton plus_beef; ImageButton minus_beef;
     TextView price_topping;
 
     String name;

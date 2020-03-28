@@ -89,6 +89,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/weight_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="g" />
             </TableRow>
 
             <View
@@ -116,7 +124,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/calrorie_content"
+                    android:id="@+id/calorie_content"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
@@ -125,6 +133,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/calorie_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="Kcal" />
             </TableRow>
 
             <View
@@ -161,6 +177,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/protein_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="g" />
             </TableRow>
 
             <View
@@ -197,6 +221,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/natrium_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="mg" />
             </TableRow>
 
             <View
@@ -233,6 +265,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sugar_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="g" />
             </TableRow>
 
             <View
@@ -269,6 +309,14 @@
                     android:text="TextView"
                     android:textColor="#585858"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/fat_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left"
+                    android:text="g" />
             </TableRow>
 
             <View
@@ -286,7 +334,7 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="20dp"
             android:gravity="end"
-            android:text="TextView"
+            android:text="*1회 제공량 기준"
             android:textColor="#585858"
             android:textSize="14sp" />
     </LinearLayout>

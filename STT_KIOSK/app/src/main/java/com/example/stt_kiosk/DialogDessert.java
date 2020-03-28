@@ -47,8 +47,8 @@ public class DialogDessert extends Dialog {
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         lpWindow.dimAmount = 0.5f;
-        lpWindow.width = 700;
-        lpWindow.height = 850;
+        lpWindow.width = 750;
+        lpWindow.height = 900;
         getWindow().setAttributes(lpWindow);
 
         setContentView(R.layout.dialog_dessert);
@@ -275,7 +275,7 @@ public class DialogDessert extends Dialog {
         dessert_price = (TextView) findViewById(dprice_id);
         name = dessert_name.getText().toString();
         price = dessert_price.getText().toString();
-        price = price.substring(1);
+        price = price.substring(2,price.indexOf("원"));
         save_menu = context.getResources().getIdentifier("dessert_menu"+idx, "id", "com.example.stt_kiosk");
         save_menu_layout = (LinearLayout)findViewById(save_menu);
         pre_menu_layout = (LinearLayout)findViewById(pre_menu);
