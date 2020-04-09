@@ -28,7 +28,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
 
 
     // ListViewBtnAdapter 생성자. 마지막에 ListBtnClickListener 추가.
-    ListViewBtnAdapter(Context context, int resource, ArrayList<ListViewBtnItem> list, MainActivity clickListener) {
+    ListViewBtnAdapter(Context context, int resource, ArrayList<ListViewBtnItem> list) {
         super(context, resource, list) ;
 
         // resource id 값 복사. (super로 전달된 resource를 참조할 방법이 없음.)

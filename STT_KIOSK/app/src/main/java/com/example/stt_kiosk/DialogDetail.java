@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -22,6 +23,8 @@ public class DialogDetail extends Dialog {
     public static TextView natrium_content;
     public static TextView sugar_content;
     public static TextView fat_content;
+    public static TextView allergy_content;
+    public static TextView origin_content;
 
     String totalweight = PopupActivity.getNutrient(0);
     String calorie = PopupActivity.getNutrient(1);
@@ -29,8 +32,8 @@ public class DialogDetail extends Dialog {
     String natrium = PopupActivity.getNutrient(3);
     String sugar = PopupActivity.getNutrient(4);
     String fat = PopupActivity.getNutrient(5);
-
-
+    String allergy = PopupActivity.getAllergy();
+    String origin = PopupActivity.getOrigin();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,8 @@ public class DialogDetail extends Dialog {
         natrium_content = (TextView) findViewById(R.id.natrium_content);
         sugar_content = (TextView) findViewById(R.id.sugar_content);
         fat_content = (TextView) findViewById(R.id.fat_content);
+        allergy_content = (TextView) findViewById(R.id.allergy_content);
+        origin_content = (TextView) findViewById(R.id.origin_content);
 
         m_oDialog = this;
 
@@ -59,6 +64,22 @@ public class DialogDetail extends Dialog {
         natrium_content.setText(""+formatter.format(Integer.parseInt(natrium)));
         sugar_content.setText(""+formatter.format(Integer.parseInt(sugar)));
         fat_content.setText(""+formatter.format(Integer.parseInt(fat)));
+        LinearLayout allergy_layout = (LinearLayout) findViewById(R.id.allergy_layout);
+        LinearLayout origin_layout = (LinearLayout) findViewById(R.id.origin_layout);
+        if(allergy.equals("-")){
+            allergy_layout.setVisibility(View.GONE);
+        }
+        else{
+            allergy_layout.setVisibility(View.VISIBLE);
+            allergy_content.setText(allergy);
+        }
+        if(origin.equals("-")){
+            origin_layout.setVisibility(View.GONE);
+        }
+        else{
+            origin_layout.setVisibility(View.VISIBLE);
+            origin_content.setText(origin);
+        }
 
         ImageButton oBtn = (ImageButton)this.findViewById(R.id.close_btn);
         oBtn.setOnClickListener(new View.OnClickListener(){

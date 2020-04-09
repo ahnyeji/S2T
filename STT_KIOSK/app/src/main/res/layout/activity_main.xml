@@ -49,8 +49,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:onClick="MicOnClick" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -294,6 +293,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="6"
                 android:background="@drawable/radius"
+                android:onClick="OnclickOrder"
                 android:text="주문하기"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"

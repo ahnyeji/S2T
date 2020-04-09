@@ -1,13 +1,19 @@
 package com.example.stt_kiosk;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.speech.RecognitionListener;
+import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +21,29 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.bumptech.glide.Glide;
+import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.dialogflow.v2.DetectIntentResponse;
+import com.google.cloud.dialogflow.v2.QueryInput;
+import com.google.cloud.dialogflow.v2.SessionName;
+import com.google.cloud.dialogflow.v2.SessionsClient;
+import com.google.cloud.dialogflow.v2.SessionsSettings;
+import com.google.cloud.dialogflow.v2.TextInput;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -31,8 +53,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-
+import java.util.UUID;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -89,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
     String sodium_db;
     String sugar_db;
     String saturatedfat_db;
+    String allergy_db;
+    String origin_db;
     private static String TAG = "phptest_MainActivity";
 
     private static final String TAG_JSON="webnautes";
@@ -103,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_SODIUM = "sodium";
     private static final String TAG_SUGAR = "sugar";
     private static final String TAG_SATURATEDFAT = "saturatedfat";
+    private static final String TAG_ALLERGY = "allergy";
+    private static final String TAG_ORIGIN = "origin";
     public static ArrayList<ArrayList<String>> DB_result_burger = null;
     public static ArrayList<ArrayList<String>> DB_result_chicken = null;
     public static ArrayList<ArrayList<String>> DB_result_dessert = null;
@@ -119,6 +144,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<TextView> firstPagePrice = new ArrayList<>();
     private Context context;
     ArrayList<String> nutrient;
+    String allergy;
+    String origin;
+
+//    for Dialogflow
+    private String uuid = UUID.randomUUID().toString();
+    private SessionsClient sessionsClient;
+    private SessionName session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,8 +160,28 @@ public class MainActivity extends AppCompatActivity {
 //        vpPager.setAdapter(adapterViewPager);
         changeView(1);
         this.context = getApplicationContext();
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 5);
+        }
         mic_btn = (ImageView) findViewById(R.id.mic_btn);
         Glide.with(this).load(R.raw.mic_off).into(mic_btn);
+        mic_btn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                if(IsMicOn == false){
+                    Glide.with(v).load(R.raw.mic_on).into(mic_btn);
+                    IsMicOn = true;
+                    Log.d("stt before", "before function");
+                    inputVoice(stt);
+                    Log.d("stt after", "after function");
+                }
+                else{
+                    Glide.with(v).load(R.raw.mic_off).into(mic_btn);
+                    IsMicOn = false;
+                }
+            }
+        });
 
         final Button rec_btn = (Button) findViewById(R.id.rec_btn) ;
         clicked_category = rec_btn;
@@ -216,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
 
         items = new ArrayList<ListViewBtnItem>();
         listview = (ListView) findViewById(R.id.list);
-        list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items, this);
+        list_adapter = new ListViewBtnAdapter(this, R.layout.listview, items);
         listview.setAdapter(list_adapter);
         total_price = (TextView) findViewById(R.id.total_price);
 
@@ -225,6 +277,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.GetData task = new MainActivity.GetData();
         task.execute(serverUrl + "getjson.php");
         stt = findViewById(R.id.stt_window);
+        initV2Dialogflow();
     }
 
     private void changeView(int index) {
@@ -280,16 +333,19 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void MicOnClick(View v){
-        if(IsMicOn == false){
-            Glide.with(this).load(R.raw.mic_on).into(mic_btn);
-            IsMicOn = true;
-        }
-        else{
-            Glide.with(this).load(R.raw.mic_off).into(mic_btn);
-            IsMicOn = false;
-        }
-    }
+//    public void MicOnClick(View v){
+//        if(IsMicOn == false){
+//            Glide.with(this).load(R.raw.mic_on).into(mic_btn);
+//            IsMicOn = true;
+//            Log.d("stt before", "before function");
+//            inputVoice(stt);
+//            Log.d("stt after", "after function");
+//        }
+//        else{
+//            Glide.with(this).load(R.raw.mic_off).into(mic_btn);
+//            IsMicOn = false;
+//        }
+//    }
 
 
     public void MenuOnClick(View v)
@@ -326,6 +382,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(0).get(8));
                 nutrient.add(db_cat.get(0).get(9));
                 nutrient.add(db_cat.get(0).get(10));
+                allergy = db_cat.get(0).get(11);
+                origin = db_cat.get(0).get(12);
                 img = (ImageView) findViewById(R.id.menu_img1);
                 break;
             case R.id.menu_btn2:
@@ -339,6 +397,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(1).get(8));
                 nutrient.add(db_cat.get(1).get(9));
                 nutrient.add(db_cat.get(1).get(10));
+                allergy = db_cat.get(1).get(11);
+                origin = db_cat.get(1).get(12);
                 img = findViewById(R.id.menu_img2);
                 break;
             case R.id.menu_btn3:
@@ -352,6 +412,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(2).get(8));
                 nutrient.add(db_cat.get(2).get(9));
                 nutrient.add(db_cat.get(2).get(10));
+                allergy = db_cat.get(2).get(11);
+                origin = db_cat.get(2).get(12);
                 img = findViewById(R.id.menu_img3);
                 break;
             case R.id.menu_btn4:
@@ -365,6 +427,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(3).get(8));
                 nutrient.add(db_cat.get(3).get(9));
                 nutrient.add(db_cat.get(3).get(10));
+                allergy = db_cat.get(3).get(11);
+                origin = db_cat.get(3).get(12);
                 img = findViewById(R.id.menu_img4);
                 break;
             case R.id.menu_btn5:
@@ -378,6 +442,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(4).get(8));
                 nutrient.add(db_cat.get(4).get(9));
                 nutrient.add(db_cat.get(4).get(10));
+                allergy = db_cat.get(4).get(11);
+                origin = db_cat.get(4).get(12);
                 img = findViewById(R.id.menu_img5);
                 break;
             case R.id.menu_btn6:
@@ -391,6 +457,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(5).get(8));
                 nutrient.add(db_cat.get(5).get(9));
                 nutrient.add(db_cat.get(5).get(10));
+                allergy = db_cat.get(5).get(11);
+                origin = db_cat.get(5).get(12);
                 img = findViewById(R.id.menu_img6);
                 break;
             case R.id.menu_btn7:
@@ -404,6 +472,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(6).get(8));
                 nutrient.add(db_cat.get(6).get(9));
                 nutrient.add(db_cat.get(6).get(10));
+                allergy = db_cat.get(6).get(11);
+                origin = db_cat.get(6).get(12);
                 img = findViewById(R.id.menu_img7);
                 break;
             case R.id.menu_btn8:
@@ -417,6 +487,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(7).get(8));
                 nutrient.add(db_cat.get(7).get(9));
                 nutrient.add(db_cat.get(7).get(10));
+                allergy = db_cat.get(7).get(11);
+                origin = db_cat.get(7).get(12);
                 img = findViewById(R.id.menu_img8);
                 break;
             case R.id.menu_btn9:
@@ -430,6 +502,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(8).get(8));
                 nutrient.add(db_cat.get(8).get(9));
                 nutrient.add(db_cat.get(8).get(10));
+                allergy = db_cat.get(8).get(11);
+                origin = db_cat.get(8).get(12);
                 img = findViewById(R.id.menu_img9);
                 break;
             case R.id.menu_btn11:
@@ -443,6 +517,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(9).get(8));
                 nutrient.add(db_cat.get(9).get(9));
                 nutrient.add(db_cat.get(9).get(10));
+                allergy = db_cat.get(9).get(11);
+                origin = db_cat.get(9).get(12);
                 img = findViewById(R.id.menu_img11);
                 break;
             case R.id.menu_btn12:
@@ -456,6 +532,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(10).get(8));
                 nutrient.add(db_cat.get(10).get(9));
                 nutrient.add(db_cat.get(10).get(10));
+                allergy = db_cat.get(10).get(11);
+                origin = db_cat.get(10).get(12);
                 img = findViewById(R.id.menu_img12);
                 break;
             case R.id.menu_btn13:
@@ -469,6 +547,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(11).get(8));
                 nutrient.add(db_cat.get(11).get(9));
                 nutrient.add(db_cat.get(11).get(10));
+                allergy = db_cat.get(11).get(11);
+                origin = db_cat.get(11).get(12);
                 img = findViewById(R.id.menu_img13);
                 break;
             case R.id.menu_btn14:
@@ -482,6 +562,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(12).get(8));
                 nutrient.add(db_cat.get(12).get(9));
                 nutrient.add(db_cat.get(12).get(10));
+                allergy = db_cat.get(12).get(11);
+                origin = db_cat.get(12).get(12);
                 img = findViewById(R.id.menu_img14);
                 break;
             case R.id.menu_btn15:
@@ -495,6 +577,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(13).get(8));
                 nutrient.add(db_cat.get(13).get(9));
                 nutrient.add(db_cat.get(13).get(10));
+                allergy = db_cat.get(13).get(11);
+                origin = db_cat.get(13).get(12);
                 img = findViewById(R.id.menu_img15);
                 break;
             case R.id.menu_btn16:
@@ -508,6 +592,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(14).get(8));
                 nutrient.add(db_cat.get(14).get(9));
                 nutrient.add(db_cat.get(14).get(10));
+                allergy = db_cat.get(14).get(11);
+                origin = db_cat.get(14).get(12);
                 img = findViewById(R.id.menu_img16);
                 break;
             case R.id.menu_btn17:
@@ -521,6 +607,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(15).get(8));
                 nutrient.add(db_cat.get(15).get(9));
                 nutrient.add(db_cat.get(15).get(10));
+                allergy = db_cat.get(15).get(11);
+                origin = db_cat.get(15).get(12);
                 img = findViewById(R.id.menu_img17);
                 break;
             case R.id.menu_btn18:
@@ -534,6 +622,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(16).get(8));
                 nutrient.add(db_cat.get(16).get(9));
                 nutrient.add(db_cat.get(16).get(10));
+                allergy = db_cat.get(16).get(11);
+                origin = db_cat.get(16).get(12);
                 img = findViewById(R.id.menu_img18);
                 break;
             case R.id.menu_btn19:
@@ -547,6 +637,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(17).get(8));
                 nutrient.add(db_cat.get(17).get(9));
                 nutrient.add(db_cat.get(17).get(10));
+                allergy = db_cat.get(17).get(11);
+                origin = db_cat.get(17).get(12);
                 img = findViewById(R.id.menu_img19);
                 break;
             case R.id.menu_btn21:
@@ -560,6 +652,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(18).get(8));
                 nutrient.add(db_cat.get(18).get(9));
                 nutrient.add(db_cat.get(18).get(10));
+                allergy = db_cat.get(18).get(11);
+                origin = db_cat.get(18).get(12);
                 img = findViewById(R.id.menu_img21);
                 break;
             case R.id.menu_btn22:
@@ -573,6 +667,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(19).get(8));
                 nutrient.add(db_cat.get(19).get(9));
                 nutrient.add(db_cat.get(19).get(10));
+                allergy = db_cat.get(19).get(11);
+                origin = db_cat.get(19).get(12);
                 img = findViewById(R.id.menu_img22);
                 break;
             case R.id.menu_btn23:
@@ -586,6 +682,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(20).get(8));
                 nutrient.add(db_cat.get(20).get(9));
                 nutrient.add(db_cat.get(20).get(10));
+                allergy = db_cat.get(20).get(11);
+                origin = db_cat.get(20).get(12);
                 img = findViewById(R.id.menu_img23);
                 break;
             case R.id.menu_btn24:
@@ -599,6 +697,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(21).get(8));
                 nutrient.add(db_cat.get(21).get(9));
                 nutrient.add(db_cat.get(21).get(10));
+                allergy = db_cat.get(21).get(11);
+                origin = db_cat.get(21).get(12);
                 img = findViewById(R.id.menu_img24);
                 break;
             case R.id.menu_btn25:
@@ -612,6 +712,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(22).get(8));
                 nutrient.add(db_cat.get(22).get(9));
                 nutrient.add(db_cat.get(22).get(10));
+                allergy = db_cat.get(22).get(11);
+                origin = db_cat.get(22).get(12);
                 img = findViewById(R.id.menu_img25);
                 break;
             case R.id.menu_btn26:
@@ -625,6 +727,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(23).get(8));
                 nutrient.add(db_cat.get(23).get(9));
                 nutrient.add(db_cat.get(23).get(10));
+                allergy = db_cat.get(23).get(11);
+                origin = db_cat.get(23).get(12);
                 img = findViewById(R.id.menu_img26);
                 break;
             case R.id.menu_btn27:
@@ -638,6 +742,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(24).get(8));
                 nutrient.add(db_cat.get(24).get(9));
                 nutrient.add(db_cat.get(24).get(10));
+                allergy = db_cat.get(24).get(11);
+                origin = db_cat.get(24).get(12);
                 img = findViewById(R.id.menu_img27);
                 break;
             case R.id.menu_btn28:
@@ -651,6 +757,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(25).get(8));
                 nutrient.add(db_cat.get(25).get(9));
                 nutrient.add(db_cat.get(25).get(10));
+                allergy = db_cat.get(25).get(11);
+                origin = db_cat.get(25).get(12);
                 img = findViewById(R.id.menu_img28);
                 break;
             case R.id.menu_btn29:
@@ -664,6 +772,8 @@ public class MainActivity extends AppCompatActivity {
                 nutrient.add(db_cat.get(26).get(8));
                 nutrient.add(db_cat.get(26).get(9));
                 nutrient.add(db_cat.get(26).get(10));
+                allergy = db_cat.get(26).get(11);
+                origin = db_cat.get(26).get(12);
                 img = findViewById(R.id.menu_img29);
                 break;
         }
@@ -677,6 +787,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("cat", cat);
         intent.putExtra("exp", exp);
         intent.putExtra("nutrient",nutrient);
+        intent.putExtra("allergy", allergy);
+        intent.putExtra("origin", origin);
         startActivityForResult(intent, 1);
     }
 
@@ -701,6 +813,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static void setList_adapter(ListViewBtnAdapter adapter){
         list_adapter = adapter;
+    }
+
+    public void OnclickOrder(View view) {
+        if(!list_adapter.isEmpty()){
+            Intent order_intent = new Intent(getApplicationContext(), OrderActivity.class);
+            startActivity(order_intent);
+        }
     }
 
     private class GetData extends AsyncTask<String, Void, String>{
@@ -791,6 +910,115 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void inputVoice(TextView txt) {
+        Log.d("inputVoice", "in function");
+        try {
+            Intent intentSTT = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            intentSTT.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
+            intentSTT.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR");
+            final SpeechRecognizer sttrec = SpeechRecognizer.createSpeechRecognizer(this);
+            sttrec.setRecognitionListener(new RecognitionListener() {
+                @Override
+                public void onReadyForSpeech(Bundle params) {
+//                    toast("음성입력시작");
+                }
+
+                @Override
+                public void onBeginningOfSpeech() {
+                    Log.d("STTstart", "start here");
+                }
+
+                @Override
+                public void onRmsChanged(float rmsdB) {
+
+                }
+
+                @Override
+                public void onBufferReceived(byte[] buffer) {
+
+                }
+
+                @Override
+                public void onEndOfSpeech() {
+//                    toast("음성입력종료");
+                    Log.d("STTend", "end here");
+                }
+
+                @Override
+                public void onError(int error) {
+//                    toast("오류발생 : " + error);
+                    switch(error){
+                        case 1:
+                            stt.setText("Network Timeout");
+                            break;
+                        case 2:
+                            stt.setText("Network Error");
+                            break;
+                        case 3:
+                            stt.setText("Record Error");
+                            break;
+                        case 4:
+                            stt.setText("Server Error");
+                            break;
+                        case 5:
+                            stt.setText("Client Error");
+                            break;
+                        case 6:
+                            stt.setText("아무 것도 못들었어요\n마이크 버튼을 누르고\n다시 한 번 말씀해주세요.");
+                            break;
+                        case 7:
+                            stt.setText("마이크 버튼을 누르고\n다시 한 번 말씀해주세요.");
+                            break;
+                        case 8:
+                            stt.setText("Busy Error");
+                            break;
+                        case 9:
+                            stt.setText("Permission");
+                            break;
+                        default :
+                            stt.setText("error,,,");
+                    }
+                    Log.d("onError", "error : "+ error);
+                    Glide.with(context).load(R.raw.mic_off).into(mic_btn);
+                    IsMicOn = false;
+                    sttrec.destroy();
+                }
+
+                @Override
+                public void onResults(Bundle results) {
+                    ArrayList<String> result = (ArrayList<String>) results.get(SpeechRecognizer.RESULTS_RECOGNITION);
+                    stt.setText( result.get(0) + "\n");
+                    Glide.with(context).load(R.raw.mic_off).into(mic_btn);
+                    IsMicOn = false;
+                    sttrec.destroy();
+                    sendMessage();
+                }
+
+                @Override
+                public void onPartialResults(Bundle partialResults) {
+
+                }
+
+                @Override
+                public void onEvent(int eventType, Bundle params) {
+
+                }
+            });
+            sttrec.startListening(intentSTT);
+            new CountDownTimer(5000,1000){
+                public void onTick(long m){
+                }
+                public void onFinish(){
+                    sttrec.stopListening();
+                }
+            }.start();
+        }
+        catch (Exception e) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+
     private void showResult(){
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
@@ -817,6 +1045,8 @@ public class MainActivity extends AppCompatActivity {
                 sodium_db = item.getString(TAG_SODIUM);
                 sugar_db = item.getString(TAG_SUGAR);
                 saturatedfat_db = item.getString(TAG_SATURATEDFAT);
+                allergy_db = item.getString(TAG_ALLERGY);
+                origin_db = item.getString(TAG_ORIGIN);
                 DB_item = new ArrayList<String>();
                 DB_item.add(category_db);
                 DB_item.add(name_db);
@@ -829,6 +1059,8 @@ public class MainActivity extends AppCompatActivity {
                 DB_item.add(sodium_db);
                 DB_item.add(sugar_db);
                 DB_item.add(saturatedfat_db);
+                DB_item.add(allergy_db);
+                DB_item.add(origin_db);
                 if(category_db.equals("세트")){
                     DB_result_set.add(DB_item);
                 }
@@ -846,26 +1078,201 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-//            for(int i=0 ; i<DB_result_burger.size() ; i++) {
-//                Log.d(TAG, "DB_RESULT_BURGER :");
-//
-//                for (int j = 0; j < DB_item.size(); j++) {
-//                    Log.d(TAG, "" + DB_result_burger.get(i).get(j));
-//                }
-//            }
-//            for(int i=0 ; i<DB_result_chicken.size() ; i++) {
-//                Log.d(TAG, "DB_RESULT_CHICKEN :");
-//
-//                for (int j = 0; j < DB_item.size(); j++) {
-//                    Log.d(TAG, "" + DB_result_chicken.get(i).get(j));
-//                }
-//            }
-
         } catch (JSONException e) {
 
             Log.d(TAG, "showResult : ", e);
         }
 
+    }
+
+    private void initV2Dialogflow() {
+        try {
+            InputStream dialogstream = getResources().openRawResource(R.raw.hystt);
+            GoogleCredentials credentials = GoogleCredentials.fromStream(dialogstream);
+            String projectID = ((ServiceAccountCredentials)credentials).getProjectId();
+
+            SessionsSettings.Builder settingsBuilder = SessionsSettings.newBuilder();
+            SessionsSettings sessionsSettings = settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
+            sessionsClient = SessionsClient.create(sessionsSettings);
+            session = SessionName.of(projectID, uuid);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendMessage() {
+        String msg = stt.getText().toString();
+        if(msg.trim().isEmpty()) {
+            Toast.makeText(MainActivity.this, "Please enter your query!", Toast.LENGTH_LONG).show();
+        }
+        else {
+            QueryInput queryInput = QueryInput.newBuilder().setText(TextInput.newBuilder().setText(msg).setLanguageCode("ko-KR")).build();
+            new RequestJavaV2Task(MainActivity.this, session, sessionsClient, queryInput).execute();
+        }
+    }
+
+    public void callbackV2(DetectIntentResponse response) {
+        if(response != null) {
+            String dialogReply = response.getQueryResult().getFulfillmentText();
+            String[] parseReply = dialogReply.split("/");
+            if(parseReply.length < 3){
+                stt.setText(dialogReply);
+            }
+            else {
+                String[] search_keys = parseReply[2].split(",");
+                String sqlString = "select * from menuboard ";
+                switch (parseReply[0]) {
+                    case "search_menu" :
+                        sqlString += ("where name = \"" + search_keys[0]+"\"");
+                        break;
+                    case "search_best_menu" :
+                        if(!search_keys[0].equals("메뉴")) {
+                            sqlString += "where category = \"" + search_keys[0] + "\" ";
+                        }
+                        sqlString += "order by sales DESC, price DESC LIMIT 6";
+                        break;
+                    case "search_new_menu" :
+                        sqlString += "where name in (select name from new";
+                        // New라는 테이블 만들어서 카테고리, 이름만 넣어두고, 그 테이블에 있는 친구들 전부 menuboard에서 찾아오기
+                        if(!search_keys[0].equals("메뉴")) {
+                            sqlString += " where category = \"" + search_keys[0] + "\"";
+                        }
+                        sqlString += ")";
+                        break;
+                    case "search_by_nutrient" :
+                        switch (search_keys[1]) {
+                            case "열량" :
+                                search_keys[1] = "calorie";
+                                break;
+                            case "당류" :
+                                search_keys[1] = "sugar";
+                                break;
+                            case "나트륨" :
+                                search_keys[1] = "sodium";
+                                break;
+                            case "포화지방" :
+                                search_keys[1] = "saturatedfat";
+                                break;
+                            case "총중량" :
+                                search_keys[1] = "totalweight";
+                                break;
+                            case "단백질" :
+                                search_keys[1] = "protein";
+                                break;
+                        }
+                        String nutrientCateg;
+                        if(!search_keys[0].equals("메뉴")) {
+                            nutrientCateg = ("category = \"" + search_keys[0] + "\" and ");
+                        }
+                        else {
+                            nutrientCateg = "";
+                        }
+                        if(search_keys[2].equals("AdjNutrient")) { // 영양성분이 ~인 경우
+//                            select * from menuboard where category = "버거" and totalweight[nutrient] = 500[number];
+//                            select * from menuboard where nutrient = number;
+                            sqlString += ("where " + nutrientCateg + search_keys[1] + " = " + search_keys[3]);
+                        }
+                        else {
+                            if(search_keys[3].equals("number")) {
+                                nutrientCateg = nutrientCateg.substring(0,nutrientCateg.lastIndexOf("\"")+1);
+                                if(!nutrientCateg.equals("")) {
+                                    nutrientCateg = "where " + nutrientCateg;
+                                }
+                                // Top5
+                                if(search_keys[2].equals("많은") || search_keys[2].equals("높은")) {
+//                                    select * from menuboard where category = "버거" order by totalweight[nutrient] desc, price desc limit 6;
+//                                    select * from menuboard order by totalweight[nutrient] desc, price desc limit 6;
+                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " desc, price desc limit 6");
+                                }
+                                else {
+//                                    select * from menuboard where category = "버거" order by totalweight asc, price desc limit 6;
+//                                    select * from menuboard order by totalweight asc, price desc limit 6;
+                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " asc, price desc limit 6");
+                                }
+                            }
+                            else {
+                                if(search_keys[2].equals("이상")) {
+//                                    select * from menuboard where category = "버거" and totalweight >= 700 order by totalweight asc, price desc limit 6;
+//                                    select * from menuboard where totalweight >= 700 order by totalweight asc, price desc limit 6;
+                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " >= " + search_keys[3] + " order by " + search_keys[1] + " asc, price desc limit 6");
+                                }
+                                else {
+//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 6;
+//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 6;
+                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " <= " + search_keys[3] + " order by " + search_keys[1] + " desc, price desc limit 6");
+                                }
+                            }
+                        }
+                        break;
+                    case "search_by_ingredient" :
+                        break;
+                    case "search_by_price" :
+                        String priceCateg;
+                        if(!search_keys[0].equals("메뉴")) {
+                            priceCateg = ("category = \"" + search_keys[0] + "\" and ");
+                        }
+                        else {
+                            priceCateg = "";
+                        }
+                        if(search_keys[1].equals("AdjPrice")) { // 가격이 ~인 경우
+//                            Select * from menuboard where category = "버거" price = 3000 order by name desc limit 6;
+//                            Select * from menuboard where price = 3000 order by name desc limit 6;
+                            sqlString += ("where " + priceCateg + "price = " + search_keys[2]);
+                        }
+                        else {
+                            if(search_keys[2].equals("number")) {
+                                priceCateg = priceCateg.substring(0,priceCateg.lastIndexOf("\"")+1);
+                                if(!priceCateg.equals("")) {
+                                    priceCateg = "where " + priceCateg;
+                                }
+                                // Top5
+                                if(search_keys[1].equals("비싼")) {
+//                                    Select * from menuboard where category = "버거" order by price desc, name desc limit 6;
+//                                    Select * from menuboard order by price desc, name desc limit 6;
+                                    sqlString += (priceCateg + " order by price desc, name desc limit 6");
+                                }
+                                else {
+//                                    Select * from menuboard where category = "버거" order by price asc, name desc limit 6;
+//                                    Select * from menuboard order by price asc, name desc limit 6;
+                                    sqlString += (priceCateg + " order by price asc, name desc limit 6");
+                                }
+                            }
+                            else {
+                                if(search_keys[1].equals("이상")) {
+//                                    Select * from menuboard where category = "버거" and price >= 3000 order by price asc, name desc limit 6;
+//                                    Select * from menuboard where price >= 3000 order by price asc, name desc limit 6;
+                                    sqlString += ("where " + priceCateg + " price >= " + search_keys[2] + " order by price asc, name desc limit 6");
+                                }
+                                else {
+//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 6;
+//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 6;
+                                    sqlString += ("where " + priceCateg + " price <= " + search_keys[2] + " order by price desc, name desc limit 6");
+                                }
+                            }
+                        }
+                        break;
+                    case "search_by_spicy" :
+                        if(search_keys[1].equals("매운")) {
+                            search_keys[1] = "1";
+                        }
+                        else {
+                            search_keys[1] = "0";
+                        }
+                        sqlString += ("where spicy = \"" + search_keys[1]+"\"");
+                        if(!search_keys[0].equals("메뉴")) {
+                            sqlString += (" and category = \"" + search_keys[0] + "\"");
+                        }
+                        sqlString += " order by sales DESC, price DESC LIMIT 6";
+                        break;
+                }
+                sqlString += ";";
+                stt.setText(parseReply[1]+"\n"+sqlString);
+            }
+        }
+        else {
+            stt.setText("There was some communication issue. Please Try again!");
+        }
     }
 
 }

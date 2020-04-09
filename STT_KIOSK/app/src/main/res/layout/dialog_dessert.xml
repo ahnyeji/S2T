@@ -541,9 +541,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="지파이 고소한맛(S)"
+                    android:text="지파이 고소한맛"
                     android:textColor="#494949"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/dessert_price11"
@@ -585,9 +585,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="0dp"
-                    android:text="지파이 하바네로(L)"
+                    android:text="지파이 하바네로"
                     android:textColor="#494949"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/dessert_price12"

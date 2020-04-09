@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -49,6 +50,8 @@ public class PopupActivity extends Activity {
     static int drink_save;
     static int[] topping_save;
     public static ArrayList<String> nutrient_save;
+    public static String allergy_save;
+    public static String origin_save;
 
     static String des_name;
     static String des_price;
@@ -76,6 +79,7 @@ public class PopupActivity extends Activity {
         Point size = new Point();
         display.getSize(size);
 
+
         dessert_name = (TextView) findViewById(R.id.dessert_selected);
         dessert_price = (TextView) findViewById(R.id.dessert_price);
         drink_name = (TextView) findViewById(R.id.drink_selected);
@@ -99,6 +103,8 @@ public class PopupActivity extends Activity {
 //        nutrient_save = new ArrayList<>();
         nutrient_save = intent.getStringArrayListExtra("nutrient");
         cat = intent.getStringExtra("cat");
+        allergy_save = intent.getStringExtra("allergy");
+        origin_save = intent.getStringExtra("origin");
         popupName.setText(name);
         popupPrice.setText(price);
         popupExp.setText(exp);
@@ -207,6 +213,14 @@ public class PopupActivity extends Activity {
                     @Override
                     public void onApplyClicked(String name, String price, int save) {
                         dessert_name.setText(name);
+                        if(name.equals("양념감자(어니언)") || name.equals("화이어윙(2조각)") || name.equals("치킨휠레(2조각)")
+                                || name.equals("지파이 고소한맛") || name.equals("지파이 하바네로") || name.equals("쉑쉑치킨(어니언)")){
+                            dessert_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                        }else if(name.equals("선데아이스크림(딸기)") || name.equals("토네이도(초코쿠키)")){
+                            dessert_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+                        }else{
+                            dessert_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                        }
                         dessert_price.setText("+"+price+"원");
                         dessert_save = save;
                         addPrice();
@@ -269,6 +283,13 @@ public class PopupActivity extends Activity {
     public static String getNutrient(int idx) {
         return nutrient_save.get(idx);
     }
+    public static String getAllergy(){
+        return allergy_save;
+    }
+    public static String getOrigin(){
+        return origin_save;
+    }
+
 
     public void addPrice() {
         String dessert = (String) dessert_price.getText();
