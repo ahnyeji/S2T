@@ -119,7 +119,7 @@ public class PopupActivity extends Activity {
             popup_dessert.setVisibility(View.GONE);
             popup_drink.setVisibility(View.GONE);
             popup_topping.setVisibility(View.VISIBLE);
-        }else if(cat.equals("세트/팩")){
+        }else if(cat.equals("세트")){
             popup_dessert.setVisibility(View.VISIBLE);
             popup_drink.setVisibility(View.VISIBLE);
             popup_topping.setVisibility(View.VISIBLE);

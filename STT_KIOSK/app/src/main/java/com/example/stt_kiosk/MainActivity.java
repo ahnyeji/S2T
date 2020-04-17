@@ -1,7 +1,6 @@
 package com.example.stt_kiosk;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,7 +18,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -56,6 +58,8 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import me.relex.circleindicator.CircleIndicator;
+
+import static java.lang.Math.min;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -128,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_SATURATEDFAT = "saturatedfat";
     private static final String TAG_ALLERGY = "allergy";
     private static final String TAG_ORIGIN = "origin";
+    public static ArrayList<ArrayList<String>> DB_result_search = null;
     public static ArrayList<ArrayList<String>> DB_result_burger = null;
     public static ArrayList<ArrayList<String>> DB_result_chicken = null;
     public static ArrayList<ArrayList<String>> DB_result_dessert = null;
@@ -138,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
     TextView stt;
     ArrayList<HashMap<String, String>> mArrayList;
     String mJsonString;
+    String mJsonString1;
+
+    LinearLayout menuboard;
+    TableLayout searchboard;
 
     ArrayList<ImageView> firstPageImg = new ArrayList<>();
     ArrayList<TextView> firstPageName = new ArrayList<>();
@@ -146,8 +155,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> nutrient;
     String allergy;
     String origin;
+    public static String sqlString;
 
-//    for Dialogflow
+    //    for Dialogflow
     private String uuid = UUID.randomUUID().toString();
     private SessionsClient sessionsClient;
     private SessionName session;
@@ -163,12 +173,29 @@ public class MainActivity extends AppCompatActivity {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 5);
         }
+        ImageView help = (ImageView) findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                DialogHelp dialogHelp = new DialogHelp(MainActivity.this);
+                dialogHelp.setCancelable(false);
+                dialogHelp.show();
+            }
+        });
+
+        menuboard = (LinearLayout) findViewById(R.id.menuboard);
+        searchboard = (TableLayout) findViewById(R.id.searchboard);
         mic_btn = (ImageView) findViewById(R.id.mic_btn);
         Glide.with(this).load(R.raw.mic_off).into(mic_btn);
         mic_btn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
+                if(menuboard.getVisibility() == View.VISIBLE) {
+                    menuboard.setVisibility(View.GONE);
+                    searchboard.setVisibility(View.VISIBLE);
+                }
                 if(IsMicOn == false){
                     Glide.with(v).load(R.raw.mic_on).into(mic_btn);
                     IsMicOn = true;
@@ -276,8 +303,10 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivity.GetData task = new MainActivity.GetData();
         task.execute(serverUrl + "getjson.php");
+        URLConnector request = null;
         stt = findViewById(R.id.stt_window);
         initV2Dialogflow();
+        NetworkUtil.setNetworkPolicy();
     }
 
     private void changeView(int index) {
@@ -357,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
         if(cat.equals("버거")){
             db_cat = DB_result_burger;
         }
-        else if(cat.equals("세트/팩")){
+        else if(cat.equals("세트")){
             db_cat = DB_result_set;
         }
         else if(cat.equals("디저트")){
@@ -792,6 +821,161 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 1);
     }
 
+    public void SearchOnClick(View v)
+    {
+        intent = new Intent(this, com.example.stt_kiosk.PopupActivity.class);
+        stream = new ByteArrayOutputStream();
+        ArrayList<ArrayList<String>> db_cat = new ArrayList<>();
+        db_cat = DB_result_search;
+        String cat = (String) "";
+
+        switch (v.getId()){
+            case R.id.search_btn1:
+                name = (TextView) findViewById(R.id.search_name1);
+                price = (TextView) findViewById(R.id.search_price1);
+                cat = db_cat.get(0).get(0);
+                exp = db_cat.get(0).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(0).get(5));
+                nutrient.add(db_cat.get(0).get(6));
+                nutrient.add(db_cat.get(0).get(7));
+                nutrient.add(db_cat.get(0).get(8));
+                nutrient.add(db_cat.get(0).get(9));
+                nutrient.add(db_cat.get(0).get(10));
+                allergy = db_cat.get(0).get(11);
+                origin = db_cat.get(0).get(12);
+                img = (ImageView) findViewById(R.id.search_img1);
+                break;
+            case R.id.search_btn2:
+                name = (TextView) findViewById(R.id.search_name2);
+                price = (TextView) findViewById(R.id.search_price2);
+                cat = db_cat.get(1).get(0);
+                exp = db_cat.get(1).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(1).get(5));
+                nutrient.add(db_cat.get(1).get(6));
+                nutrient.add(db_cat.get(1).get(7));
+                nutrient.add(db_cat.get(1).get(8));
+                nutrient.add(db_cat.get(1).get(9));
+                nutrient.add(db_cat.get(1).get(10));
+                allergy = db_cat.get(1).get(11);
+                origin = db_cat.get(1).get(12);
+                img = findViewById(R.id.search_img2);
+                break;
+            case R.id.search_btn3:
+                name = (TextView) findViewById(R.id.search_name3);
+                price = (TextView) findViewById(R.id.search_price3);
+                cat = db_cat.get(2).get(0);
+                exp = db_cat.get(2).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(2).get(5));
+                nutrient.add(db_cat.get(2).get(6));
+                nutrient.add(db_cat.get(2).get(7));
+                nutrient.add(db_cat.get(2).get(8));
+                nutrient.add(db_cat.get(2).get(9));
+                nutrient.add(db_cat.get(2).get(10));
+                allergy = db_cat.get(2).get(11);
+                origin = db_cat.get(2).get(12);
+                img = findViewById(R.id.search_img3);
+                break;
+            case R.id.search_btn4:
+                name = (TextView) findViewById(R.id.search_name4);
+                price = (TextView) findViewById(R.id.search_price4);
+                cat = db_cat.get(3).get(0);
+                exp = db_cat.get(3).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(3).get(5));
+                nutrient.add(db_cat.get(3).get(6));
+                nutrient.add(db_cat.get(3).get(7));
+                nutrient.add(db_cat.get(3).get(8));
+                nutrient.add(db_cat.get(3).get(9));
+                nutrient.add(db_cat.get(3).get(10));
+                allergy = db_cat.get(3).get(11);
+                origin = db_cat.get(3).get(12);
+                img = findViewById(R.id.search_img4);
+                break;
+            case R.id.menu_btn5:
+                name = (TextView) findViewById(R.id.search_name5);
+                price = (TextView) findViewById(R.id.search_price5);
+                cat = db_cat.get(4).get(0);
+                exp = db_cat.get(4).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(4).get(5));
+                nutrient.add(db_cat.get(4).get(6));
+                nutrient.add(db_cat.get(4).get(7));
+                nutrient.add(db_cat.get(4).get(8));
+                nutrient.add(db_cat.get(4).get(9));
+                nutrient.add(db_cat.get(4).get(10));
+                allergy = db_cat.get(4).get(11);
+                origin = db_cat.get(4).get(12);
+                img = findViewById(R.id.search_img5);
+                break;
+            case R.id.search_btn6:
+                name = (TextView) findViewById(R.id.search_name6);
+                price = (TextView) findViewById(R.id.search_price6);
+                cat = db_cat.get(5).get(0);
+                exp = db_cat.get(5).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(5).get(5));
+                nutrient.add(db_cat.get(5).get(6));
+                nutrient.add(db_cat.get(5).get(7));
+                nutrient.add(db_cat.get(5).get(8));
+                nutrient.add(db_cat.get(5).get(9));
+                nutrient.add(db_cat.get(5).get(10));
+                allergy = db_cat.get(5).get(11);
+                origin = db_cat.get(5).get(12);
+                img = findViewById(R.id.search_img6);
+                break;
+            case R.id.search_btn7:
+                name = (TextView) findViewById(R.id.search_name7);
+                price = (TextView) findViewById(R.id.search_price7);
+                cat = db_cat.get(6).get(0);
+                exp = db_cat.get(6).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(6).get(5));
+                nutrient.add(db_cat.get(6).get(6));
+                nutrient.add(db_cat.get(6).get(7));
+                nutrient.add(db_cat.get(6).get(8));
+                nutrient.add(db_cat.get(6).get(9));
+                nutrient.add(db_cat.get(6).get(10));
+                allergy = db_cat.get(6).get(11);
+                origin = db_cat.get(6).get(12);
+                img = findViewById(R.id.search_img7);
+                break;
+            case R.id.search_btn8:
+                name = (TextView) findViewById(R.id.search_name8);
+                price = (TextView) findViewById(R.id.search_price8);
+                cat = db_cat.get(7).get(0);
+                exp = db_cat.get(7).get(4);
+                nutrient = new ArrayList<String>();
+                nutrient.add(db_cat.get(7).get(5));
+                nutrient.add(db_cat.get(7).get(6));
+                nutrient.add(db_cat.get(7).get(7));
+                nutrient.add(db_cat.get(7).get(8));
+                nutrient.add(db_cat.get(7).get(9));
+                nutrient.add(db_cat.get(7).get(10));
+                allergy = db_cat.get(7).get(11);
+                origin = db_cat.get(7).get(12);
+                img = findViewById(R.id.search_img8);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
+        }
+        image = (BitmapDrawable) img.getDrawable();
+        Bitmap bitmap = image.getBitmap();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byteArray = stream.toByteArray();
+        intent.putExtra("image", byteArray);
+        intent.putExtra("name", name.getText().toString());
+        intent.putExtra("price", price.getText().toString());
+        intent.putExtra("cat", cat);
+        intent.putExtra("exp", exp);
+        intent.putExtra("nutrient",nutrient);
+        intent.putExtra("allergy", allergy);
+        intent.putExtra("origin", origin);
+        startActivityForResult(intent, 1);
+    }
+
     public static void setTotalPrice(int total_int){
         DecimalFormat formatter = new DecimalFormat("###,###");
         total_price.setText(formatter.format(total_int)+"원");
@@ -823,15 +1007,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class GetData extends AsyncTask<String, Void, String>{
-        ProgressDialog progressDialog;
+        //        ProgressDialog progressDialog;
         String errorString = null;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
-            progressDialog = ProgressDialog.show(MainActivity.this,
-                    "Please Wait", null, true, true);
+            Log.d("preexecute", "here");
+//            progressDialog = ProgressDialog.show(MainActivity.this,
+//                    "Please Wait", null, true, true);
         }
 
 
@@ -839,15 +1023,17 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            progressDialog.dismiss();
+//            progressDialog.dismiss();
             Log.d(TAG, "response  - " + result);
 
             if (result == null){
-
+                Log.d("postexecute", "null");
                 stt.setText(errorString);
             }
             else {
+
                 mJsonString = result;
+                Log.d("postexecute", result);
                 showResult();
             }
         }
@@ -1084,6 +1270,96 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    private void getResult(){
+        try {
+            JSONObject jsonObject = new JSONObject(mJsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
+            DB_result_search= new ArrayList<ArrayList<String>>();
+
+            for(int i=0;i<jsonArray.length();i++){
+
+                JSONObject item = jsonArray.getJSONObject(i);
+
+                category_db = item.getString(TAG_CATEGORY);
+                name_db = item.getString(TAG_NAME);
+                price_db = item.getString(TAG_PRICE);
+                image_db = item.getString(TAG_IMAGE);
+                descript_db = item.getString(TAG_DESCRIPT);
+                totalweight_db = item.getString(TAG_TOTALWEIGHT);
+                calorie_db = item.getString(TAG_CALORIE);
+                protein_db = item.getString(TAG_PROTEIN);
+                sodium_db = item.getString(TAG_SODIUM);
+                sugar_db = item.getString(TAG_SUGAR);
+                saturatedfat_db = item.getString(TAG_SATURATEDFAT);
+                allergy_db = item.getString(TAG_ALLERGY);
+                origin_db = item.getString(TAG_ORIGIN);
+                DB_item = new ArrayList<String>();
+                DB_item.add(category_db);
+                DB_item.add(name_db);
+                DB_item.add(price_db);
+                DB_item.add(image_db);
+                DB_item.add(descript_db);
+                DB_item.add(totalweight_db);
+                DB_item.add(calorie_db);
+                DB_item.add(protein_db);
+                DB_item.add(sodium_db);
+                DB_item.add(sugar_db);
+                DB_item.add(saturatedfat_db);
+                DB_item.add(allergy_db);
+                DB_item.add(origin_db);
+                DB_result_search.add(DB_item);
+                setSearchResult();
+                Log.d(TAG, "database result =" + DB_item.get(1));
+            }
+
+        } catch (JSONException e) {
+
+            Log.d(TAG, "showResult : ", e);
+        }
+
+    }
+
+    void setSearchResult() {
+        DecimalFormat formatter = new DecimalFormat("###,###");
+        ArrayList<ImageView> searchboardImg = new ArrayList();
+        ArrayList<TextView> searchboardName = new ArrayList();
+        ArrayList<TextView> searchboardPrice = new ArrayList();
+        ArrayList<TextView> searchboardInfo = new ArrayList();
+        ArrayList<LinearLayout> searchboardBtn = new ArrayList();
+
+        for(int i=1; i<9; i++) {
+            int imgID = context.getResources().getIdentifier("search_img"+i, "id", "com.example.stt_kiosk");
+            int nameID = context.getResources().getIdentifier("search_name"+i, "id", "com.example.stt_kiosk");
+            int priceID = context.getResources().getIdentifier("search_price"+i, "id", "com.example.stt_kiosk");
+            int infoID = context.getResources().getIdentifier("search_info"+i, "id", "com.example.stt_kiosk");
+            int btnID = context.getResources().getIdentifier("search_btn"+i, "id", "com.example.stt_kiosk");
+            searchboardImg.add((ImageView) findViewById(imgID));
+            searchboardName.add((TextView) findViewById(nameID));
+            searchboardPrice.add((TextView) findViewById(priceID));
+            searchboardInfo.add((TextView) findViewById(infoID));
+            searchboardBtn.add((LinearLayout) findViewById(btnID));
+        }
+
+        int db_size = DB_result_search.size();
+        db_size = min(db_size,8);
+        int i=0;
+        for(; i<db_size; i++) {
+            searchboardImg.get(i).setImageResource(context.getResources().getIdentifier(DB_result_search.get(i).get(3), "drawable", "com.example.stt_kiosk"));
+            searchboardImg.get(i).setVisibility(View.VISIBLE);
+            searchboardName.get(i).setText(DB_result_search.get(i).get(1));
+            searchboardPrice.get(i).setText(formatter.format(Integer.parseInt(DB_result_search.get(i).get(2)))+"원");
+            searchboardBtn.get(i).setEnabled(true);
+//            searchboardInfo.get(i).setText(DB_result_search.get(i).get(1));
+        }
+        for(; i < 8; i++){
+            searchboardImg.get(i).setImageResource(R.drawable.burger_az);
+            searchboardImg.get(i).setVisibility(View.INVISIBLE);
+            searchboardName.get(i).setText("");
+            searchboardPrice.get(i).setText("");
+            searchboardInfo.get(i).setText("");
+            searchboardBtn.get(i).setEnabled(false);
+        }
+    }
 
     private void initV2Dialogflow() {
         try {
@@ -1111,7 +1387,6 @@ public class MainActivity extends AppCompatActivity {
             new RequestJavaV2Task(MainActivity.this, session, sessionsClient, queryInput).execute();
         }
     }
-
     public void callbackV2(DetectIntentResponse response) {
         if(response != null) {
             String dialogReply = response.getQueryResult().getFulfillmentText();
@@ -1124,13 +1399,13 @@ public class MainActivity extends AppCompatActivity {
                 String sqlString = "select * from menuboard ";
                 switch (parseReply[0]) {
                     case "search_menu" :
-                        sqlString += ("where name = \"" + search_keys[0]+"\"");
+                        sqlString += ("where name like (\"%" + search_keys[0]+"%\")");
                         break;
                     case "search_best_menu" :
                         if(!search_keys[0].equals("메뉴")) {
                             sqlString += "where category = \"" + search_keys[0] + "\" ";
                         }
-                        sqlString += "order by sales DESC, price DESC LIMIT 6";
+                        sqlString += "order by sales DESC, price DESC LIMIT 8";
                         break;
                     case "search_new_menu" :
                         sqlString += "where name in (select name from new";
@@ -1181,31 +1456,55 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 // Top5
                                 if(search_keys[2].equals("많은") || search_keys[2].equals("높은")) {
-//                                    select * from menuboard where category = "버거" order by totalweight[nutrient] desc, price desc limit 6;
-//                                    select * from menuboard order by totalweight[nutrient] desc, price desc limit 6;
-                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " desc, price desc limit 6");
+//                                    select * from menuboard where category = "버거" order by totalweight[nutrient] desc, price desc limit 8;
+//                                    select * from menuboard order by totalweight[nutrient] desc, price desc limit 8;
+                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " desc, price desc limit 8");
                                 }
                                 else {
-//                                    select * from menuboard where category = "버거" order by totalweight asc, price desc limit 6;
-//                                    select * from menuboard order by totalweight asc, price desc limit 6;
-                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " asc, price desc limit 6");
+//                                    select * from menuboard where category = "버거" order by totalweight asc, price desc limit 8;
+//                                    select * from menuboard order by totalweight asc, price desc limit 8;
+                                    sqlString += (nutrientCateg + " order by " + search_keys[1] + " asc, price desc limit 8");
                                 }
                             }
                             else {
                                 if(search_keys[2].equals("이상")) {
-//                                    select * from menuboard where category = "버거" and totalweight >= 700 order by totalweight asc, price desc limit 6;
-//                                    select * from menuboard where totalweight >= 700 order by totalweight asc, price desc limit 6;
-                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " >= " + search_keys[3] + " order by " + search_keys[1] + " asc, price desc limit 6");
+//                                    select * from menuboard where category = "버거" and totalweight >= 700 order by totalweight asc, price desc limit 8;
+//                                    select * from menuboard where totalweight >= 700 order by totalweight asc, price desc limit 8;
+                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " >= " + search_keys[3] + " order by " + search_keys[1] + " asc, price desc limit 8");
                                 }
                                 else {
-//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 6;
-//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 6;
-                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " <= " + search_keys[3] + " order by " + search_keys[1] + " desc, price desc limit 6");
+//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 8;
+//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 8;
+                                    sqlString += ("where " + nutrientCateg + search_keys[1] + " <= " + search_keys[3] + " order by " + search_keys[1] + " desc, price desc limit 8");
                                 }
                             }
                         }
                         break;
+                    case "search_by_hotcold" :
+//                        select * from menuboard where name in (select name from hotcold where hot = 1);
+                        if(search_keys[1].equals("뜨거운")) {
+                            search_keys[1] = "1";
+                        }
+                        else {
+                            search_keys[1] = "0";
+                        }
+                        sqlString += ("where name in (select name from hotcold where hot = \"" + search_keys[1]);
+                        if(!search_keys[0].equals("메뉴")) {
+                            sqlString += ("\" and category = \"" + search_keys[0]);
+                        }
+                        sqlString += "\")";
+                        break;
                     case "search_by_ingredient" :
+                        sqlString += "where ";
+                        if(!search_keys[0].equals("메뉴")) {
+                            sqlString += ("category = \"" + search_keys[0] + "\" and ");
+                        }
+                        if(search_keys[2].equals("들어간")) {
+                            sqlString += ("(allergy like (\"%" + search_keys[1] + "%\") or ingredient like (\"%" + search_keys[1] + "%\"))");
+                        }
+                        else {
+                            sqlString += ("not (allergy like (\"%" + search_keys[1] + "%\") or ingredient like (\"%" + search_keys[1] + "%\"))");
+                        }
                         break;
                     case "search_by_price" :
                         String priceCateg;
@@ -1216,8 +1515,8 @@ public class MainActivity extends AppCompatActivity {
                             priceCateg = "";
                         }
                         if(search_keys[1].equals("AdjPrice")) { // 가격이 ~인 경우
-//                            Select * from menuboard where category = "버거" price = 3000 order by name desc limit 6;
-//                            Select * from menuboard where price = 3000 order by name desc limit 6;
+//                            Select * from menuboard where category = "버거" price = 3000 order by name desc limit 8;
+//                            Select * from menuboard where price = 3000 order by name desc limit 8;
                             sqlString += ("where " + priceCateg + "price = " + search_keys[2]);
                         }
                         else {
@@ -1228,26 +1527,26 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 // Top5
                                 if(search_keys[1].equals("비싼")) {
-//                                    Select * from menuboard where category = "버거" order by price desc, name desc limit 6;
-//                                    Select * from menuboard order by price desc, name desc limit 6;
-                                    sqlString += (priceCateg + " order by price desc, name desc limit 6");
+//                                    Select * from menuboard where category = "버거" order by price desc, name desc limit 8;
+//                                    Select * from menuboard order by price desc, name desc limit 8;
+                                    sqlString += (priceCateg + " order by price desc, name desc limit 8");
                                 }
                                 else {
-//                                    Select * from menuboard where category = "버거" order by price asc, name desc limit 6;
-//                                    Select * from menuboard order by price asc, name desc limit 6;
-                                    sqlString += (priceCateg + " order by price asc, name desc limit 6");
+//                                    Select * from menuboard where category = "버거" order by price asc, name desc limit 8;
+//                                    Select * from menuboard order by price asc, name desc limit 8;
+                                    sqlString += (priceCateg + " order by price asc, name desc limit 8");
                                 }
                             }
                             else {
                                 if(search_keys[1].equals("이상")) {
-//                                    Select * from menuboard where category = "버거" and price >= 3000 order by price asc, name desc limit 6;
-//                                    Select * from menuboard where price >= 3000 order by price asc, name desc limit 6;
-                                    sqlString += ("where " + priceCateg + " price >= " + search_keys[2] + " order by price asc, name desc limit 6");
+//                                    Select * from menuboard where category = "버거" and price >= 3000 order by price asc, name desc limit 8;
+//                                    Select * from menuboard where price >= 3000 order by price asc, name desc limit 8;
+                                    sqlString += ("where " + priceCateg + " price >= " + search_keys[2] + " order by price asc, name desc limit 8");
                                 }
                                 else {
-//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 6;
-//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 6;
-                                    sqlString += ("where " + priceCateg + " price <= " + search_keys[2] + " order by price desc, name desc limit 6");
+//                                    select * from menuboard where category = "버거" and totalweight <= 700 order by totalweight desc, price desc limit 8;
+//                                    select * from menuboard where totalweight <= 700 order by totalweight desc, price desc limit 8;
+                                    sqlString += ("where " + priceCateg + " price <= " + search_keys[2] + " order by price desc, name desc limit 8");
                                 }
                             }
                         }
@@ -1263,16 +1562,24 @@ public class MainActivity extends AppCompatActivity {
                         if(!search_keys[0].equals("메뉴")) {
                             sqlString += (" and category = \"" + search_keys[0] + "\"");
                         }
-                        sqlString += " order by sales DESC, price DESC LIMIT 6";
+                        sqlString += " order by sales DESC, price DESC LIMIT 8";
                         break;
                 }
                 sqlString += ";";
                 stt.setText(parseReply[1]+"\n"+sqlString);
+                try {
+                    URLConnector search_request = new URLConnector(serverUrl+"selectjson.php");
+                    String search_result = search_request.PhPtest(sqlString);
+                    mJsonString = search_result;
+                    getResult();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }
         }
+
         else {
             stt.setText("There was some communication issue. Please Try again!");
         }
     }
-
 }

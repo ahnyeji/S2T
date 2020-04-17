@@ -71,7 +71,7 @@ public class ListViewBtnAdapter extends ArrayAdapter {
 
 
         LinearLayout item_sub = (LinearLayout) convertView.findViewById(R.id.item_sub);
-        if(items.get(position).cat_list.equals("세트/팩")){
+        if(items.get(position).cat_list.equals("세트")){
             dessert_str = "디저트 : " + items.get(position).getDessert();
             drink_str = ",  음료 : " + items.get(position).getDrink();
             if(!items.get(position).isEmptyTopping(items.get(position).getTopping())){
