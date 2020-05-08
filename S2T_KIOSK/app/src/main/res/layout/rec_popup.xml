@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:text="메뉴를 5개 이상 선택하여 별점을 주세요"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_cnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ECECEC"
+                    android:text="  버거"
+                    android:textSize="30sp" />
+
+                <TableLayout
+                    android:id="@+id/burger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view25"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView65"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view27"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/bg_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="모짜렐라 \n인 더 버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view22"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView66"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+
+                                <ImageView
+                                    android:id="@+id/imageView19"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/checkcircle" />
+
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view24"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/set_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="핫크리스피버거"
+                                android:textSize="24sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view28"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView67"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view31"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/des_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="AZ버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view39"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView68"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view38"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/dri_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="클래식치즈버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view72"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView69"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view59"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/chi_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="모짜렐라 \n인 더 버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view74"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView70"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view73"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="핫크리스피버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view76"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView39"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view75"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="AZ버거"
+                                android:textSize="24sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view10"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view78"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView40"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view77"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/total_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="클래식치즈버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view11"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view12"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view80"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView41"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view79"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="모짜렐라 \n인 더 버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view13"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view82"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView42"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view81"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="핫크리스피버거"
+                                android:textSize="24sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view14"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view84"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView43"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view83"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="AZ버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view15"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view85"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView44"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view86"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView14"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="클래식치즈버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view16"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view17"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view87"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView45"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view88"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="모짜렐라 \n인 더 버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view18"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view90"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView46"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view89"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="핫크리스피버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view19"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view91"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView47"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view92"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="AZ버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view20"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical">
+
+                            <View
+                                android:id="@+id/view93"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/imageView48"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/set_azburger" />
+                            </FrameLayout>
+
+                            <View
+                                android:id="@+id/view94"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="클래식치즈버거"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view21"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ECECEC"
+                    android:text="  세트"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:id="@+id/view43"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view44"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#E40202"
+                android:textSize="43sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=" / 5"
+                android:textColor="#E40202"
+                android:textSize="43sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="  (최소 개수)"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view45"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view97"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/cancel_dessert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@drawable/cancel_background"
+            android:gravity="center"
+            android:text="취소"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view98"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <Button
+            android:id="@+id/ok_dessert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@drawable/gray_background"
+            android:text="완료"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view99"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view100"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7" />
+</LinearLayout>
