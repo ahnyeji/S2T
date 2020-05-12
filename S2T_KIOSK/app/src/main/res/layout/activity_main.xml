@@ -681,7 +681,7 @@
                             android:visibility="gone">
 
                             <TextView
-                                android:id="@+id/textView18"
+                                android:id="@+id/stt_title"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="3"
@@ -904,7 +904,7 @@
                             android:visibility="visible">
 
                             <TextView
-                                android:id="@+id/textView46"
+                                android:id="@+id/stt_window"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="2"
@@ -915,6 +915,7 @@
                                 android:textStyle="bold" />
 
                             <TableLayout
+                                android:id="@+id/stt_table"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="15">
@@ -941,6 +942,7 @@
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
@@ -948,8 +950,7 @@
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
-                                                android:scaleType="fitCenter"
-                                                app:srcCompat="@drawable/burger_az" />
+                                                android:scaleType="fitCenter" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -963,7 +964,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
-                                                    android:text="핫크리스피버거"
+                                                    android:text=""
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -973,7 +974,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
-                                                    android:text="5,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />
@@ -991,6 +992,7 @@
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
@@ -998,8 +1000,7 @@
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="1"
-                                                android:scaleType="fitCenter"
-                                                app:srcCompat="@drawable/burger_az" />
+                                                android:scaleType="fitCenter" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -1013,7 +1014,6 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
-                                                    android:text="AZ버거"
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -1023,7 +1023,7 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
-                                                    android:text="5,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />
@@ -1061,14 +1061,14 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
                                                 android:id="@+id/rec_menu_img2"
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                app:srcCompat="@drawable/burger_bigbul" />
+                                                android:layout_weight="1" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -1081,7 +1081,7 @@
                                                     android:id="@+id/rec_menu_name2"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="불고기버거"
+                                                    android:text=""
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -1090,7 +1090,7 @@
                                                     android:id="@+id/rec_menu_price2"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="4,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />
@@ -1108,14 +1108,14 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
                                                 android:id="@+id/rec_menu_img3"
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                app:srcCompat="@drawable/burger_bigbul" />
+                                                android:layout_weight="1" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -1128,7 +1128,7 @@
                                                     android:id="@+id/rec_menu_name3"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="불고기버거"
+                                                    android:text=""
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -1137,7 +1137,7 @@
                                                     android:id="@+id/rec_menu_price3"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="4,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />
@@ -1176,14 +1176,14 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
                                                 android:id="@+id/rec_menu_img4"
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                app:srcCompat="@drawable/burger_chicken" />
+                                                android:layout_weight="1" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -1196,7 +1196,7 @@
                                                     android:id="@+id/rec_menu_name4"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="치킨버거"
+                                                    android:text=""
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -1205,7 +1205,7 @@
                                                     android:id="@+id/rec_menu_price4"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="4,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />
@@ -1223,14 +1223,14 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight="12"
+                                            android:onClick="SearchOnClick"
                                             android:orientation="horizontal">
 
                                             <ImageView
                                                 android:id="@+id/rec_menu_img5"
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
-                                                android:layout_weight="1"
-                                                app:srcCompat="@drawable/burger_chicken" />
+                                                android:layout_weight="1" />
 
                                             <LinearLayout
                                                 android:layout_width="0dp"
@@ -1243,7 +1243,7 @@
                                                     android:id="@+id/rec_menu_name5"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="핫크리스피버거"
+                                                    android:text=""
                                                     android:textColor="#000000"
                                                     android:textSize="27sp"
                                                     android:textStyle="bold" />
@@ -1252,7 +1252,7 @@
                                                     android:id="@+id/rec_menu_price5"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
-                                                    android:text="4,000"
+                                                    android:text=""
                                                     android:textColor="#FF7979"
                                                     android:textSize="24sp"
                                                     android:textStyle="bold" />

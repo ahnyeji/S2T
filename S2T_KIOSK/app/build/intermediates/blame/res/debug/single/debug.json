@@ -1,0 +1,726 @@
+[
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_ciderr.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_ciderr.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_teriyaki.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_teriyaki.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_americano.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_americano.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_leanmeatfullpack.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_leanmeatfullpack.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_mustard.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_mustard.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_volvic.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_volvic.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_rec_start.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/rec_start.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_hotchoco.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_hotchoco.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_dialog_dessert.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/dialog_dessert.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_init_logo.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/init_logo.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_potatochilli.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_potatochilli.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_milkshakestrawberry.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_milkshakestrawberry.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_bulgogiburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_bulgogiburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_pack_hanwoopremium.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/pack_hanwoopremium.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_fragment_first.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/fragment_first.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_squidring.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_squidring.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_mozzarellabacon.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_mozzarellabacon.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_down.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/down.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_orangejuice.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_orangejuice.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_milkshakevanilla.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_milkshakevanilla.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_softcone.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_softcone.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_doublex2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_doublex2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_dialog_topping.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/dialog_topping.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_potatoonion.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_potatoonion.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_white_radius.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/white_radius.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_friedchicken.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_friedchicken.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_left.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/left.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_logo.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_leanmeathalfpack.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_leanmeathalfpack.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mushroom.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mushroom.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_recommend_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/recommend_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_chickenburger.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_chickenburger.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_tomato.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/tomato.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_fillet4.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_fillet4.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_star.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/star.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_hot.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_hot.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_trex.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_trex.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_rec_start.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/rec_start.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_shrimpburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_shrimpburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_shakeshakecheese.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_shakeshakecheese.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_bacon.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/bacon.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_backup.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/backup.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_longcheesestick.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_longcheesestick.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/raw_mic_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/raw/mic_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_potatocheese.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_potatocheese.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_sundaystrawberry.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_sundaystrawberry.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_sizzlingonion.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_sizzlingonion.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_greenteatornado.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_greenteatornado.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_doublex2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_doublex2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_sizzlingcheese.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_sizzlingcheese.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_list_down.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/list_down.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_gray_background.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/gray_background.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_x.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/x.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mic_dot.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mic_dot.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_fragment_second.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/fragment_second.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mic_balloon.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mic_balloon.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_shrimp.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_shrimp.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_treviplain.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_treviplain.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_pack_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/pack_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_fragment_third.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/fragment_third.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_halfpack.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_halfpack.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/raw_hystt.json.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/raw/hystt.json"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_loading_rec.gif.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/loading_rec.gif"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_iceamericano.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_iceamericano.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_riamiracle.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_riamiracle.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_bigbulgogi.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_bigbulgogi.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_dialog_detail.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/dialog_detail.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_familypack.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_familypack.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_azburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_azburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_ciders.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_ciders.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mic_white.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mic_white.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_hanwoobulgogi.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_hanwoobulgogi.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_strawberrytornado.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_strawberrytornado.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_teriburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_teriburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_classiccheese.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_classiccheese.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_list_up.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/list_up.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_rec_ing.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/rec_ing.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_shakeshakechilli.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_shakeshakechilli.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_call.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/call.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_jipiehabanerol.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_jipiehabanerol.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_rec_star.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/rec_star.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_chococookietornado.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_chococookietornado.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_checkcircle.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/checkcircle.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_lemonade.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_lemonade.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_firewing2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_firewing2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_colarl.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_colarl.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_fillet2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_fillet2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_classiccheeseburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_classiccheeseburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_help.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/help.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_listview_order.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/listview_order.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_cheesestickoriginal.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_cheesestickoriginal.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_hondak.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_hondak.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_ice.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/ice.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_jipies.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_jipies.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_cheese.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/cheese.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_sizzlingchilli.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_sizzlingchilli.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_wagyuedition2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_wagyuedition2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/raw_mic_on.gif.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/raw/mic_on.gif"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_bulgogi.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_bulgogi.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_potato.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_potato.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_rec_popup.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/rec_popup.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_next.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/next.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_star_gray.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/star_gray.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mic_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mic_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_riamiracle.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_riamiracle.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_sauce_sweetsour.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/sauce_sweetsour.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_home.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/home.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_pack_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/pack_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_hanwoobulgogi.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_hanwoobulgogi.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_burdocktea.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_burdocktea.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_black_radius.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/black_radius.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_mic_on.gif.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/mic_on.gif"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_icecaffelatte.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_icecaffelatte.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_listview.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/listview.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_cafelatte.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_cafelatte.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_recommend_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/recommend_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_back.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/back.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_bigbul.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_bigbul.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_info.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/info.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_hotcrispychicken.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_hotcrispychicken.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_trexburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_trexburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_strawberrylatte.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_strawberrylatte.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_colar.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_colar.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_americanos.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_americanos.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_az.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_az.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_iceamericanol.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_iceamericanol.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_chicken.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_chicken.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_hotcrispychickenburger.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_hotcrispychickenburger.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_teri.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_teri.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_white.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/white.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_graphic.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/graphic.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_firewing4.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_firewing4.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_milkshakechoco.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_milkshakechoco.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_chickennugget.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_chickennugget.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_popup_activity.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/popup_activity.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_payment_background.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/payment_background.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_cornsalad.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_cornsalad.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_activity_order.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/activity_order.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_dialog_drink.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/dialog_drink.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_shakeshakeonion.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_shakeshakeonion.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_icedtea.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_icedtea.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_right.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/right.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_on.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_on.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_milk.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_milk.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_mozzarellaintheburgerbacon.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_mozzarellaintheburgerbacon.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_cancel_background.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/cancel_background.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_dessert_potatol.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/dessert_potatol.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_burger_wagyuedition2.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/burger_wagyuedition2.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_chicken_fullpack.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/chicken_fullpack.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_colars.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_colars.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_set_off.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/set_off.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_combo_hanwoobulgogi.jpg.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/combo_hanwoobulgogi.jpg"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/layout_rec_result.xml.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/layout/rec_result.xml"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_pack_hanwoocouple.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/pack_hanwoocouple.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_patty.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/patty.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/drawable_drink_ciderl.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/drawable/drink_ciderl.png"
+    },
+    {
+        "merged": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/build/intermediates/res/merged/debug/raw_mic_dot.png.flat",
+        "source": "/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/res/raw/mic_dot.png"
+    }
+]
