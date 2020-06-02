@@ -30,6 +30,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".PopupActivityRec" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".OrderActivity"></activity>
     </application>
 
 </manifest>

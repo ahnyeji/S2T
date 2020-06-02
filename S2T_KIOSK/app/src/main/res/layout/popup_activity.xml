@@ -6,237 +6,134 @@
     android:background="@drawable/white_radius"
     android:orientation="vertical">
 
-    <View
-        android:id="@+id/view129"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
+    <ImageView
+        android:id="@+id/detail_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="onChangeClicked"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
-
-        <View
-            android:id="@+id/view151"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="9" />
 
         <ImageView
-            android:id="@+id/detail_btn"
+            android:id="@+id/popup_img"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:onClick="onChangeClicked"
-            android:scaleType="fitCenter"
-            android:src="@drawable/info" />
-
-        <View
-            android:id="@+id/view150"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4.5"
-        android:orientation="horizontal">
-
-        <View
-            android:id="@+id/view134"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
+            android:layout_height="200dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="2"
+            android:paddingLeft="30dp"
+            android:paddingRight="15dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/burger_az" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="6"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
             android:orientation="vertical">
-
-            <View
-                android:id="@+id/view137"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5" />
-
-            <ImageView
-                android:id="@+id/popup_img"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"
-                app:srcCompat="@drawable/burger_az" />
-
-            <View
-                android:id="@+id/view138"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5" />
-        </LinearLayout>
-
-        <View
-            android:id="@+id/view135"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:orientation="vertical">
-
-            <View
-                android:id="@+id/view152"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.2" />
 
             <TextView
                 android:id="@+id/popup_name"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:gravity="clip_vertical"
                 android:text="새우버거 세트"
                 android:textColor="#000000"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
-
-            <View
-                android:id="@+id/view154"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0" />
 
             <TextView
                 android:id="@+id/popup_exp"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="clip_vertical"
                 android:text="풍부한 맛의 씨푸드 버거"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <View
-                android:id="@+id/view139"
+            <TextView
+                android:id="@+id/popup_price"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/popup_price"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7"
-                    android:gravity="right"
-                    android:text="5,700"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:gravity="clip_vertical|right"
+                android:text="5,700"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <View
-            android:id="@+id/view136"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.5" />
     </LinearLayout>
-
-    <View
-        android:id="@+id/view130"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
 
     <LinearLayout
         android:id="@+id/popup_option"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="#FFFFFF"
         android:orientation="horizontal">
-
-        <View
-            android:id="@+id/view140"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"
             android:layout_weight="8"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/popup_dessert"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:onClick="onChangeClicked"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:orientation="vertical">
-
-                    <View
-                        android:id="@+id/view159"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView31"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="디저트 변경"
                         android:textColor="#000000"
-                        android:textSize="23sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view160"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.1" />
 
                     <TextView
                         android:id="@+id/dessert_selected"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="포테이토"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
                 </LinearLayout>
 
-                <View
-                    android:id="@+id/view144"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3" />
-
                 <ImageView
                     android:id="@+id/imageView25"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="0.3"
                     android:scaleType="fitCenter"
                     android:src="@drawable/next" />
@@ -246,67 +143,48 @@
             <View
                 android:id="@+id/viewDessert"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
                 android:background="#999999" />
 
             <LinearLayout
                 android:id="@+id/popup_drink"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:onClick="onChangeClicked"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:orientation="vertical">
-
-                    <View
-                        android:id="@+id/view162"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView33"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="음료 변경"
                         android:textColor="#000000"
-                        android:textSize="23sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view163"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.1" />
 
                     <TextView
                         android:id="@+id/drink_selected"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="콜라(R)"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
                 </LinearLayout>
 
-                <View
-                    android:id="@+id/view146"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3" />
-
                 <ImageView
                     android:id="@+id/imageView26"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="0.3"
                     android:scaleType="fitCenter"
                     android:src="@drawable/next" />
@@ -316,160 +194,113 @@
             <View
                 android:id="@+id/viewDrink"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
                 android:background="#999999" />
 
             <LinearLayout
                 android:id="@+id/popup_topping"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:onClick="onChangeClicked"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:orientation="vertical">
-
-                    <View
-                        android:id="@+id/view165"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView35"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="토핑 추가"
                         android:textColor="#000000"
-                        android:textSize="23sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view166"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.1" />
 
                     <TextView
                         android:id="@+id/topping_selected"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="없음"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
                 </LinearLayout>
 
-                <View
-                    android:id="@+id/view148"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3" />
-
                 <ImageView
                     android:id="@+id/imageView27"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_weight="0.3"
                     android:scaleType="fitCenter"
                     android:src="@drawable/next" />
 
             </LinearLayout>
+
         </LinearLayout>
 
-        <View
-            android:id="@+id/view141"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
     </LinearLayout>
-
-    <View
-        android:id="@+id/view131"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal">
-
-        <View
-            android:id="@+id/view155"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="7" />
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:gravity="right|center_vertical"
             android:text="총"
             android:textColor="#E40202"
-            android:textSize="30sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/total_price"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:gravity="end"
+            android:gravity="right|center_vertical"
             android:text="5,700"
             android:textColor="#E40202"
-            android:textSize="30sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
             android:text="원"
             android:textColor="#E40202"
-            android:textSize="30sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
-        <View
-            android:id="@+id/view158"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
     </LinearLayout>
-
-    <View
-        android:id="@+id/view132"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="horizontal">
-
-        <View
-            android:id="@+id/view126"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <Button
             android:id="@+id/cancel_btn"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="15dp"
             android:layout_weight="7"
             android:background="@drawable/cancel_background"
             android:onClick="mOnClose"
@@ -477,16 +308,12 @@
             android:textSize="21sp"
             android:textStyle="bold" />
 
-        <View
-            android:id="@+id/view127"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5" />
-
         <Button
             android:id="@+id/get_btn"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="40dp"
             android:layout_weight="7"
             android:background="@drawable/payment_background"
             android:onClick="mOnOK"
@@ -495,16 +322,6 @@
             android:textSize="21sp"
             android:textStyle="bold" />
 
-        <View
-            android:id="@+id/view128"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/view133"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
 </LinearLayout>

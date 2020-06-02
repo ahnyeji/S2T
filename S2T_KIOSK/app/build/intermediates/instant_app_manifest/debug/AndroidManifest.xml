@@ -39,6 +39,10 @@
         <activity
             android:name="com.example.s2t_kiosk.PopupActivity"
             android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.example.s2t_kiosk.PopupActivityRec"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="com.example.s2t_kiosk.OrderActivity" />
     </application>
 
 </manifest>

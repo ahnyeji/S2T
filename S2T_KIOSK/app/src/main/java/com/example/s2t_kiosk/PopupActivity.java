@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -21,8 +22,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import java.io.ByteArrayOutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+
+import static com.example.s2t_kiosk.MainActivity.list_adapter;
 
 public class PopupActivity extends Activity {
     DecimalFormat formatter = new DecimalFormat("###,###");
@@ -36,6 +40,7 @@ public class PopupActivity extends Activity {
     TextView popupExp;
     ImageView popupImg;
     ArrayList<ListViewBtnItem> items;
+    ArrayList<ListViewBtnItem> order_items;
     ListViewBtnAdapter list_adapter;
     ImageView detail_btn;
 
@@ -61,7 +66,9 @@ public class PopupActivity extends Activity {
     static String dri_price;
 
     public static TextView total_price;
+    public static TextView total_cnt;
     String total_str;
+    int cnt;
     public static int total_int;
     public static int t_price;
     public static String cat;
@@ -74,6 +81,9 @@ public class PopupActivity extends Activity {
     View viewDessert;
     View viewDrink;
 
+    ByteArrayOutputStream stream;
+    byte[] byteArray;
+
     int width;
     int height;
 
@@ -83,9 +93,9 @@ public class PopupActivity extends Activity {
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.popup_activity);
-        Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
+//        Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+//        Point size = new Point();
+//        display.getSize(size);
         this.getWindow().setBackgroundDrawable(new ColorDrawable(0));
 
         dessert_name = (TextView) findViewById(R.id.dessert_selected);
@@ -96,7 +106,7 @@ public class PopupActivity extends Activity {
         popupName = (TextView)findViewById(R.id.popup_name);
         popupPrice = (TextView)findViewById(R.id.popup_price);
         popupExp = (TextView) findViewById(R.id.popup_exp);
-        popupImg = findViewById(R.id.popup_img);
+        popupImg = (ImageView) findViewById(R.id.popup_img);
         //데이터 가져오기
         Intent intent = getIntent();
         byte[] arr = intent.getByteArrayExtra("image");
@@ -134,7 +144,7 @@ public class PopupActivity extends Activity {
             viewDrink.setVisibility(View.GONE);
             popup_topping.setVisibility(View.VISIBLE);
             width = (int) (dm.widthPixels * 0.8); // Display 사이즈의 90%
-            height = (int) (dm.heightPixels * 0.5); // Display 사이즈의 90%
+            height = (int) (dm.heightPixels * 0.48); // Display 사이즈의 90%
 
         }else if(cat.equals("세트")){
             popup_option.setVisibility(View.VISIBLE);
@@ -144,12 +154,12 @@ public class PopupActivity extends Activity {
             viewDrink.setVisibility(View.VISIBLE);
             popup_topping.setVisibility(View.VISIBLE);
             width = (int) (dm.widthPixels * 0.8); // Display 사이즈의 90%
-            height = (int) (dm.heightPixels * 0.7); // Display 사이즈의 90%
+            height = (int) (dm.heightPixels * 0.62); // Display 사이즈의 90%
 
         }else {
             popup_option.setVisibility(View.GONE);
             width = (int) (dm.widthPixels * 0.8); // Display 사이즈의 90%
-            height = (int) (dm.heightPixels * 0.4); // Display 사이즈의 90%
+            height = (int) (dm.heightPixels * 0.39); // Display 사이즈의 90%
         }
         getWindow().getAttributes().width = width;
         getWindow().getAttributes().height = height;
@@ -188,10 +198,16 @@ public class PopupActivity extends Activity {
         setResult(RESULT_OK, intent);
 
         ListViewBtnItem item;
+        stream = new ByteArrayOutputStream();
         item = new ListViewBtnItem();
         String Name_item = (String) popupName.getText().toString();
         String Price_item = (String) popupPrice.getText().toString();
+        BitmapDrawable order_image = (BitmapDrawable) popupImg.getDrawable();
+        Bitmap bitmap = order_image.getBitmap();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byteArray = stream.toByteArray();
         items = (ArrayList<ListViewBtnItem>) MainActivity.getList();
+        item.setImg(byteArray);
         item.setMenu(Name_item);
         item.setNumber("1");
         item.setPrice(Price_item);
@@ -200,6 +216,8 @@ public class PopupActivity extends Activity {
         list_adapter = MainActivity.getList_adapter();
         list_adapter.notifyDataSetChanged();
         MainActivity.setList_adapter(list_adapter);
+//        cnt++;
+//        total_cnt.setText(cnt);
 
         //액티비티(팝업) 닫기
         finish();

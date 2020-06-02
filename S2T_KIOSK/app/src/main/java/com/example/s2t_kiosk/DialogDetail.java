@@ -3,6 +3,7 @@ package com.example.s2t_kiosk;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -12,9 +13,16 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class DialogDetail extends Dialog {
+    int width;
+    int height;
+
     DialogDetail m_oDialog;
+
+    Context m_context;
+
     public DialogDetail(Context context) {
         super(context, android.R.style.Theme_Translucent_NoTitleBar);
+        m_context = context;
     }
     DecimalFormat formatter = new DecimalFormat("###,###");
     public static TextView weight_content;
@@ -39,11 +47,21 @@ public class DialogDetail extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+//        lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+//        lpWindow.dimAmount = 0.5f;
+//        lpWindow.width = 500;
+//        lpWindow.height = 780;
+//        getWindow().setAttributes(lpWindow);
+
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+        DisplayMetrics dm = m_context.getApplicationContext().getResources().getDisplayMetrics();
+        width = (int) (dm.widthPixels * 0.7); // Display 사이즈의 90%
+        height = (int) (dm.heightPixels * 0.8); // Display 사이즈의 90%
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        lpWindow.dimAmount = 0.5f;
-        lpWindow.width = 500;
-        lpWindow.height = 780;
+        lpWindow.dimAmount = 0.7f;
+        lpWindow.width = width;
+        lpWindow.height = height;
         getWindow().setAttributes(lpWindow);
 
         setContentView(R.layout.dialog_detail);

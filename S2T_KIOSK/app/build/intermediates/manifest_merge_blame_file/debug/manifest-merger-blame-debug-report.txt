@@ -34,7 +34,7 @@
 18-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:15:9-38
 19
 20    <application
-20-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:17:5-33:19
+20-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:17:5-35:19
 21        android:allowBackup="true"
 21-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:18:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -73,6 +73,15 @@
 39-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:32:19-48
 40            android:theme="@android:style/Theme.Dialog" />
 40-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:32:49-92
-41    </application>
-42
-43</manifest>
+41        <activity
+41-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:33:9-97
+42            android:name="com.example.s2t_kiosk.PopupActivityRec"
+42-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:33:19-51
+43            android:theme="@android:style/Theme.Dialog" />
+43-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:33:52-95
+44        <activity android:name="com.example.s2t_kiosk.OrderActivity" />
+44-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:34:9-60
+44-->/Users/an-yeji/AndroidStudioProjects/S2T_KIOSK/app/src/main/AndroidManifest.xml:34:19-48
+45    </application>
+46
+47</manifest>

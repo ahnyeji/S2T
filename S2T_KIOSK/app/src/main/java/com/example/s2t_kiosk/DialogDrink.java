@@ -3,6 +3,7 @@ package com.example.s2t_kiosk;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class DialogDrink extends Dialog {
+    int width;
+    int height;
+
     TextView drink_name;
     TextView drink_price;
     String name;
@@ -49,11 +53,20 @@ public class DialogDrink extends Dialog {
         super.onCreate(savedInstanceState);
 
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+        DisplayMetrics dm = context.getApplicationContext().getResources().getDisplayMetrics();
+        width = (int) (dm.widthPixels * 0.85); // Display 사이즈의 90%
+        height = (int) (dm.heightPixels * 0.85); // Display 사이즈의 90%
         lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        lpWindow.dimAmount = 0.5f;
-        lpWindow.width = 750;
-        lpWindow.height = 900;
+        lpWindow.dimAmount = 0.7f;
+        lpWindow.width = width;
+        lpWindow.height = height;
         getWindow().setAttributes(lpWindow);
+
+//        DisplayMetrics dm = context.getApplicationContext().getResources().getDisplayMetrics();
+//        width = (int) (dm.widthPixels * 0.85); // Display 사이즈의 90%
+//        height = (int) (dm.heightPixels * 0.85); // Display 사이즈의 90%
+//        getWindow().getAttributes().width = width;
+//        getWindow().getAttributes().height = height;
 
         setContentView(R.layout.dialog_drink);
 

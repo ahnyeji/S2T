@@ -11,29 +11,29 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         android:background="#E40202"
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="8.4"
         android:background="#FFFFFF"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:elevation="7dp"
-            android:orientation="horizontal">
+            android:layout_weight="1.1"
+            android:background="#ffffff">
 
             <LinearLayout
                 android:id="@+id/back_order"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
+                android:onClick="OnClickBack"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -46,7 +46,7 @@
                         android:id="@+id/view90"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1.4" />
 
                     <ImageView
                         android:id="@+id/imageView19"
@@ -61,7 +61,7 @@
                         android:id="@+id/view91"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1.4" />
                 </LinearLayout>
 
                 <TextView
@@ -73,7 +73,7 @@
                     android:gravity="center|left"
                     android:text="이전으로"
                     android:textColor="#000000"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -96,15 +96,9 @@
                 android:layout_weight="4" />
         </LinearLayout>
 
-        <View
-            android:id="@+id/view89"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5" />
-
         <ListView
             android:id="@+id/list_order"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9">
 
@@ -122,14 +116,14 @@
         android:id="@+id/receipt"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.5"
+        android:layout_weight="2.4"
         android:background="#EFEFEF"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.3"
+            android:layout_weight="1"
             android:background="#EFEFEF"
             android:orientation="horizontal">
 
@@ -144,6 +138,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                android:onClick="OnClickPack"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -194,11 +189,17 @@
             android:layout_weight="0.02"
             android:background="#B9B9B9" />
 
+        <View
+            android:id="@+id/view209"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <View
                 android:id="@+id/view97"
@@ -215,11 +216,11 @@
                 android:gravity="center_vertical"
                 android:text="주문 수량 :"
                 android:textColor="#000000"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/total_cnt"
+                android:id="@+id/order_total_cnt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -227,7 +228,7 @@
                 android:gravity="right|center_vertical"
                 android:text="0"
                 android:textColor="#000000"
-                android:textSize="33sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -239,7 +240,7 @@
                 android:gravity="right|center_vertical"
                 android:text="개"
                 android:textColor="#000000"
-                android:textSize="30sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <View
@@ -254,7 +255,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <View
                 android:id="@+id/view98"
@@ -271,18 +272,18 @@
                 android:gravity="center_vertical"
                 android:text="주문 금액 : "
                 android:textColor="#000000"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/total_price"
+                android:id="@+id/order_total_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
                 android:gravity="right|center_vertical"
                 android:text="0"
                 android:textColor="#E40202"
-                android:textSize="33sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -294,7 +295,7 @@
                 android:gravity="right|center_vertical"
                 android:text="원"
                 android:textColor="#E40202"
-                android:textSize="30sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <View
@@ -304,12 +305,19 @@
                 android:layout_weight="1" />
 
         </LinearLayout>
+
+        <View
+            android:id="@+id/view183"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:background="#EFEFEF"
         android:orientation="vertical">
 
@@ -317,7 +325,7 @@
             android:id="@+id/view70"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.26" />
+            android:layout_weight="0.3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -336,6 +344,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:onClick="OnclickClose"
                 android:orientation="vertical">
 
                 <View
@@ -400,6 +409,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:onClick="OnclickCall"
                 android:orientation="vertical">
 
                 <View
@@ -466,10 +476,11 @@
                 android:layout_gravity="center"
                 android:layout_weight="6"
                 android:background="@drawable/payment_background"
+                android:onClick="OnclickCash"
                 android:stateListAnimator="@null"
                 android:text="현금결제"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -485,10 +496,11 @@
                 android:layout_gravity="center"
                 android:layout_weight="6"
                 android:background="@drawable/payment_background"
+                android:onClick="OnclickCard"
                 android:stateListAnimator="@null"
                 android:text="카드결제"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -503,7 +515,7 @@
             android:id="@+id/view71"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.26" />
+            android:layout_weight="0.3" />
 
     </LinearLayout>
 

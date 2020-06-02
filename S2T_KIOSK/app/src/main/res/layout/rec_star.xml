@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/white_radius"
     android:orientation="vertical">
 
     <View
         android:id="@+id/view116"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.4" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/star_title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:gravity="center"
         android:text="모짜렐라 인 더 버거 세트"
         android:textColor="#000000"
-        android:textSize="36sp"
+        android:textSize="26sp"
         android:textStyle="bold" />
 
     <View
@@ -39,7 +39,7 @@
             android:id="@+id/view120"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.8" />
 
         <ImageView
             android:id="@+id/star1"
@@ -47,13 +47,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/star" />
+            android:src="@drawable/star" />
 
         <View
             android:id="@+id/view121"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.4" />
 
         <ImageView
             android:id="@+id/star2"
@@ -61,13 +61,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/star" />
+            android:src="@drawable/star" />
 
         <View
             android:id="@+id/view122"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.4" />
 
         <ImageView
             android:id="@+id/star3"
@@ -75,13 +75,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/star" />
+            android:src="@drawable/star" />
 
         <View
             android:id="@+id/view123"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.4" />
 
         <ImageView
             android:id="@+id/star4"
@@ -89,13 +89,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/star" />
+            android:src="@drawable/star" />
 
         <View
             android:id="@+id/view124"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.4" />
 
         <ImageView
             android:id="@+id/star5"
@@ -103,25 +103,25 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/star" />
+            android:src="@drawable/star" />
 
         <View
             android:id="@+id/view125"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.8" />
     </LinearLayout>
 
     <View
         android:id="@+id/view118"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.4" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -132,14 +132,14 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/cancel_dessert"
+            android:id="@+id/cancel_star"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:background="@drawable/cancel_background"
             android:text="취소"
             android:textColor="#000000"
-            android:textSize="33sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -149,14 +149,14 @@
             android:layout_weight="0.5" />
 
         <Button
-            android:id="@+id/ok_dessert"
+            android:id="@+id/ok_star"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:background="@drawable/payment_background"
             android:text="완료"
             android:textColor="#FFFFFF"
-            android:textSize="33sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -170,5 +170,5 @@
         android:id="@+id/view119"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="0.4" />
 </LinearLayout>

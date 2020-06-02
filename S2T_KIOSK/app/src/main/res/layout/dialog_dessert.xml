@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/white_radius"
     android:orientation="vertical">
+
+    <View
+        android:id="@+id/view161"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3" />
 
     <TextView
         android:id="@+id/textView1"
@@ -14,7 +20,7 @@
         android:gravity="center"
         android:text="디저트 선택"
         android:textColor="#000000"
-        android:textSize="33sp"
+        android:textSize="29sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -32,7 +38,7 @@
                 android:id="@+id/view2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
 
             <LinearLayout
                 android:id="@+id/dessert_menu0"
@@ -45,12 +51,12 @@
                     android:id="@+id/view25"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img0"
@@ -62,6 +68,7 @@
                         android:id="@+id/dessert_check0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/checkcircle"
                         android:visibility="invisible" />
 
@@ -71,52 +78,41 @@
                     android:id="@+id/dessert_name0"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="포테이토"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
-
-                    <View
-                        android:id="@+id/view263"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView48"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center|right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price0"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
+                        android:gravity="left"
                         android:text="0"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view264"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
                 </LinearLayout>
 
@@ -139,12 +135,12 @@
                     android:id="@+id/view22"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img1"
@@ -156,8 +152,8 @@
                         android:id="@+id/dessert_check1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
 
                 </FrameLayout>
 
@@ -165,17 +161,18 @@
                     android:id="@+id/dessert_name1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="포테이토(L)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_gravity="top"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -192,7 +189,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -200,17 +197,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="400"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view266"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
 
@@ -233,12 +230,12 @@
                     android:id="@+id/view28"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img2"
@@ -250,25 +247,25 @@
                         android:id="@+id/dessert_check2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="지파이 고소한맛"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -285,7 +282,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -293,10 +290,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,900"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -325,12 +322,12 @@
                     android:id="@+id/view39"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img3"
@@ -342,25 +339,25 @@
                         android:id="@+id/dessert_check3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="지파이 하바네로"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -377,7 +374,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -385,10 +382,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="2,800"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -404,7 +401,7 @@
                 android:id="@+id/view6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
         </TableRow>
 
         <TableRow
@@ -416,7 +413,7 @@
                 android:id="@+id/view7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
 
             <LinearLayout
                 android:id="@+id/dessert_menu4"
@@ -429,12 +426,12 @@
                     android:id="@+id/view72"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img4"
@@ -446,25 +443,25 @@
                         android:id="@+id/dessert_check4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name4"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="양념감자(어니언)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -478,28 +475,29 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center|right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:gravity="left"
                         android:text="500"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view272"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -521,12 +519,12 @@
                     android:id="@+id/view74"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img5"
@@ -538,8 +536,8 @@
                         android:id="@+id/dessert_check5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
 
                 </FrameLayout>
 
@@ -547,17 +545,17 @@
                     android:id="@+id/dessert_name5"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="양념감자(치즈)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -574,7 +572,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -582,17 +580,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="500"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view274"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -614,12 +612,12 @@
                     android:id="@+id/view76"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img6"
@@ -631,25 +629,25 @@
                         android:id="@+id/dessert_check6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name6"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="양념감자(칠리)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -666,7 +664,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -674,17 +672,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="500"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view276"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
 
@@ -707,12 +705,12 @@
                     android:id="@+id/view78"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img7"
@@ -724,25 +722,25 @@
                         android:id="@+id/dessert_check7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name7"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="치즈스틱"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -759,7 +757,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -767,17 +765,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="500"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view278"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -786,7 +784,7 @@
                 android:id="@+id/view11"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
         </TableRow>
 
         <TableRow
@@ -798,7 +796,7 @@
                 android:id="@+id/view12"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
 
             <LinearLayout
                 android:id="@+id/dessert_menu8"
@@ -811,12 +809,12 @@
                     android:id="@+id/view80"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img8"
@@ -828,25 +826,25 @@
                         android:id="@+id/dessert_check8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name8"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="쉑쉑치킨(어니언)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -860,21 +858,22 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center|right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price8"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="top"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,000"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -903,12 +902,12 @@
                     android:id="@+id/view82"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img9"
@@ -920,25 +919,25 @@
                         android:id="@+id/dessert_check9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name9"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="쉑쉑치킨(치즈)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -955,7 +954,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -963,10 +962,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,000"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -996,12 +995,12 @@
                     android:id="@+id/view84"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img10"
@@ -1013,25 +1012,25 @@
                         android:id="@+id/dessert_check10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name10"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="쉑쉑치킨(칠리)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1048,7 +1047,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1056,10 +1055,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,000"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -1088,12 +1087,12 @@
                     android:id="@+id/view85"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img11"
@@ -1105,25 +1104,25 @@
                         android:id="@+id/dessert_check11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name11"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="롱치즈스틱"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1140,25 +1139,25 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price11"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="left"
                         android:text="300"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view286"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1167,7 +1166,7 @@
                 android:id="@+id/view16"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
         </TableRow>
 
         <TableRow
@@ -1179,7 +1178,7 @@
                 android:id="@+id/view17"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
 
             <LinearLayout
                 android:id="@+id/dessert_menu12"
@@ -1192,12 +1191,12 @@
                     android:id="@+id/view87"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img12"
@@ -1209,60 +1208,49 @@
                         android:id="@+id/dessert_check12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name12"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="선데아이스크림(딸기)"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
-
-                    <View
-                        android:id="@+id/view287"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView59"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center|right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price12"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
+                        android:gravity="left"
                         android:text="0"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view288"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1284,12 +1272,12 @@
                     android:id="@+id/view90"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img13"
@@ -1301,25 +1289,25 @@
                         android:id="@+id/dessert_check13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name13"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="토네이도(딸기)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1336,7 +1324,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1344,17 +1332,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="900"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view290"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1376,12 +1364,12 @@
                     android:id="@+id/view91"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img14"
@@ -1401,17 +1389,17 @@
                     android:id="@+id/dessert_name14"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="토네이도(초코쿠키)"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1428,7 +1416,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1436,17 +1424,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="800"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view292"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1468,12 +1456,12 @@
                     android:id="@+id/view93"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img15"
@@ -1485,25 +1473,25 @@
                         android:id="@+id/dessert_check15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name15"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="토네이도(녹차)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1520,7 +1508,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1528,17 +1516,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="800"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view294"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1547,19 +1535,19 @@
                 android:id="@+id/view21"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" >
+            android:layout_weight="1">
 
             <View
                 android:id="@+id/view184"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
 
             <LinearLayout
                 android:id="@+id/dessert_menu16"
@@ -1572,12 +1560,12 @@
                     android:id="@+id/view196"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img16"
@@ -1589,25 +1577,25 @@
                         android:id="@+id/dessert_check16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name16"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="콘샐러드"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1621,28 +1609,29 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center|right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/dessert_price16"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="top"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="200"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view296"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
 
@@ -1665,12 +1654,12 @@
                     android:id="@+id/view197"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img17"
@@ -1682,25 +1671,25 @@
                         android:id="@+id/dessert_check17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name17"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="오징어링"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1717,7 +1706,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1725,17 +1714,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="700"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
                         android:id="@+id/view298"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -1757,12 +1746,12 @@
                     android:id="@+id/view198"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img18"
@@ -1774,25 +1763,25 @@
                         android:id="@+id/dessert_check18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name18"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="치킨휠레(2조각)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1809,7 +1798,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1817,10 +1806,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,000"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -1849,12 +1838,12 @@
                     android:id="@+id/view199"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.6" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2">
+                    android:layout_weight="2.6">
 
                     <ImageView
                         android:id="@+id/dessert_img19"
@@ -1866,25 +1855,25 @@
                         android:id="@+id/dessert_check19"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:src="@drawable/checkcircle" />
+                        android:src="@drawable/checkcircle"
+                        android:visibility="invisible" />
                 </FrameLayout>
 
                 <TextView
                     android:id="@+id/dessert_name19"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:text="화이어윙(2조각)"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.8"
                     android:orientation="horizontal">
 
                     <View
@@ -1901,7 +1890,7 @@
                         android:gravity="right"
                         android:text="+"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -1909,10 +1898,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="1,000"
                         android:textColor="#E40202"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <View
@@ -1928,7 +1917,7 @@
                 android:id="@+id/view195"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5" />
+                android:layout_weight="7" />
         </TableRow>
 
     </LinearLayout>
@@ -1937,7 +1926,7 @@
         android:id="@+id/view101"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5" />
+        android:layout_weight="1.8" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -1955,28 +1944,28 @@
             android:id="@+id/dessert_close_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="3"
             android:background="@drawable/cancel_background"
             android:gravity="center"
             android:text="취소"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <View
             android:id="@+id/view98"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.25" />
 
         <Button
             android:id="@+id/dessert_apply"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="3"
             android:background="@drawable/payment_background"
             android:text="완료"
             android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <View
@@ -1990,5 +1979,5 @@
         android:id="@+id/view100"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1.2" />
 </LinearLayout>

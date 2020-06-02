@@ -67,21 +67,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view89"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name0"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="핫크리스피버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -107,7 +107,7 @@
                         android:id="@+id/view91"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -115,7 +115,7 @@
                 android:id="@+id/view25"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.3" />
 
             <LinearLayout
                 android:id="@+id/menu_btn1"
@@ -155,21 +155,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view92"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -195,7 +195,7 @@
                         android:id="@+id/view94"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -256,21 +256,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view96"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name2"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -296,7 +296,7 @@
                         android:id="@+id/view97"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -304,7 +304,7 @@
                 android:id="@+id/view27"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.3" />
 
             <LinearLayout
                 android:id="@+id/menu_btn3"
@@ -344,21 +344,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view98"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -384,7 +384,7 @@
                         android:id="@+id/view100"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -445,21 +445,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view101"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name4"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -485,7 +485,7 @@
                         android:id="@+id/view102"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -493,7 +493,7 @@
                 android:id="@+id/view28"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.3" />
 
             <LinearLayout
                 android:id="@+id/menu_btn5"
@@ -533,21 +533,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view104"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name5"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -573,7 +573,7 @@
                         android:id="@+id/view106"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -634,21 +634,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view107"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name6"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -674,7 +674,7 @@
                         android:id="@+id/view109"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -682,7 +682,7 @@
                 android:id="@+id/view31"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.3" />
 
             <LinearLayout
                 android:id="@+id/menu_btn7"
@@ -722,21 +722,21 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <View
                         android:id="@+id/view110"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.5" />
 
                     <TextView
                         android:id="@+id/menu_name7"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="bottom"
+                        android:layout_weight="1.5"
+                        android:gravity="bottom|center_vertical"
                         android:text="AZ버거"
                         android:textColor="#000000"
                         android:textSize="20sp"
@@ -762,7 +762,7 @@
                         android:id="@+id/view112"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.6" />
                 </LinearLayout>
             </LinearLayout>
 
